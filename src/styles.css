@@ -3282,10 +3282,40 @@ body::before {
   }
 
   .portrait-hero {
+    isolation: isolate;
     background:
       radial-gradient(ellipse at 50% 50%, rgba(53, 112, 103, 0.36), transparent 30%),
       radial-gradient(ellipse at 50% 86%, rgba(36, 73, 68, 0.2), transparent 38%),
       #050607;
+  }
+
+  .portrait-hero::before {
+    position: absolute;
+    z-index: 3;
+    inset: 14px;
+    border: 1px solid rgba(188, 238, 221, 0.1);
+    border-radius: 28px;
+    content: '';
+    pointer-events: none;
+  }
+
+  .portrait-hero::after {
+    position: absolute;
+    z-index: 1;
+    inset: 40% 0 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(7, 9, 9, 0.24) 38%, rgba(7, 9, 9, 0.84) 78%, #070909 100%);
+    content: '';
+    pointer-events: none;
+  }
+
+  .portrait-hero-inner {
+    min-height: max(760px, 100vh);
+    padding-bottom: 24px;
+  }
+
+  .hero-side {
+    top: clamp(60px, 10vh, 92px);
+    align-self: start;
   }
 
   .hero-light {
@@ -3385,10 +3415,10 @@ body::before {
   .hero-focus-list li {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: 4px;
     border: 1px solid rgba(238, 241, 231, 0.1);
     border-radius: 18px;
-    padding: 13px 14px;
+    padding: 11px 13px;
     background: rgba(16, 21, 21, 0.68);
   }
 
@@ -3400,8 +3430,8 @@ body::before {
   .hero-focus-list span {
     color: var(--muted);
     font-family: inherit;
-    font-size: 0.69rem;
-    line-height: 1.45;
+    font-size: 0.66rem;
+    line-height: 1.35;
   }
 
   .hero-side-copy-right {
@@ -3410,8 +3440,8 @@ body::before {
 
   .hero-portrait-image-wrap {
     width: min(43vw, 580px);
-    height: min(62vh, 620px);
-    min-height: 470px;
+    height: min(57vh, 560px);
+    min-height: 450px;
     overflow: visible;
     background: radial-gradient(ellipse at 50% 60%, rgba(64, 139, 125, 0.32), transparent 61%);
     filter: none;
@@ -3432,7 +3462,14 @@ body::before {
   }
 
   .hero-portrait-image-wrap::after {
-    display: none;
+    position: absolute;
+    z-index: 2;
+    inset: 48% -8% -16%;
+    height: auto;
+    background: linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, 0.14) 34%, #070909 100%);
+    box-shadow: none;
+    content: '';
+    pointer-events: none;
   }
 
   .hero-portrait-image {
@@ -3443,8 +3480,8 @@ body::before {
     opacity: 1;
     mix-blend-mode: normal;
     filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.22));
-    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 98%);
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 98%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
   }
 
   .hero-portrait-caption {
@@ -3465,11 +3502,24 @@ body::before {
 
   .hero-title-block h1 {
     max-width: 500px;
-    font-size: clamp(3rem, 5.1vw, 4.85rem);
+    font-size: clamp(2.65rem, 4.1vw, 3.9rem);
     line-height: 0.9;
   }
 
+  .hero-bottom {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: end;
+  }
+
+  .hero-title-actions {
+    display: grid;
+    max-width: 520px;
+    gap: 16px;
+  }
+
   .hero-bottom-center {
+    align-self: end;
+    justify-self: center;
     padding-bottom: 8px;
     color: var(--muted);
     font-size: 0.6rem;
@@ -3478,7 +3528,9 @@ body::before {
   }
 
   .hero-bottom-actions {
+    justify-content: flex-start;
     gap: 14px;
+    padding-bottom: 0;
   }
 
   .button-light {
@@ -4036,6 +4088,19 @@ body::before {
   }
 }
 
+@media screen and (max-width: 1080px) {
+  .hero-focus-list li {
+    padding: 9px 11px;
+  }
+
+  .hero-focus-list span {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
 @media screen and (max-width: 820px) {
   .focus-card-grid {
     grid-template-columns: 1fr;
@@ -4067,7 +4132,21 @@ body::before {
   }
 
   .portrait-hero-inner {
+    min-height: auto;
     padding-top: 104px;
+  }
+
+  .portrait-hero::before {
+    inset: 10px;
+    border-radius: 20px;
+  }
+
+  .portrait-hero::after {
+    inset: 34% 0 0;
+  }
+
+  .hero-side {
+    top: 0;
   }
 
   .hero-side-topline {
@@ -4098,6 +4177,10 @@ body::before {
 
   .hero-bottom-center {
     display: none;
+  }
+
+  .hero-bottom {
+    grid-template-columns: 1fr;
   }
 
   .portfolio-section {

@@ -42,10 +42,10 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
 
           <div className="container portrait-hero-inner">
             <aside className="hero-side hero-side-left" aria-label="Identidade profissional">
-              <p className="hero-name">Dyllan Alves Cordeiro</p>
+              <p className="hero-name">Dyllan</p>
               <p className="hero-role">{portfolioProfile.headline}</p>
               <p className="hero-side-copy">
-                Arquitetura, segurança e dados aplicados a sistemas que precisam funcionar.
+                Arquitetura, segurança e software para sistemas que precisam funcionar.
               </p>
               <a className="hero-side-contact" href={publicContacts[0].href}>
                 Vamos conversar
@@ -81,29 +81,31 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 ))}
               </ul>
               <p className="hero-side-copy hero-side-copy-right">
-                Na Digytron, essa base vira produtos digitais, operações e ferramentas de engenharia.
+                Do dado à operação: BI, segurança e software aplicados ao contexto real.
               </p>
             </aside>
 
             <div className="hero-bottom">
-              <div className="hero-title-block">
-                <span className="hero-kicker">Segurança aplicada</span>
-                <h1 id="hero-title">
-                  Segurança que dá para <em>entender.</em>
-                </h1>
+              <div className="hero-title-actions">
+                <div className="hero-title-block">
+                  <span className="hero-kicker">Segurança aplicada</span>
+                  <h1 id="hero-title">
+                    Segurança que dá para <em>entender.</em>
+                  </h1>
+                </div>
+                <div className="hero-bottom-actions">
+                  <button className="button button-light" type="button" onClick={onOpenCurriculum}>
+                    Abrir currículo
+                    <Icon name="arrow-up-right" size={16} />
+                  </button>
+                  <button className="hero-text-link" type="button" onClick={() => onHome('contato')}>
+                    Falar comigo
+                    <Icon name="arrow-up-right" size={14} />
+                  </button>
+                </div>
               </div>
               <div className="hero-bottom-center">
                 <span>arquitetura · segurança · BI · software</span>
-              </div>
-              <div className="hero-bottom-actions">
-                <button className="button button-light" type="button" onClick={onOpenCurriculum}>
-                  Abrir currículo
-                  <Icon name="arrow-up-right" size={16} />
-                </button>
-                <button className="hero-text-link" type="button" onClick={() => onHome('contato')}>
-                  Falar comigo
-                  <Icon name="arrow-up-right" size={14} />
-                </button>
               </div>
             </div>
           </div>
