@@ -10,19 +10,20 @@ validar: npm run build
 
 # Portfólio pessoal de cibersegurança
 
-Base local isolada para o portfólio profissional pessoal do Dyllan. A interface está sendo
-construída para receber currículo, experiências, projetos, competências, formação, certificações,
-contatos e links reais depois da validação do proprietário.
+Base local isolada para o portfólio profissional pessoal do Dyllan. A interface agora recebe o
+currículo-base e a foto reais fornecidos em 20/08/2026, com uma primeira consolidação da atuação
+técnica na Digytron.
 
 ## Estado atual
 
 - **Ambiente:** local, sem domínio e sem publicação.
 - **Idioma de trabalho:** PT-BR; PT-BR + inglês é decisão pendente.
-- **Conteúdo:** estrutura visual pronta; fatos profissionais ainda não foram fornecidos/aprovados.
-- **Currículo:** rota `/curriculo` preparada para impressão; exportação PDF fica bloqueada até a
-  aprovação do conteúdo factual.
+- **Conteúdo:** PT-BR, baseado no currículo-base e em documentação local de alto nível da Digytron;
+  datas finais, cargo preferido, certificados e cases detalhados continuam pendentes.
+- **Currículo:** rota `/curriculo` responsiva e preparada para impressão; `Salvar como PDF` abre a
+  impressão do navegador em layout A4, sem gerar publicação automática.
 - **Analytics e integrações:** não configurados.
-- **Ativos de marca:** nenhum logo, foto ou imagem inventada foi adicionada.
+- **Ativos visuais:** foto real fornecida pelo Dyllan em `public/assets/`; nenhum logo ou imagem inventada.
 
 ## Executar localmente
 
@@ -43,10 +44,10 @@ npm run build
 
 Não publicar esta base antes de definir, na sessão do Dyllan:
 
-1. nome profissional e posicionamento;
-2. contatos públicos, LinkedIn, GitHub e demais links;
-3. currículo-base, formação e certificações reais;
-4. três a cinco experiências/projetos publicáveis;
+1. aprovação do posicionamento e da descrição pública da Digytron;
+2. revisão de datas finais, cargo preferido e certificados formais;
+3. três a cinco experiências/projetos publicáveis com autorização e evidência;
+4. GitHub e demais links públicos reais, se existirem;
 5. domínio-alvo e idioma inicial;
 6. autorização explícita para o ambiente de publicação.
 

@@ -1,16 +1,24 @@
 // DGX FILE HEADER
-// nivel: L2-medium
+// nivel: L2-large
 // arquivo: src/pages/HomePage.tsx
-// papel: Página inicial do portfólio pessoal, com tese, método e estados de conteúdo.
+// papel: Página inicial do portfólio pessoal, com retrato real, posicionamento e prova factual.
 // governa: docs/content-contract.md
 // validar: npm run typecheck && npm run build
 // DGX:ANCHOR: personal-portfolio-home-page
 
-import { caseAnatomy, contentLedger, reservedFocusAreas } from '../content'
+import {
+  complementaryTraining,
+  contentLedger,
+  digytronMethod,
+  focusAreas,
+  portfolioProfile,
+  professionalExperiences,
+  publicContacts,
+  technicalSkills,
+} from '../content'
 import { Icon } from '../icons'
 import { SiteHeader } from '../components/SiteHeader'
 import { ContentStatusTag, StatusTag } from '../components/StatusTag'
-import { SectionIntro } from '../components/SectionIntro'
 
 type HomePageProps = {
   onOpenCurriculum: () => void
@@ -19,113 +27,128 @@ type HomePageProps = {
 
 export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
   return (
-    <div className="app-shell">
+    <div className="app-shell home-shell">
       <SiteHeader onOpenCurriculum={onOpenCurriculum} onHome={onHome} />
 
       <main>
-        <section className="hero container" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <div className="eyebrow-row">
-              <span className="eyebrow">Portfólio pessoal / cibersegurança</span>
-              <StatusTag tone="amber">CONTEÚDO EM VALIDAÇÃO</StatusTag>
-            </div>
-            <h1 id="hero-title">
-              Segurança
-              <br />
-              demonstrada por <em>clareza.</em>
-            </h1>
-            <p className="hero-lede">
-              Uma base profissional para organizar experiência, método e evidência — com espaço
-              para o que é real e nenhum atalho sobre o que ainda precisa ser confirmado.
-            </p>
-            <div className="hero-actions">
-              <button className="button button-primary" type="button" onClick={onOpenCurriculum}>
-                Abrir currículo
-                <Icon name="arrow-up-right" size={17} />
-              </button>
-              <button className="text-link" type="button" onClick={() => onHome('metodo')}>
-                Ver como os cases serão apresentados
-                <Icon name="chevron-right" size={16} />
-              </button>
-            </div>
-          </div>
+        <section className="portrait-hero" aria-labelledby="hero-title">
+          <div className="hero-grid-lines" aria-hidden="true" />
+          <div className="hero-light hero-light-one" aria-hidden="true" />
+          <div className="hero-light hero-light-two" aria-hidden="true" />
 
-          <aside className="signal-panel" aria-label="Estado da base do portfólio">
-            <div className="signal-panel-topline">
-              <span className="mono-label">TRACE / 00</span>
-              <span className="signal-dot" aria-hidden="true" />
-            </div>
-            <div className="signal-line" aria-hidden="true" />
-            <p className="signal-title">Base local, conteúdo controlado.</p>
-            <p className="signal-copy">
-              O desenho está pronto para receber provas reais. A publicação permanece fechada até
-              os fatos serem aprovados.
-            </p>
-            <div className="signal-grid">
-              <div>
-                <strong>01</strong>
-                <span>rota de CV</span>
+          <div className="container portrait-hero-inner">
+            <aside className="hero-side hero-side-left" aria-label="Identidade profissional">
+              <div className="hero-side-topline">
+                <span className="hero-index">01 / identidade</span>
+                <span className="hero-live"><i aria-hidden="true" /> em atuação</span>
               </div>
-              <div>
-                <strong>00</strong>
-                <span>cases publicados</span>
-              </div>
-              <div>
-                <strong>01</strong>
-                <span>próximo gate</span>
-              </div>
-            </div>
-            <p className="signal-footnote">/ conteúdo factual aguardando fonte</p>
-          </aside>
-        </section>
-
-        <section className="proof-strip" aria-label="Resumo de evidências da base">
-          <div className="container proof-strip-inner">
-            <span className="proof-strip-label">LEITURA RÁPIDA</span>
-            <div className="proof-items">
-              <span>
-                <i aria-hidden="true" /> Sem claims fabricados
-              </span>
-              <span>
-                <i aria-hidden="true" /> Currículo imprimível
-              </span>
-              <span>
-                <i aria-hidden="true" /> Mobile-first
-              </span>
-            </div>
-          </div>
-        </section>
-
-        <section className="section container" id="perfil" aria-labelledby="profile-title">
-          <SectionIntro
-            eyebrow="01 / Perfil"
-            title="A pessoa vem antes da lista de tecnologias."
-            detail="O perfil só será escrito quando houver um currículo-base e um posicionamento aprovado."
-          />
-          <div className="profile-grid">
-            <div className="profile-note">
-              <div className="note-header">
-                <span className="mono-label">PROFILE / DRAFT</span>
-                <StatusTag>AGUARDANDO FONTE</StatusTag>
-              </div>
-              <h3 id="profile-title">Um lugar para explicar o que foi feito, por que importou e como provar.</h3>
-              <p>
-                A primeira versão não presume cargo, certificação ou especialidade. Ela deixa a
-                estrutura pronta para que o conteúdo venha da experiência do Dyllan — não de um
-                modelo genérico de currículo.
+              <p className="hero-name">
+                Dyllan
+                <br />
+                <span>Alves</span>
+                <br />
+                Cordeiro
               </p>
-            </div>
-            <div className="ledger-card" aria-label="Livro de fatos usados na base">
-              <div className="ledger-card-heading">
-                <span className="mono-label">FACT LEDGER</span>
-                <span className="ledger-count">{contentLedger.length.toString().padStart(2, '0')} registros</span>
+              <p className="hero-role">{portfolioProfile.headline}</p>
+              <p className="hero-side-copy">
+                Redes, infraestrutura e suporte técnico com uma visão cada vez mais próxima de
+                segurança aplicada.
+              </p>
+              <a className="hero-side-contact" href={publicContacts[0].href}>
+                {publicContacts[0].value}
+                <Icon name="arrow-up-right" size={14} />
+              </a>
+            </aside>
+
+            <figure className="hero-portrait" aria-label="Retrato de Dyllan Alves Cordeiro">
+              <div className="hero-portrait-image-wrap">
+                <img
+                  className="hero-portrait-image"
+                  src="/assets/dyllan-alves-cordeiro.jpeg"
+                  alt="Retrato de Dyllan Alves Cordeiro"
+                  width="1280"
+                  height="1280"
+                  decoding="async"
+                />
               </div>
-              <div className="ledger-list">
+              <figcaption className="hero-portrait-caption">
+                <span>retrato / 2026</span>
+                <span>01—01</span>
+              </figcaption>
+            </figure>
+
+            <aside className="hero-side hero-side-right" aria-label="Áreas de atuação">
+              <div className="hero-side-topline">
+                <span className="hero-index">02 / foco</span>
+                <span className="hero-index">BR — GO</span>
+              </div>
+              <p className="hero-side-label">O que eu faço</p>
+              <ul className="hero-focus-list">
+                {focusAreas.map((area) => (
+                  <li key={area.code}>
+                    <span>{area.code}</span>
+                    <strong>{area.title}</strong>
+                  </li>
+                ))}
+              </ul>
+              <p className="hero-side-copy hero-side-copy-right">
+                Na Digytron, essa base se transforma em engenharia aplicada, produtos digitais e
+                operação técnica documentada.
+              </p>
+            </aside>
+
+            <div className="hero-bottom">
+              <div className="hero-title-block">
+                <span className="hero-index">03 / posicionamento</span>
+                <h1 id="hero-title">
+                  Segurança
+                  <br />
+                  demonstrada por <em>clareza.</em>
+                </h1>
+              </div>
+              <div className="hero-bottom-center">
+                <span className="hero-scroll-mark" aria-hidden="true">↓</span>
+                <span>ver método</span>
+              </div>
+              <div className="hero-bottom-actions">
+                <button className="button button-light" type="button" onClick={onOpenCurriculum}>
+                  Abrir currículo
+                  <Icon name="arrow-up-right" size={16} />
+                </button>
+                <button className="hero-text-link" type="button" onClick={() => onHome('contato')}>
+                  Falar comigo
+                  <Icon name="arrow-up-right" size={14} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="portfolio-section profile-section" id="perfil" aria-labelledby="profile-title">
+          <div className="container section-grid profile-section-grid">
+            <div className="section-heading-block">
+              <span className="section-index">04 / perfil</span>
+              <h2 id="profile-title">A pessoa vem antes da lista de tecnologias.</h2>
+              <p>{portfolioProfile.intro}</p>
+              <div className="profile-meta-row">
+                <span>{portfolioProfile.location}</span>
+                <span>•</span>
+                <span>Digytron / engenharia aplicada</span>
+              </div>
+            </div>
+
+            <div className="fact-ledger-card">
+              <div className="card-topline">
+                <span className="mono-label">FACT LEDGER / 05</span>
+                <span className="card-topline-rule" aria-hidden="true" />
+                <span className="mono-label">base factual</span>
+              </div>
+              <div className="fact-ledger-list">
                 {contentLedger.map((item) => (
-                  <div className="ledger-row" key={item.label}>
+                  <div className="fact-ledger-row" key={item.label}>
                     <div>
-                      <span className="ledger-label">{item.label}</span>
-                      <span className="ledger-detail">{item.detail}</span>
+                      <strong>{item.label}</strong>
+                      <span>{item.detail}</span>
                     </div>
                     <ContentStatusTag status={item.status} />
                   </div>
@@ -135,124 +158,172 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
           </div>
         </section>
 
-        <section className="section section-surface" aria-labelledby="focus-title">
+        <section className="portfolio-section focus-section" id="atuacao" aria-labelledby="focus-title">
           <div className="container">
-            <SectionIntro
-              eyebrow="02 / Áreas de atuação"
-              title="A arquitetura espera os fatos certos."
-              detail="As áreas abaixo são espaços de conteúdo, não alegações de competência."
-            />
-            <div className="focus-grid">
-              {reservedFocusAreas.map((area) => (
-                <article className="focus-card" key={area.code}>
-                  <div className="focus-card-topline">
-                    <span className="mono-label">{area.code}</span>
-                    <StatusTag tone="amber">PENDENTE</StatusTag>
+            <div className="section-heading-inline">
+              <div>
+                <span className="section-index">05 / áreas de atuação</span>
+                <h2 id="focus-title">Onde a experiência encontra o próximo nível.</h2>
+              </div>
+              <p>
+                Uma leitura curta do que já aparece no currículo e do que está sendo construído na
+                Digytron.
+              </p>
+            </div>
+            <div className="focus-card-grid">
+              {focusAreas.map((area) => (
+                <article className="focus-card-v2" key={area.code}>
+                  <div className="focus-card-number">{area.code}</div>
+                  <div>
+                    <h3>{area.title}</h3>
+                    <p>{area.detail}</p>
                   </div>
-                  <h3>{area.label}</h3>
-                  <p>{area.detail}</p>
-                  <span className="focus-corner" aria-hidden="true">↗</span>
+                  <span className="focus-card-arrow" aria-hidden="true">↗</span>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section container" id="metodo" aria-labelledby="method-title">
-          <SectionIntro
-            eyebrow="03 / Método de case"
-            title="Toda prova terá cinco camadas legíveis."
-            detail="A estrutura foi definida no Envelope para separar contexto de responsabilidade e resultado de promessa."
-          />
-          <div className="method-layout">
-            <div className="method-statement">
-              <span className="statement-mark" aria-hidden="true">/</span>
-              <p id="method-title">Clareza operacional é o fio condutor desta superfície.</p>
-              <span className="mono-label">CASE ANATOMY / READY</span>
+        <section className="portfolio-section experience-section" id="experiencia" aria-labelledby="experience-title">
+          <div className="container">
+            <div className="section-heading-inline experience-heading">
+              <div>
+                <span className="section-index">06 / experiência</span>
+                <h2 id="experience-title">Percurso técnico, sem atalhos na narrativa.</h2>
+              </div>
+              <span className="section-side-note">5 experiências selecionadas<br />a partir do CV-base</span>
             </div>
-            <div className="anatomy-list">
-              {caseAnatomy.map((item) => (
-                <div className="anatomy-row" key={item.index}>
-                  <span className="anatomy-index">{item.index}</span>
-                  <div>
-                    <h3>{item.label}</h3>
-                    <p>{item.detail}</p>
+
+            <div className="experience-list">
+              {professionalExperiences.map((experience, index) => (
+                <article className={`experience-row${experience.current ? ' experience-row-featured' : ''}`} key={`${experience.company}-${experience.role}`}>
+                  <div className="experience-index">0{index + 1}</div>
+                  <div className="experience-main">
+                    <div className="experience-heading-row">
+                      <div>
+                        <div className="experience-company-line">
+                          <h3>{experience.company}</h3>
+                          {experience.current ? <StatusTag tone="mint">ATUAÇÃO ATUAL</StatusTag> : null}
+                        </div>
+                        <p className="experience-role">{experience.role}</p>
+                      </div>
+                      <span className="experience-period">{experience.period}</span>
+                    </div>
+                    <p className="experience-summary">{experience.summary}</p>
+                    <ul className="experience-bullets">
+                      {experience.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                    </ul>
+                    <p className="experience-source">{experience.sourceNote}</p>
                   </div>
-                  <Icon name="chevron-right" size={17} />
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section section-surface" id="projetos" aria-labelledby="projects-title">
+        <section className="portfolio-section skills-section" id="competencias" aria-labelledby="skills-title">
           <div className="container">
-            <SectionIntro
-              eyebrow="04 / Projetos e cases"
-              title="A vitrine fica vazia até haver prova pública."
-              detail="Nenhuma experiência foi adicionada nesta sessão. O componente abaixo é o molde de cada case real."
-            />
-            <article className="empty-case" aria-labelledby="projects-title">
-              <div className="empty-case-mark" aria-hidden="true">
-                <span>+</span>
-                <span>+</span>
-                <span>+</span>
+            <div className="section-heading-inline">
+              <div>
+                <span className="section-index">07 / competências</span>
+                <h2 id="skills-title">Ferramentas que aparecem no trabalho.</h2>
               </div>
-              <div className="empty-case-copy">
-                <div className="eyebrow-row">
-                  <span className="mono-label">CASE SLOT / 01</span>
-                  <StatusTag tone="quiet">SEM CONTEÚDO PÚBLICO</StatusTag>
-                </div>
-                <h3 id="projects-title">Pronto para receber um trabalho que possa ser verificado.</h3>
-                <p>
-                  Cada entrada deverá informar contexto, responsabilidade, abordagem, tecnologia e
-                  resultado comprovável — sem transformar confidencialidade em narrativa inventada.
-                </p>
+              <p>Lista revisada a partir do currículo-base. Sem badges automáticos, sem certificação presumida.</p>
+            </div>
+
+            <div className="skills-layout">
+              <div className="skills-grid">
+                {technicalSkills.map((group) => (
+                  <article className="skill-group" key={group.label}>
+                    <h3>{group.label}</h3>
+                    <div className="skill-pill-list">
+                      {group.items.map((item) => <span key={item}>{item}</span>)}
+                    </div>
+                  </article>
+                ))}
               </div>
-              <div className="empty-case-side">
-                <Icon name="lock" size={22} />
-                <span>Fatos pendentes</span>
+              <div className="learning-card">
+                <span className="section-index">formação complementar</span>
+                <h3>Base ampla, próxima da operação.</h3>
+                <ul>
+                  {complementaryTraining.map((item) => <li key={item}>{item}</li>)}
+                </ul>
               </div>
-            </article>
+            </div>
           </div>
         </section>
 
-        <section className="section container cv-callout" aria-labelledby="cv-callout-title">
-          <div>
-            <p className="eyebrow">05 / Currículo</p>
-            <h2 id="cv-callout-title">Uma página própria para leitura rápida e impressão.</h2>
+        <section className="portfolio-section digytron-section" id="metodo" aria-labelledby="dgy-title">
+          <div className="container section-grid digytron-grid">
+            <div className="dgy-copy">
+              <span className="section-index">08 / digytron</span>
+              <h2 id="dgy-title">Uma atuação que conecta infraestrutura, produto e segurança.</h2>
+              <p>
+                A Digytron é o contexto atual de engenharia aplicada: uma arquitetura digital própria,
+                com pesquisa, produtos e ferramentas construídos de forma documentada e soberana.
+              </p>
+              <div className="dgy-note">
+                <span className="dgy-note-mark">/</span>
+                <span>Esta é uma descrição profissional de alto nível. Cases públicos detalhados ainda aguardam evidência e aprovação de citação.</span>
+              </div>
+            </div>
+            <div className="method-card">
+              <div className="card-topline">
+                <span className="mono-label">MÉTODO / DIGYTRON</span>
+                <span className="mono-label">A—E</span>
+              </div>
+              <div className="method-list">
+                {digytronMethod.map((item) => (
+                  <div className="method-row" key={item.index}>
+                    <span>{item.index}</span>
+                    <strong>{item.label}</strong>
+                    <p>{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="cv-callout-action">
-            <p>O layout está pronto. O conteúdo factual ainda não foi fornecido.</p>
-            <button className="button button-outline" type="button" onClick={onOpenCurriculum}>
-              Ver rota de currículo
-              <Icon name="arrow-up-right" size={17} />
+        </section>
+
+        <section className="portfolio-section cv-section" aria-labelledby="cv-title-home">
+          <div className="container cv-section-inner">
+            <div>
+              <span className="section-index">09 / currículo</span>
+              <h2 id="cv-title-home">Uma página própria para ler, imprimir e levar para a candidatura.</h2>
+              <p>Conteúdo transcrito do CV-base e reorganizado para destacar redes, infraestrutura e Digytron.</p>
+            </div>
+            <button className="button button-light button-dark-surface" type="button" onClick={onOpenCurriculum}>
+              Ver currículo completo
+              <Icon name="arrow-up-right" size={16} />
             </button>
           </div>
         </section>
 
-        <section className="section contact-section" id="contato" aria-labelledby="contact-title">
-          <div className="container contact-grid">
+        <section className="portfolio-section contact-section-v2" id="contato" aria-labelledby="contact-title">
+          <div className="container section-grid contact-grid-v2">
             <div>
-              <p className="eyebrow">06 / Contato</p>
-              <h2 id="contact-title">O canal público entra quando existir um canal real.</h2>
+              <span className="section-index">10 / contato</span>
+              <h2 id="contact-title">Vamos conversar sobre o próximo problema.</h2>
+              <p className="contact-lede">Para candidaturas, parcerias técnicas ou uma conversa sobre infraestrutura e segurança.</p>
             </div>
-            <div className="contact-gate">
-              <StatusTag>CONTATO PENDENTE</StatusTag>
-              <p>
-                Nenhum e-mail, telefone ou link foi publicado por esta base. O próximo passo é
-                receber os contatos que o Dyllan deseja tornar públicos para candidaturas.
-              </p>
-              <span className="mono-label">/ aguardando definição do proprietário</span>
+            <div className="contact-list-v2">
+              {publicContacts.map((contact) => (
+                <a href={contact.href} key={contact.label} target={contact.kind === 'linkedin' ? '_blank' : undefined} rel={contact.kind === 'linkedin' ? 'noreferrer' : undefined}>
+                  <span>{contact.label}</span>
+                  <strong>{contact.value}</strong>
+                  <Icon name="arrow-up-right" size={15} />
+                </a>
+              ))}
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="site-footer">
+      <footer className="site-footer site-footer-v2">
         <div className="container footer-inner">
-          <span className="brand-context">Dyllan / security portfolio</span>
-          <span className="footer-status"><i aria-hidden="true" /> local / não publicado</span>
+          <span className="brand-context">Dyllan / cybersecurity portfolio</span>
+          <span className="footer-status"><i aria-hidden="true" /> conteúdo local / em revisão final</span>
           <span className="brand-context">2026</span>
         </div>
       </footer>

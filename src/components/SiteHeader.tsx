@@ -28,7 +28,7 @@ export function SiteHeader({
             <span />
           </span>
           <span className="brand-name">Dyllan</span>
-          <span className="brand-context">/ security portfolio</span>
+          <span className="brand-context">/ cybersecurity portfolio</span>
         </button>
 
         <nav className="nav-links" aria-label="Navegação principal">
@@ -39,13 +39,13 @@ export function SiteHeader({
           ) : (
             <>
               <button className="nav-text-button" type="button" onClick={() => onHome('perfil')}>
-                Perfil
+                Sobre
               </button>
-              <button className="nav-text-button" type="button" onClick={() => onHome('metodo')}>
-                Método
+              <button className="nav-text-button" type="button" onClick={() => onHome('experiencia')}>
+                Experiência
               </button>
-              <button className="nav-text-button" type="button" onClick={() => onHome('projetos')}>
-                Projetos
+              <button className="nav-text-button" type="button" onClick={() => onHome('competencias')}>
+                Competências
               </button>
             </>
           )}

@@ -19,10 +19,11 @@ validar: git diff --check
 
 ## Fase 2 — primeira fatia visual
 
-- Página inicial com tese, áreas reservadas, método de case e CTA de currículo.
-- Rota `/curriculo` com leitura linear e preparação de impressão.
-- Estados `PENDENTE` visíveis onde faltam dados reais.
-- Layout mobile-first, sem foto/logo/asset inventado.
+- Hero inspirado na referência enviada: retrato real central, cópias laterais e CTA de currículo.
+- Página inicial com perfil, áreas de atuação, Digytron, experiência, competências, método e contato.
+- Rota `/curriculo` com leitura factual, responsividade e ação de impressão/Salvar como PDF.
+- Estados `PENDENTE` visíveis apenas onde faltam datas, cargo preferido, certificados e cases.
+- Foto real fornecida pelo Dyllan em `public/assets/`; nenhum logo ou imagem inventada.
 
 ## Fase 3 — validação
 
@@ -33,5 +34,6 @@ validar: git diff --check
 
 ## Fase 4 — conteúdo e publicação
 
-Só começa após retorno do Dyllan com os fatos do contrato de conteúdo e decisão explícita de
-domínio. A publicação não faz parte desta primeira fatia.
+O currículo-base e a foto já foram incorporados como primeira consolidação. A publicação só começa
+após aprovação do posicionamento, revisão das datas/certificados/cases, definição de domínio e
+autorização explícita do Dyllan. Esta rodada não publica.

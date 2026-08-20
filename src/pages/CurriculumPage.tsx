@@ -1,11 +1,20 @@
 // DGX FILE HEADER
-// nivel: L2-medium
+// nivel: L2-large
 // arquivo: src/pages/CurriculumPage.tsx
-// papel: Rota própria de currículo, legível, imprimível e bloqueada contra conteúdo inventado.
+// papel: Currículo público factual, responsivo, legível e preparado para impressão/PDF.
 // governa: docs/content-contract.md
-// validar: npm run typecheck && npm run build
+// validar: npm run typecheck && npm run build && visual print
 // DGX:ANCHOR: personal-portfolio-curriculum-page
 
+import {
+  complementaryTraining,
+  education,
+  languages,
+  portfolioProfile,
+  professionalExperiences,
+  publicContacts,
+  technicalSkills,
+} from '../content'
 import { Icon } from '../icons'
 import { SiteHeader } from '../components/SiteHeader'
 import { StatusTag } from '../components/StatusTag'
@@ -15,118 +24,148 @@ type CurriculumPageProps = {
   onHome: (section?: string) => void
 }
 
-const resumeSections = [
-  {
-    label: 'Resumo profissional',
-    copy: 'Aguardando texto-base fornecido ou aprovado pelo Dyllan.',
-  },
-  {
-    label: 'Experiência',
-    copy: 'Aguardando cargos, períodos, responsabilidades e resultados comprováveis.',
-  },
-  {
-    label: 'Projetos selecionados',
-    copy: 'Aguardando três a cinco experiências que possam ser citadas publicamente.',
-  },
-  {
-    label: 'Formação e certificações',
-    copy: 'Aguardando instituições, cursos, datas e certificações reais.',
-  },
-  {
-    label: 'Competências',
-    copy: 'Aguardando lista revisada de competências e tecnologias efetivamente utilizadas.',
-  },
-]
-
 export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps) {
   return (
     <div className="app-shell curriculum-shell">
       <SiteHeader onOpenCurriculum={onOpenCurriculum} onHome={onHome} isCurriculum />
 
-      <main className="curriculum-main">
-        <div className="container curriculum-toolbar print-hidden">
-          <button className="back-link" type="button" onClick={() => onHome()}>
+      <main className="curriculum-main-v2">
+        <div className="container curriculum-toolbar-v2 print-hidden">
+          <button className="back-link-v2" type="button" onClick={() => onHome()}>
             <Icon name="arrow-left" size={17} />
             Voltar ao portfólio
           </button>
-          <div className="toolbar-status">
-            <span className="mono-label">CV / CONTROLLED DRAFT</span>
-            <StatusTag tone="amber">CONTEÚDO PENDENTE</StatusTag>
+          <div className="toolbar-status-v2">
+            <span className="mono-label">CV / PUBLIC DRAFT</span>
+            <StatusTag tone="amber">REVISÃO FINAL</StatusTag>
           </div>
         </div>
 
-        <div className="container curriculum-layout">
-          <article className="cv-document" aria-labelledby="cv-title">
-            <header className="cv-header">
+        <div className="container curriculum-layout-v2">
+          <article className="cv-document-v2" aria-labelledby="cv-title">
+            <header className="cv-header-v2">
               <div>
-                <span className="eyebrow">Currículo profissional</span>
-                <h1 id="cv-title">Dyllan</h1>
-                <p className="cv-role">Posicionamento profissional pendente</p>
+                <span className="cv-kicker">Currículo profissional</span>
+                <h1 id="cv-title">{portfolioProfile.name}</h1>
+                <p className="cv-role-v2">{portfolioProfile.headline}</p>
+                <p className="cv-positioning-v2">{portfolioProfile.positioning}</p>
               </div>
-              <div className="cv-header-meta">
-                <span>Contato público pendente</span>
-                <span>Localização pendente</span>
-                <span>Idioma pendente</span>
+              <div className="cv-contact-block">
+                <span>{portfolioProfile.location}</span>
+                {publicContacts.map((contact) => (
+                  <a href={contact.href} key={contact.label} target={contact.kind === 'linkedin' ? '_blank' : undefined} rel={contact.kind === 'linkedin' ? 'noreferrer' : undefined}>
+                    {contact.value}
+                  </a>
+                ))}
               </div>
             </header>
 
-            <div className="cv-divider" />
+            <div className="cv-rule-v2" />
 
-            <section className="cv-summary-block">
-              <span className="cv-section-label">Perfil</span>
-              <p>
-                Este resumo será escrito a partir do currículo-base e da direção profissional
-                aprovados. Nenhuma experiência, cargo, competência ou resultado foi presumido.
-              </p>
+            <section className="cv-profile-v2" aria-labelledby="cv-profile-title">
+              <span className="cv-section-label-v2" id="cv-profile-title">Perfil</span>
+              <p>{portfolioProfile.intro}</p>
             </section>
 
-            <div className="cv-section-list">
-              {resumeSections.map((section) => (
-                <section className="cv-section-row" key={section.label}>
-                  <span className="cv-section-label">{section.label}</span>
-                  <div>
-                    <StatusTag tone="amber">PENDENTE</StatusTag>
-                    <p>{section.copy}</p>
+            <section className="cv-block-v2" aria-labelledby="cv-experience-title">
+              <div className="cv-block-heading-v2">
+                <span className="cv-section-label-v2" id="cv-experience-title">Experiência profissional</span>
+                <span className="cv-block-count">{professionalExperiences.length.toString().padStart(2, '0')} entradas</span>
+              </div>
+              <div className="cv-experience-list-v2">
+                {professionalExperiences.map((experience) => (
+                  <article className={`cv-experience-v2${experience.current ? ' cv-experience-featured-v2' : ''}`} key={`${experience.company}-${experience.role}`}>
+                    <div className="cv-experience-topline">
+                      <div>
+                        <h2>{experience.company}</h2>
+                        <p>{experience.role}</p>
+                      </div>
+                      <span>{experience.period}</span>
+                    </div>
+                    <p className="cv-experience-summary-v2">{experience.summary}</p>
+                    <ul>
+                      {experience.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <div className="cv-columns-v2">
+              <section className="cv-block-v2" aria-labelledby="cv-skills-title">
+                <div className="cv-block-heading-v2">
+                  <span className="cv-section-label-v2" id="cv-skills-title">Competências</span>
+                </div>
+                <div className="cv-skill-groups-v2">
+                  {technicalSkills.map((group) => (
+                    <div key={group.label}>
+                      <h3>{group.label}</h3>
+                      <p>{group.items.join(' · ')}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="cv-block-v2" aria-labelledby="cv-education-title">
+                <div className="cv-block-heading-v2">
+                  <span className="cv-section-label-v2" id="cv-education-title">Formação</span>
+                </div>
+                {education.map((item) => (
+                  <div className="cv-education-item-v2" key={item.institution}>
+                    <h3>{item.institution}</h3>
+                    <p>{item.detail}</p>
+                    <strong>{item.course}</strong>
+                    <span>{item.period}</span>
                   </div>
-                </section>
-              ))}
+                ))}
+                <div className="cv-language-list-v2">
+                  <h3>Idiomas</h3>
+                  {languages.map((item) => (
+                    <p key={item.language}><strong>{item.language}</strong><span>{item.level}</span></p>
+                  ))}
+                </div>
+              </section>
             </div>
 
-            <footer className="cv-document-footer">
-              <span>Documento preparado para atualização factual.</span>
-              <span>v0.1 / local</span>
+            <section className="cv-block-v2 cv-training-v2" aria-labelledby="cv-training-title">
+              <div className="cv-block-heading-v2">
+                <span className="cv-section-label-v2" id="cv-training-title">Cursos e formação complementar</span>
+              </div>
+              <p>{complementaryTraining.join(' · ')}</p>
+            </section>
+
+            <footer className="cv-document-footer-v2">
+              <span>Conteúdo reorganizado a partir do currículo-base fornecido pelo Dyllan.</span>
+              <span>v0.2 / local</span>
             </footer>
           </article>
 
-          <aside className="cv-sidebar print-hidden" aria-label="Estado da publicação do currículo">
-            <div className="sidebar-block sidebar-block-accent">
+          <aside className="cv-sidebar-v2 print-hidden" aria-label="Ações e estado do currículo">
+            <div className="sidebar-panel-v2 sidebar-panel-accent-v2">
               <span className="mono-label">EXPORTAÇÃO</span>
-              <h2>PDF preparado depois da aprovação factual.</h2>
-              <p>
-                A folha de estilo de impressão já está configurada. O arquivo final só deve ser
-                gerado quando o conteúdo real estiver fechado.
-              </p>
-              <button className="button button-disabled" type="button" disabled aria-disabled="true">
-                <Icon name="lock" size={16} />
-                PDF indisponível nesta versão
+              <h2>Leve esta página com você.</h2>
+              <p>Use a impressão do navegador para salvar uma versão PDF limpa, em A4, sem a navegação lateral.</p>
+              <button className="button button-light" type="button" onClick={() => window.print()}>
+                Salvar como PDF
+                <Icon name="arrow-up-right" size={16} />
               </button>
             </div>
 
-            <div className="sidebar-block">
-              <span className="mono-label">PRÓXIMO INPUT</span>
-              <ul className="pending-list">
-                <li>Nome e cargo</li>
-                <li>Contato e links</li>
-                <li>Experiências reais</li>
-                <li>Formação e certificações</li>
-                <li>Idioma e domínio</li>
+            <div className="sidebar-panel-v2">
+              <span className="mono-label">LEITURA FACTUAL</span>
+              <h2>O que entrou nesta versão</h2>
+              <ul className="sidebar-check-list-v2">
+                <li>Experiência em redes, suporte e monitoração</li>
+                <li>Atuação técnica de alto nível na Digytron</li>
+                <li>Competências e cursos do CV-base</li>
+                <li>Contatos públicos do documento fornecido</li>
               </ul>
             </div>
 
-            <p className="sidebar-footnote">
-              <span className="signal-dot" aria-hidden="true" />
-              Nenhuma candidatura está sendo recebida por esta base local.
-            </p>
+            <div className="sidebar-panel-v2 sidebar-panel-muted-v2">
+              <span className="mono-label">PENDÊNCIAS</span>
+              <p>Confirmar cargo preferido, datas finais, certificados formais e autorização para cases detalhados antes da publicação.</p>
+            </div>
           </aside>
         </div>
       </main>

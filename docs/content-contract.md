@@ -17,29 +17,39 @@ conteúdo público só pode avançar quando o Dyllan fornecer ou aprovar cada it
 
 | Item | Estado | Fonte | Uso atual |
 |---|---|---|---|
-| Referência pessoal: Dyllan | CONFIRMADO | Envelope GK da sessão | Identificação interna e rótulo provisório da interface |
-| Tema: portfólio pessoal de cibersegurança | CONFIRMADO | Envelope GK da sessão | Escopo e título de trabalho |
-| Existência de repositório pessoal prévio | NÃO ENCONTRADO | Inspeção local da sessão | Justifica a base isolada |
-| Currículo, cases, certificações e links públicos | NÃO FORNECIDOS | Envelope GK da sessão | Permanecem como pendência |
+| Nome: Dyllan Alves Cordeiro | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | Cabeçalho, Hero e rota `/curriculo` |
+| Tema e posicionamento de trabalho | CONFIRMADO | Envelope GK + currículo-base | Portfólio pessoal de cibersegurança; redes, infraestrutura e engenharia aplicada |
+| Contatos públicos | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | E-mail, telefone e LinkedIn; endereço completo não foi exposto |
+| Formação e idiomas | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | UNIDESC, Sistemas de Informação, inglês e espanhol |
+| Histórico de redes e suporte | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | AGE Telecom, Stefanini Group, NWI Telecom e SKILL.NET |
+| Digytron em nível técnico | CONFIRMADO | Documentação local da Digytron + solicitação explícita desta atualização | Contexto atual de engenharia aplicada; sem clientes, Space ou dados internos |
+| Foto de Dyllan | CONFIRMADO | Arquivo real fornecido em 20/08/2026 | `/public/assets/dyllan-alves-cordeiro.jpeg` e composição central do Hero |
+| Repositório pessoal prévio | NÃO ENCONTRADO | Inspeção local da sessão | Justifica a base isolada criada nesta pasta |
 
 ## Itens pendentes antes de conteúdo público
 
-- Nome profissional completo.
 - Cargo ou posicionamento preferido.
-- Resumo profissional escrito ou aprovado pelo Dyllan.
-- Contatos públicos e canal de candidatura.
-- LinkedIn, GitHub e demais links reais.
-- Currículo-base.
-- Formação e certificações reais.
-- Três a cinco experiências/projetos que possam ser citados publicamente.
+- Datas finais atualizadas de experiências cujo currículo-base não as informa.
+- Certificados formais, instituições emissoras e datas.
+- GitHub e demais links públicos reais, se existirem.
+- Aprovação do resumo profissional e da descrição pública da Digytron.
+- Três a cinco experiências/projetos com autorização de citação.
 - Para cada case: contexto, responsabilidade, abordagem, tecnologia e resultado comprovável.
 - Domínio desejado.
 - Idioma inicial: PT-BR apenas ou PT-BR + inglês.
-- Foto, logo ou ativos visuais, somente se forem reais e aprovados.
+- Aprovação final da foto em produção e da versão visual.
+
+## Conteúdo omitido da versão pública
+
+- Endereço completo, data de nascimento, estado civil e informação sobre filhos.
+- Experiência administrativa e estágio antigo, por não serem centrais ao posicionamento atual.
+- Disponibilidade genérica para viagens ou mudança de região.
+- Números, clientes, certificações formais ou resultados sem fonte validada.
 
 ## Fontes explicitamente excluídas
 
 - Digytron Space.
 - Repositórios de clientes.
-- Dados de identidade comercial da Digytron.
+- Dados jurídicos e de identidade comercial da Digytron.
 - Currículos, bios ou links encontrados em superfícies operacionais sem aprovação específica.
+- Conteúdo do Digytron Space e dados de clientes.
