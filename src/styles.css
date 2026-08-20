@@ -3260,6 +3260,32 @@ body::before {
     color: var(--mint);
   }
 
+  .home-shell .site-header,
+  .curriculum-shell .site-header {
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 0;
+    padding: 14px 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .curriculum-shell .site-header {
+    position: sticky;
+  }
+
+  .home-shell .nav-shell,
+  .curriculum-shell .nav-shell {
+    min-height: 58px;
+    border: 1px solid rgba(238, 241, 231, 0.16);
+    border-radius: 999px;
+    padding: 0 18px;
+    background: rgba(5, 6, 7, 0.72);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(18px);
+  }
+
   .brand-mark,
   .brand-context {
     display: none;
@@ -3511,12 +3537,6 @@ body::before {
     align-items: end;
   }
 
-  .hero-title-actions {
-    display: grid;
-    max-width: 520px;
-    gap: 16px;
-  }
-
   .hero-bottom-center {
     align-self: end;
     justify-self: center;
@@ -3528,7 +3548,8 @@ body::before {
   }
 
   .hero-bottom-actions {
-    justify-content: flex-start;
+    justify-self: end;
+    justify-content: flex-end;
     gap: 14px;
     padding-bottom: 0;
   }
@@ -4129,6 +4150,17 @@ body::before {
 
   .nav-shell {
     min-height: 74px;
+  }
+
+  .home-shell .site-header,
+  .curriculum-shell .site-header {
+    padding: 10px 0;
+  }
+
+  .home-shell .nav-shell,
+  .curriculum-shell .nav-shell {
+    min-height: 56px;
+    padding: 0 12px;
   }
 
   .portrait-hero-inner {

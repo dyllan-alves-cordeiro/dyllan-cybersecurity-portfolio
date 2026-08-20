@@ -86,26 +86,20 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
             </aside>
 
             <div className="hero-bottom">
-              <div className="hero-title-actions">
-                <div className="hero-title-block">
-                  <span className="hero-kicker">Segurança aplicada</span>
-                  <h1 id="hero-title">
-                    Segurança que dá para <em>entender.</em>
-                  </h1>
-                </div>
-                <div className="hero-bottom-actions">
-                  <button className="button button-light" type="button" onClick={onOpenCurriculum}>
-                    Abrir currículo
-                    <Icon name="arrow-up-right" size={16} />
-                  </button>
-                  <button className="hero-text-link" type="button" onClick={() => onHome('contato')}>
-                    Falar comigo
-                    <Icon name="arrow-up-right" size={14} />
-                  </button>
-                </div>
+              <div className="hero-title-block">
+                <span className="hero-kicker">Segurança aplicada</span>
+                <h1 id="hero-title">
+                  Segurança que dá para <em>entender.</em>
+                </h1>
               </div>
               <div className="hero-bottom-center">
                 <span>arquitetura · segurança · BI · software</span>
+              </div>
+              <div className="hero-bottom-actions">
+                <button className="button button-light" type="button" onClick={() => onHome('contato')}>
+                  Falar comigo
+                  <Icon name="arrow-up-right" size={16} />
+                </button>
               </div>
             </div>
           </div>
