@@ -6,6 +6,7 @@
 // DGX:ANCHOR: personal-portfolio-app-shell
 
 import { useEffect, useState } from 'react'
+import { AiGovernancePage } from './pages/AiGovernancePage'
 import { CurriculumPage } from './pages/CurriculumPage'
 import { HomePage } from './pages/HomePage'
 
@@ -44,8 +45,26 @@ export default function App() {
     })
   }
 
+  const openGovernance = () => {
+    if (path !== '/governanca-ia') {
+      window.history.pushState({}, '', '/governanca-ia')
+      setPath('/governanca-ia')
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   if (path === '/curriculo') {
     return <CurriculumPage onOpenCurriculum={openCurriculum} onHome={goHome} />
+  }
+
+  if (path === '/governanca-ia') {
+    return (
+      <AiGovernancePage
+        onOpenCurriculum={openCurriculum}
+        onHome={goHome}
+        onOpenGovernance={openGovernance}
+      />
+    )
   }
 
   return <HomePage onOpenCurriculum={openCurriculum} onHome={goHome} />
