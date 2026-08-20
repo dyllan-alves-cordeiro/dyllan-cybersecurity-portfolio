@@ -30,7 +30,7 @@
     "task_ref": null,
     "session_close_ref": null,
     "started_at": "2026-08-20T14:19:31.725003+00:00",
-    "closed_at": null,
+    "closed_at": "2026-08-20T14:35:18.688262+00:00",
     "round_baseline": {
       "phase": "round_baseline",
       "available": true,
@@ -40,6 +40,16 @@
       "behind": 0,
       "worktree_clean": true,
       "observed_at": "2026-08-20T14:19:31.723192+00:00"
+    },
+    "pre_delivery_state": {
+      "phase": "pre_delivery_state",
+      "available": true,
+      "head": "bae1faeb5170f215f483ab5734ccca39cacdf468",
+      "branch": "main",
+      "ahead": 0,
+      "behind": 0,
+      "worktree_clean": false,
+      "observed_at": "2026-08-20T14:35:18.687559+00:00"
     }
   },
   "intent_snapshot": {
@@ -50,32 +60,56 @@
         "title": "Página inicial do portfólio pessoal.",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-9746",
+          "ev-2-8570",
+          "ev-3-9521",
+          "ev-4-835",
+          "ev-5-2903"
+        ]
       },
       {
         "id": "ob-2",
         "title": "Rota própria de currículo/CV.",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-9746",
+          "ev-2-8570",
+          "ev-3-9521",
+          "ev-4-835",
+          "ev-5-2903"
+        ]
       },
       {
         "id": "ob-3",
         "title": "Contrato de conteúdo factual e inventário de pendências.",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-9746",
+          "ev-2-8570",
+          "ev-3-9521",
+          "ev-4-835",
+          "ev-5-2903"
+        ]
       },
       {
         "id": "ob-4",
         "title": "README com escopo, limites e próximo gate de publicação.",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-9746",
+          "ev-2-8570",
+          "ev-3-9521",
+          "ev-4-835",
+          "ev-5-2903"
+        ]
       }
     ],
     "constraints": [
@@ -250,10 +284,181 @@
         }
       ],
       "plan_changes": []
+    },
+    {
+      "timestamp": "2026-08-20T14:34:52.790988+00:00",
+      "summary": "As quatro entregas estruturais foram materializadas e validadas no repositório local.",
+      "completed_obligation_ids": [
+        "ob-1",
+        "ob-2",
+        "ob-3",
+        "ob-4"
+      ],
+      "discoveries": [],
+      "decisions": [],
+      "blockers": [],
+      "evidence": [
+        {
+          "id": "ev-1-9746",
+          "type": "other",
+          "summary": "Página inicial: implementada e validada no navegador.",
+          "ref": null,
+          "timestamp": "2026-08-20T14:34:52.791017+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-2-8570",
+          "type": "other",
+          "summary": "Rota /curriculo: implementada, navegável e com impressão preparada.",
+          "ref": null,
+          "timestamp": "2026-08-20T14:34:52.791017+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-3-9521",
+          "type": "other",
+          "summary": "Contrato factual/gate de publicação: documentados em docs/.",
+          "ref": null,
+          "timestamp": "2026-08-20T14:34:52.791017+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-4-835",
+          "type": "other",
+          "summary": "README: documentado com limites e comandos.",
+          "ref": null,
+          "timestamp": "2026-08-20T14:34:52.791017+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-5-2903",
+          "type": "other",
+          "summary": "typecheck, lint, build e git diff --check: PASS.",
+          "ref": null,
+          "timestamp": "2026-08-20T14:34:52.791017+00:00",
+          "confidence": "low"
+        }
+      ],
+      "plan_changes": []
     }
   ],
   "preclose_history": [],
-  "closure_report": null,
+  "closure_report": {
+    "status": "partial",
+    "round_status": "partial",
+    "delivery_intent": "commit_local",
+    "alias_normalized": false,
+    "delivered": [
+      "Página inicial do portfólio pessoal.",
+      "Rota /curriculo com layout de impressão.",
+      "Contrato de conteúdo factual e inventário de pendências.",
+      "README e gate de publicação.",
+      "Commit local bae1fae."
+    ],
+    "not_delivered": [
+      "Nome profissional completo e posicionamento.",
+      "Currículo-base, formação e certificações.",
+      "Três a cinco experiências/cases públicos.",
+      "Contatos, LinkedIn, GitHub e links reais.",
+      "Domínio e estratégia de hospedagem.",
+      "PDF final com conteúdo factual aprovado.",
+      "Publicação pública."
+    ],
+    "blockers": [],
+    "validators": [],
+    "evidence": [
+      {
+        "id": "ev-1-6326",
+        "type": "other",
+        "summary": "npm run typecheck: PASS",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-2-7976",
+        "type": "other",
+        "summary": "npm run lint: PASS",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-3-9511",
+        "type": "other",
+        "summary": "npm run build: PASS",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-4-1653",
+        "type": "other",
+        "summary": "git diff --check: PASS",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-5-656",
+        "type": "other",
+        "summary": "Browser desktop: h1 único, documentWidth sem overflow, console sem warnings/errors",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-6-6008",
+        "type": "other",
+        "summary": "Browser mobile 390px: overflowX=false, visibleInteractiveBelow44=0",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-7-9044",
+        "type": "other",
+        "summary": "Browser /curriculo: URL correta, Dyllan visível, PDF indisponível desabilitado",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      }
+    ],
+    "feedback": {},
+    "self_score": null,
+    "score": {
+      "self_score": null,
+      "completion_score": 10.0,
+      "evidence_score": 3.0,
+      "validation_score": null,
+      "honesty_score": 8.0,
+      "final_score": 7.21,
+      "confidence": "medium",
+      "basis": {
+        "components_present": [
+          "completion",
+          "evidence",
+          "honesty"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "completion",
+          "evidence",
+          "honesty"
+        ],
+        "weight_covered": 0.7,
+        "weight_total": 1.0
+      }
+    },
+    "next_actions": [
+      "Dyllan fornecer os fatos do contrato de conteúdo.",
+      "Dyllan decidir PT-BR apenas ou PT-BR + inglês.",
+      "Dyllan definir domínio-alvo e autorizar publicação em sessão.",
+      "Abrir rodada de conteúdo para preencher e revisar o CV.",
+      "Gerar PDF somente após aprovação factual."
+    ],
+    "honest_line": "PARTIAL: base técnica e visual concluída; conteúdo profissional factual, domínio, PDF final e publicação aguardam decisão e material do Dyllan."
+  },
   "revisions": [],
   "activities": {},
   "provenance": "mcp_v3",
@@ -261,16 +466,16 @@
     "source_schema_version": 3,
     "v3_fields_imputed": {
       "model_resolution": "present",
-      "artifact_manifest": "absent",
-      "pendency_delta": "absent",
-      "closure_bundle": "absent",
+      "artifact_manifest": "present",
+      "pendency_delta": "present",
+      "closure_bundle": "present",
       "return_to_gk": "absent",
-      "skill_ledger": "absent",
-      "function_ledger": "absent",
-      "material_work": "absent",
-      "gap_fixes": "absent",
-      "unresolved_gaps": "absent",
-      "technical_decisions": "absent"
+      "skill_ledger": "present",
+      "function_ledger": "present",
+      "material_work": "present",
+      "gap_fixes": "present",
+      "unresolved_gaps": "present",
+      "technical_decisions": "present"
     }
   },
   "skill_ledger": [
@@ -317,5 +522,194 @@
       "notes": "router: domains:frontend,product; round_type:feature; operation:mutation"
     }
   ],
-  "function_ledger": []
+  "function_ledger": [],
+  "artifact_manifest": {
+    "dgx_log_json": ".dgx/logs/20260820-001-cyber-portfolio-v1.dgxlog.json",
+    "dgx_log_md": ".dgx/logs/20260820-001-cyber-portfolio-v1.dgxlog.md",
+    "output_json": ".dgx/outputs/20260820-001-cyber-portfolio-v1.output.json",
+    "return_to_gk_md": null,
+    "session_close_ref": null,
+    "additional": {}
+  },
+  "pendency_delta": {
+    "created_ids": [],
+    "resolved_ids": [],
+    "carried_ids": [],
+    "human_action_ids": []
+  },
+  "closure_bundle": {
+    "schema_version": 3,
+    "round_id": "20260820-001-cyber-portfolio-v1",
+    "generated_at": "2026-08-20T14:35:18.688262+00:00",
+    "generated_by": "dgx.log_write action=close schema_version=3",
+    "audit": {
+      "total_required": 4,
+      "completed_with_evidence": 4,
+      "completed_no_evidence": 0,
+      "pending": 0,
+      "blocked": 0,
+      "not_applicable": 0,
+      "waived": 0,
+      "pending_ids": [],
+      "blocked_ids": [],
+      "no_evidence_ids": [],
+      "completed_ids": [
+        "ob-1",
+        "ob-2",
+        "ob-3",
+        "ob-4"
+      ],
+      "success_blockers": [],
+      "allowed_statuses": [
+        "success",
+        "partial",
+        "blocked",
+        "aborted"
+      ]
+    },
+    "status": {
+      "requested": "partial",
+      "accepted": "partial",
+      "coherent": true
+    },
+    "delivered": [
+      "Página inicial do portfólio pessoal.",
+      "Rota /curriculo com layout de impressão.",
+      "Contrato de conteúdo factual e inventário de pendências.",
+      "README e gate de publicação.",
+      "Commit local bae1fae."
+    ],
+    "not_delivered": [
+      "Nome profissional completo e posicionamento.",
+      "Currículo-base, formação e certificações.",
+      "Três a cinco experiências/cases públicos.",
+      "Contatos, LinkedIn, GitHub e links reais.",
+      "Domínio e estratégia de hospedagem.",
+      "PDF final com conteúdo factual aprovado.",
+      "Publicação pública."
+    ],
+    "validators": [],
+    "evidence": [
+      {
+        "id": "ev-1-6326",
+        "type": "other",
+        "summary": "npm run typecheck: PASS",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-2-7976",
+        "type": "other",
+        "summary": "npm run lint: PASS",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-3-9511",
+        "type": "other",
+        "summary": "npm run build: PASS",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-4-1653",
+        "type": "other",
+        "summary": "git diff --check: PASS",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-5-656",
+        "type": "other",
+        "summary": "Browser desktop: h1 único, documentWidth sem overflow, console sem warnings/errors",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-6-6008",
+        "type": "other",
+        "summary": "Browser mobile 390px: overflowX=false, visibleInteractiveBelow44=0",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-7-9044",
+        "type": "other",
+        "summary": "Browser /curriculo: URL correta, Dyllan visível, PDF indisponível desabilitado",
+        "ref": null,
+        "timestamp": "2026-08-20T14:35:18.688252+00:00",
+        "confidence": "low"
+      }
+    ],
+    "git": {
+      "head": "bae1faeb5170f215f483ab5734ccca39cacdf468",
+      "branch": "main",
+      "ahead": 0,
+      "behind": 0,
+      "worktree_clean": false,
+      "observed_commit": null,
+      "observed_push": false
+    },
+    "artifact_paths": {
+      "dgx_log": ".dgx/logs/20260820-001-cyber-portfolio-v1.dgxlog.json",
+      "output_json": ".dgx/outputs/20260820-001-cyber-portfolio-v1.output.json",
+      "return_to_gk_md": null
+    },
+    "pendency_delta": {
+      "created_ids": [],
+      "resolved_ids": [],
+      "carried_ids": [],
+      "human_action_ids": []
+    },
+    "session_references": {
+      "session_close_ref": null,
+      "capsule_v2_ref": null
+    },
+    "score": {
+      "self_score": null,
+      "completion_score": 10.0,
+      "evidence_score": 3.0,
+      "validation_score": null,
+      "honesty_score": 8.0,
+      "final_score": 7.21,
+      "confidence": "medium",
+      "basis": {
+        "components_present": [
+          "completion",
+          "evidence",
+          "honesty"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "completion",
+          "evidence",
+          "honesty"
+        ],
+        "weight_covered": 0.7,
+        "weight_total": 1.0
+      }
+    },
+    "confidence": "medium",
+    "honest_line": "PARTIAL: base técnica e visual concluída; conteúdo profissional factual, domínio, PDF final e publicação aguardam decisão e material do Dyllan.",
+    "next_round": "",
+    "friction": [],
+    "decisions": [],
+    "discoveries": [],
+    "documentation_drifts": [],
+    "material_work": [],
+    "gap_fixes": [],
+    "unresolved_gaps": [],
+    "technical_decisions": [],
+    "output_sha256": "0337ecb84c2852df697cf2279a12de52476ad960f43b1e726d9f67c039084cd8"
+  },
+  "material_work": [],
+  "gap_fixes": [],
+  "unresolved_gaps": [],
+  "technical_decisions": []
 }
