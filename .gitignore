@@ -1,0 +1,15 @@
+# DGX FILE HEADER
+# nivel: L1-small
+# arquivo: .gitignore
+# papel: Ignora dependências, saídas de build e segredos locais do portfólio.
+# validar: git status --short
+
+node_modules/
+dist/
+.vite/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.local
+*.log
