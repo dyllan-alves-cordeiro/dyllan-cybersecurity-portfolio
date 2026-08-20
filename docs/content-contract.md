@@ -18,11 +18,11 @@ conteúdo público só pode avançar quando o Dyllan fornecer ou aprovar cada it
 | Item | Estado | Fonte | Uso atual |
 |---|---|---|---|
 | Nome: Dyllan Alves Cordeiro | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | Cabeçalho, Hero e rota `/curriculo` |
-| Tema e posicionamento de trabalho | CONFIRMADO | Envelope GK + currículo-base | Portfólio pessoal de cibersegurança; redes, infraestrutura e engenharia aplicada |
+| Tema e posicionamento de trabalho | CONFIRMADO | Envelope GK + currículo-base + revisão 20/08/2026 | Cibersegurança no centro; arquitetura de sistemas, dados e software como apoio |
 | Contatos públicos | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | E-mail, telefone e LinkedIn; endereço completo não foi exposto |
 | Formação e idiomas | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | UNIDESC, Sistemas de Informação, inglês e espanhol |
 | Histórico de redes e suporte | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | AGE Telecom, Stefanini Group, NWI Telecom e SKILL.NET |
-| Digytron em nível técnico | CONFIRMADO | Documentação local da Digytron + solicitação explícita desta atualização | Contexto atual de engenharia aplicada; sem clientes, Space ou dados internos |
+| Digytron BR em nível técnico | CONFIRMADO | Documentação local da Digytron + solicitação explícita desta atualização | Contexto atual de engenharia aplicada; sem clientes, Space ou dados internos |
 | Foto de Dyllan | CONFIRMADO | Arquivo real fornecido em 20/08/2026 | `/public/assets/dyllan-alves-cordeiro.jpeg` e composição central do Hero |
 | Repositório pessoal prévio | NÃO ENCONTRADO | Inspeção local da sessão | Justifica a base isolada criada nesta pasta |
 

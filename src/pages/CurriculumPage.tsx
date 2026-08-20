@@ -14,7 +14,8 @@ import {
   portfolioProfile,
   professionalExperiences,
   publicContacts,
-  technicalSkills,
+  skillFocus,
+  supportingSkills,
 } from '../content'
 import { Icon } from '../icons'
 import { SiteHeader } from '../components/SiteHeader'
@@ -27,12 +28,12 @@ type CurriculumPageProps = {
 export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps) {
   return (
     <div className="app-shell curriculum-shell">
-      <SiteHeader onOpenCurriculum={onOpenCurriculum} onHome={onHome} isCurriculum />
+      <SiteHeader onOpenCurriculum={onOpenCurriculum} onHome={onHome} isCurriculum visible />
 
       <main className="curriculum-main-v2">
         <div className="container curriculum-toolbar-v2 print-hidden">
           <button className="back-link-v2" type="button" onClick={() => onHome()}>
-            <Icon name="arrow-left" size={17} />
+            <Icon name="arrow-left" />
             Voltar ao portfólio
           </button>
           <div className="toolbar-status-v2">
@@ -91,7 +92,7 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
 
             <section className="cv-block-v2 cv-projects-v2" aria-labelledby="cv-projects-title">
               <div className="cv-block-heading-v2">
-                <span className="cv-section-label-v2" id="cv-projects-title">Projetos Digytron</span>
+                <span className="cv-section-label-v2" id="cv-projects-title">Projetos Digytron BR</span>
               </div>
               <div className="cv-project-grid-v2">
                 {digytronProjects.map((project) => (
@@ -109,7 +110,11 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
                   <span className="cv-section-label-v2" id="cv-skills-title">Competências</span>
                 </div>
                 <div className="cv-skill-groups-v2">
-                  {technicalSkills.map((group) => (
+                  <div>
+                    <h3>{skillFocus.title}</h3>
+                    <p>{skillFocus.items.join(' · ')}</p>
+                  </div>
+                  {supportingSkills.map((group) => (
                     <div key={group.label}>
                       <h3>{group.label}</h3>
                       <p>{group.items.join(' · ')}</p>
@@ -157,9 +162,9 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
               <span className="mono-label">EXPORTAÇÃO</span>
               <h2>Leve esta página com você.</h2>
               <p>Use a impressão do navegador para salvar uma versão PDF limpa, em A4, sem a navegação lateral.</p>
-              <button className="button button-light" type="button" onClick={() => window.print()}>
+              <button className="button-light" type="button" onClick={() => window.print()}>
                 Salvar como PDF
-                <Icon name="arrow-up-right" size={16} />
+                <Icon name="arrow-up-right" />
               </button>
             </div>
 
@@ -167,9 +172,9 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
               <span className="mono-label">LEITURA FACTUAL</span>
               <h2>O que entrou nesta versão</h2>
               <ul className="sidebar-check-list-v2">
-                <li>Arquitetura de AR, cibersegurança e software</li>
-                <li>Tratamento de dados e BI</li>
-                <li>Projetos reais da arquitetura Digytron</li>
+                <li>Cibersegurança como foco do currículo</li>
+                <li>Arquitetura de sistemas, dados e software como apoio</li>
+                <li>Projetos reais da arquitetura Digytron BR</li>
                 <li>Contatos públicos do documento fornecido</li>
               </ul>
             </div>

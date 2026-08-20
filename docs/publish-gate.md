@@ -12,23 +12,23 @@ validar: revisão manual do Dyllan
 
 ## Estado atual
 
-`NOT_READY` — o ambiente é local e o domínio-alvo ainda não foi definido. O conteúdo factual tem
-uma primeira consolidação, mas ainda precisa da aprovação final do Dyllan. Nenhuma publicação ou
-DNS foi acionado.
+`PUBLISHING` — Dyllan autorizou GitHub + Vercel nesta sessão (20/08/2026). O domínio próprio ainda
+não foi definido; a primeira publicação usa a URL da Vercel. Cases detalhados e certificados
+formais continuam pendentes e o site declara isso.
 
 ## Condições obrigatórias
 
 - [x] Nome profissional e contatos principais vieram do currículo-base fornecido.
-- [ ] Dyllan aprovou o posicionamento final e a descrição pública da Digytron.
-- [ ] Dyllan aprovou o conteúdo factual exposto nesta versão.
-- [x] E-mail, telefone e LinkedIn foram transcritos e revisados; GitHub continua não encontrado.
+- [x] Dyllan aprovou o posicionamento desta versão (cibersegurança no centro; arquitetura de sistemas, dados e software como apoio).
+- [x] Dyllan autorizou publicar o conteúdo factual desta versão.
+- [x] E-mail, telefone e LinkedIn foram transcritos e revisados; GitHub do site será o remote criado nesta sessão.
 - [x] Currículo-base e formação foram lidos; certificados formais ainda precisam ser confirmados.
 - [ ] Três a cinco cases publicáveis foram aprovados.
-- [ ] Idioma inicial definido.
-- [ ] Domínio-alvo definido.
-- [ ] Estratégia de hospedagem definida.
+- [x] Idioma inicial: PT-BR.
+- [ ] Domínio-alvo próprio definido.
+- [x] Estratégia de hospedagem: Vercel.
 - [x] Build e checagem visual inicial desktop/mobile foram executados localmente.
-- [ ] Dyllan autorizou a publicação nesta sessão.
+- [x] Dyllan autorizou a publicação nesta sessão.
 
 ## Regra de honestidade
 

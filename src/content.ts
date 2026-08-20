@@ -34,13 +34,13 @@ export type Experience = {
 export const portfolioProfile = {
   name: 'Dyllan Alves Cordeiro',
   shortName: 'Dyllan',
-  headline: 'Arquitetura, cibersegurança & software',
-  positioning: 'Arquitetura de AR, cibersegurança, BI e engenharia de software.',
+  headline: 'Cibersegurança aplicada',
+  positioning: 'Cibersegurança no centro; arquitetura de sistemas, dados e software em torno dela.',
   location: 'Valparaíso de Goiás, GO',
   intro:
-    'Atuo na construção de sistemas digitais: arquitetura, segurança, tratamento de dados e software. Na Digytron, essa prática ganha forma em produtos, operações e ferramentas reais.',
+    'Trabalho em cibersegurança aplicada: identidade, dados e operação. Arquitetura de sistemas, BI e engenharia de software entram como apoio para construir e manter o que precisa permanecer protegido. Na Digytron BR, essa prática ganha forma em produtos e ferramentas reais.',
   heroStatement: 'Segurança que dá para entender.',
-  heroNote: 'Arquitetura, segurança e dados com clareza operacional.',
+  heroNote: 'Cibersegurança com clareza operacional.',
 } as const
 
 export const publicContacts: PublicContact[] = [
@@ -76,7 +76,7 @@ export const contentLedger: ContentLedgerItem[] = [
     detail: 'E-mail, telefone e LinkedIn foram transcritos do currículo-base; endereço completo foi omitido.',
   },
   {
-    label: 'Digytron',
+    label: 'Digytron BR',
     status: 'CONFIRMADO',
     detail: 'Contexto técnico baseado na documentação local da Digytron e na solicitação explícita desta atualização.',
   },
@@ -94,14 +94,14 @@ export const contentLedger: ContentLedgerItem[] = [
 
 export const professionalExperiences: Experience[] = [
   {
-    company: 'Digytron',
+    company: 'Digytron BR',
     role: 'Atuação independente em engenharia aplicada',
     period: 'Atual · período exato a confirmar',
     summary:
-      'Arquitetura e evolução de produtos digitais, superfícies web e ferramentas de engenharia para uma operação própria.',
+      'Cibersegurança e evolução de produtos digitais, superfícies web e ferramentas de engenharia para uma operação própria.',
     bullets: [
-      'Arquitetura de sistemas e desenvolvimento de produtos com React, TypeScript, Vite, Tailwind CSS e TanStack.',
       'Cibersegurança aplicada a identidade, dados, operação e governança técnica.',
+      'Arquitetura de sistemas e desenvolvimento de produtos com React, TypeScript, Vite, Tailwind CSS e TanStack.',
       'Tratamento de dados e BI para leitura operacional, documentação e decisão.',
     ],
     sourceNote:
@@ -160,44 +160,67 @@ export const professionalExperiences: Experience[] = [
 
 export const focusAreas = [
   {
-    code: 'architecture',
-    title: 'Arquitetura de AR',
-    detail: 'Arquitetura de sistemas, integrações e camadas de operação.',
-  },
-  {
     code: 'cybersecurity',
     title: 'Cibersegurança',
-    detail: 'Segurança aplicada à identidade, aos dados e à operação.',
+    detail: 'Identidade, dados e operação — o centro do trabalho público.',
+    primary: true,
+  },
+  {
+    code: 'architecture',
+    title: 'Arquitetura de sistemas',
+    detail: 'Integrações, camadas de operação e estrutura dos produtos.',
+    primary: false,
   },
   {
     code: 'bi',
-    title: 'Tratamento de dados com BI',
-    detail: 'Organização, leitura e uso de dados para decisão e operação.',
+    title: 'Dados e BI',
+    detail: 'Organização e leitura de dados para decisão operacional.',
+    primary: false,
   },
   {
     code: 'software',
-    title: 'Engenharia de software',
-    detail: 'Produtos, ferramentas e automações com código bem estruturado.',
+    title: 'Software',
+    detail: 'Produtos, ferramentas e automações com código estruturado.',
+    primary: false,
   },
 ] as const
 
-export const technicalSkills = [
+export const skillFocus = {
+  title: 'Cibersegurança',
+  detail:
+    'O foco público do currículo. Identidade, dados, operação e governança técnica — sem números, clientes ou certificações que ainda não foram confirmados.',
+  items: ['Identidade', 'LGPD', 'Governança técnica', 'Observabilidade'],
+} as const
+
+export const supportingSkills = [
   {
-    label: 'Arquitetura & segurança',
-    items: ['Arquitetura de AR', 'Cibersegurança', 'Identidade', 'LGPD', 'Governança técnica', 'Observabilidade'],
+    label: 'Arquitetura de sistemas',
+    detail: 'Como os produtos se encaixam e o que precisa permanecer estável.',
+    items: ['Sistemas', 'Integrações', 'Camadas de operação'],
   },
   {
-    label: 'Dados & BI',
-    items: ['Tratamento de dados', 'BI', 'SQL', 'Dados operacionais', 'Dashboards'],
+    label: 'Dados e BI',
+    detail: 'Leitura operacional para decisão, não vitrine de dashboard.',
+    items: ['SQL', 'Dados operacionais', 'Dashboards'],
   },
   {
-    label: 'Engenharia de software',
+    label: 'Software',
+    detail: 'Ferramentas usadas no trabalho real, sem lista ornamental.',
     items: ['React', 'TypeScript', 'Vite', 'Python', 'Java', 'PHP', 'HTML', 'MySQL'],
   },
+] as const
+
+export const digytronStack = ['Supabase', 'TanStack', 'Tailwind CSS', 'OpenAI', 'PDF', 'APIs'] as const
+
+export const technicalSkills = [
   {
-    label: 'Stack Digytron',
-    items: ['Supabase', 'TanStack', 'Tailwind CSS', 'OpenAI', 'PDF', 'APIs'],
+    label: 'Cibersegurança',
+    items: [...skillFocus.items],
   },
+  ...supportingSkills.map((group) => ({
+    label: group.label,
+    items: [...group.items],
+  })),
 ] as const
 
 export const digytronProjects = [

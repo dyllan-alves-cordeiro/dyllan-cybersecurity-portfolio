@@ -16,7 +16,7 @@ técnica na Digytron.
 
 ## Estado atual
 
-- **Ambiente:** local, sem domínio e sem publicação.
+- **Ambiente:** GitHub + Vercel, com autorização explícita em 20/08/2026; domínio próprio ainda pendente.
 - **Idioma de trabalho:** PT-BR; PT-BR + inglês é decisão pendente.
 - **Conteúdo:** PT-BR, baseado no currículo-base e em documentação local de alto nível da Digytron;
   datas finais, cargo preferido, certificados e cases detalhados continuam pendentes.
@@ -42,14 +42,13 @@ npm run build
 
 ## Limites de publicação
 
-Não publicar esta base antes de definir, na sessão do Dyllan:
+A primeira publicação em Vercel foi autorizada nesta sessão. Continuam pendentes:
 
-1. aprovação do posicionamento e da descrição pública da Digytron;
-2. revisão de datas finais, cargo preferido e certificados formais;
-3. três a cinco experiências/projetos publicáveis com autorização e evidência;
-4. GitHub e demais links públicos reais, se existirem;
-5. domínio-alvo e idioma inicial;
-6. autorização explícita para o ambiente de publicação.
+1. domínio próprio;
+2. datas finais, cargo preferido e certificados formais;
+3. três a cinco cases detalhados com autorização e evidência;
+4. GitHub pessoal de código, se existir além deste repositório do site;
+5. versão em inglês, se for desejada.
 
 O inventário completo está em [`docs/content-contract.md`](docs/content-contract.md) e o gate de
 publicação em [`docs/publish-gate.md`](docs/publish-gate.md).

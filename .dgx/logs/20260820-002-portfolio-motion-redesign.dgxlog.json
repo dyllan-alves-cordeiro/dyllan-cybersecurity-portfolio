@@ -1,0 +1,176 @@
+{
+  "schema_version": 3,
+  "round_identity": {
+    "round_id": "20260820-002-portfolio-motion-redesign",
+    "executor": "",
+    "executor_model": null,
+    "model_resolution": {
+      "actual_model": "Cursor Grok 4.6",
+      "fallback_used": false,
+      "human_override": true,
+      "model_identifier": "cursor-grok-4.6",
+      "requested_model": "Cursor Grok 4.6",
+      "runtime_reported_identifier": null,
+      "selection_source": "human_override"
+    },
+    "executor_role": "EXECUTOR",
+    "repos": [
+      "/Users/dyllanalves/Documents/Codex/2026-08-20/new-chat"
+    ],
+    "surfaces": [],
+    "round_type": "redesign",
+    "domains": [
+      "design",
+      "frontend"
+    ],
+    "envelope_ref": null,
+    "plan_ref": null,
+    "task_ref": null,
+    "session_close_ref": null,
+    "started_at": "2026-08-20T18:10:12.459438+00:00",
+    "closed_at": null,
+    "round_baseline": {
+      "phase": "round_baseline",
+      "available": true,
+      "head": "15b5359c09025a9eaf0f31885d4df20319401547",
+      "branch": "main",
+      "ahead": 0,
+      "behind": 0,
+      "worktree_clean": false,
+      "observed_at": "2026-08-20T18:10:12.457565+00:00"
+    }
+  },
+  "intent_snapshot": {
+    "objective": "Redesign visual do portfólio: pílula só no scroll com pulse, botões brancos mais finos, bordas e setas padronizadas, Digytron BR, competências redesenhadas, motion, parallax no contato, copy cibersegurança-first e Arquitetura de Sistemas. Sem publicar.",
+    "deliverables": [
+      {
+        "id": "ob-1",
+        "title": "header-pill-on-scroll",
+        "required": true,
+        "evidence_required": true,
+        "status": "pending",
+        "evidence_ids": []
+      },
+      {
+        "id": "ob-2",
+        "title": "copy-cyber-first",
+        "required": true,
+        "evidence_required": true,
+        "status": "pending",
+        "evidence_ids": []
+      },
+      {
+        "id": "ob-3",
+        "title": "skills-redesign",
+        "required": true,
+        "evidence_required": true,
+        "status": "pending",
+        "evidence_ids": []
+      },
+      {
+        "id": "ob-4",
+        "title": "section-motion",
+        "required": true,
+        "evidence_required": true,
+        "status": "pending",
+        "evidence_ids": []
+      },
+      {
+        "id": "ob-5",
+        "title": "contact-parallax",
+        "required": true,
+        "evidence_required": true,
+        "status": "pending",
+        "evidence_ids": []
+      },
+      {
+        "id": "ob-6",
+        "title": "visual-tokens",
+        "required": true,
+        "evidence_required": true,
+        "status": "pending",
+        "evidence_ids": []
+      }
+    ],
+    "constraints": [],
+    "required_evidence": [],
+    "out_of_scope": [],
+    "write_scope": [
+      "src/",
+      "index.html",
+      "package.json",
+      "package-lock.json",
+      "docs/content-contract.md"
+    ],
+    "definition_of_done": [],
+    "expected_close_status": null
+  },
+  "amendments": [],
+  "execution_trail": [],
+  "preclose_history": [],
+  "closure_report": null,
+  "revisions": [],
+  "activities": {},
+  "provenance": "mcp_v3",
+  "compatibility": {
+    "source_schema_version": 3,
+    "v3_fields_imputed": {
+      "model_resolution": "present",
+      "artifact_manifest": "absent",
+      "pendency_delta": "absent",
+      "closure_bundle": "absent",
+      "return_to_gk": "absent",
+      "skill_ledger": "absent",
+      "function_ledger": "absent",
+      "material_work": "absent",
+      "gap_fixes": "absent",
+      "unresolved_gaps": "absent",
+      "technical_decisions": "absent"
+    }
+  },
+  "skill_ledger": [
+    {
+      "skill": "dgx-code-review",
+      "activation_level": "OPTIONAL",
+      "state": "AVAILABLE",
+      "evidence_ids": [],
+      "notes": "router: domains:frontend"
+    },
+    {
+      "skill": "dgx-design",
+      "activation_level": "RECOMMENDED",
+      "state": "RECOMMENDED",
+      "evidence_ids": [],
+      "notes": "router: objectives:design,ui,visual,motion; domains:design,frontend; round_type:redesign; operation:mutation; validation:visual-validation"
+    },
+    {
+      "skill": "dgx-gk-senior",
+      "activation_level": "RECOMMENDED",
+      "state": "RECOMMENDED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE"
+    },
+    {
+      "skill": "dgx-identity",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE; objectives:contato; operation:mutation"
+    },
+    {
+      "skill": "dgx-senior-engineer",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE; operation:mutation · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-seo",
+      "activation_level": "RECOMMENDED",
+      "state": "RECOMMENDED",
+      "evidence_ids": [],
+      "notes": "router: objectives:copy; domains:frontend; operation:mutation"
+    }
+  ],
+  "function_ledger": []
+}
