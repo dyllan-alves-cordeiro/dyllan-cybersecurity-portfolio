@@ -38,10 +38,9 @@ export const portfolioProfile = {
   positioning: 'Segurança, redes e engenharia aplicada.',
   location: 'Valparaíso de Goiás, GO',
   intro:
-    'Profissional de redes e suporte com experiência em monitoração, troubleshooting, infraestrutura e atendimento técnico. Hoje também organiza e desenvolve a frente de engenharia aplicada da Digytron.',
-  heroStatement: 'Clareza para operar. Segurança para evoluir.',
-  heroNote:
-    'Infraestrutura, observabilidade e produto digital tratados como sistemas que precisam ser entendidos antes de serem alterados.',
+    'Redes, infraestrutura e suporte técnico. Hoje, esse trabalho também vive na engenharia aplicada da Digytron.',
+  heroStatement: 'Segurança que dá para entender.',
+  heroNote: 'Redes e produto com clareza operacional.',
 } as const
 
 export const publicContacts: PublicContact[] = [
@@ -163,17 +162,17 @@ export const focusAreas = [
   {
     code: '01',
     title: 'Redes & infraestrutura',
-    detail: 'TCP/IP, roteamento, segmentação, VPN, VLAN, QoS, MPLS, OSPF e BGP.',
+    detail: 'TCP/IP, roteamento, segmentação, VPN e protocolos de rede.',
   },
   {
     code: '02',
     title: 'Observabilidade & suporte',
-    detail: 'Monitoração, leitura de logs, troubleshooting e suporte N2/N3.',
+    detail: 'Monitoração, logs, troubleshooting e suporte N2/N3.',
   },
   {
     code: '03',
     title: 'Engenharia aplicada',
-    detail: 'Produtos digitais, ferramentas de IA, documentação e operação técnica na Digytron.',
+    detail: 'Produtos digitais, ferramentas de IA e documentação técnica.',
   },
 ] as const
 
@@ -226,27 +225,27 @@ export const digytronMethod = [
   {
     index: 'A',
     label: 'Contexto',
-    detail: 'Entender o sistema, o risco e o que precisa permanecer protegido.',
+    detail: 'Entender o sistema e o que precisa permanecer protegido.',
   },
   {
     index: 'B',
     label: 'Responsabilidade',
-    detail: 'Separar o que foi executado diretamente do que ainda depende de confirmação.',
+    detail: 'Separar execução direta do que ainda depende de confirmação.',
   },
   {
     index: 'C',
     label: 'Abordagem',
-    detail: 'Construir em camadas, documentar decisões e validar o comportamento real.',
+    detail: 'Construir em camadas e validar o comportamento real.',
   },
   {
     index: 'D',
     label: 'Tecnologia',
-    detail: 'Escolher ferramentas pelo papel que cumprem, não pelo efeito visual.',
+    detail: 'Escolher ferramentas pelo papel que cumprem.',
   },
   {
     index: 'E',
     label: 'Evidência',
-    detail: 'Publicar somente o que pode ser demonstrado sem expor dados sensíveis.',
+    detail: 'Publicar só o que pode ser demonstrado com segurança.',
   },
 ] as const
 

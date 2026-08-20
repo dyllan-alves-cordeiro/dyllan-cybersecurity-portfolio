@@ -22,13 +22,15 @@ export function SiteHeader({
     <header className="site-header">
       <div className="container nav-shell">
         <button className="brand-lockup" type="button" onClick={() => onHome()}>
-          <span className="brand-mark" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </span>
           <span className="brand-name">Dyllan</span>
-          <span className="brand-context">/ cybersecurity portfolio</span>
+          <span className="brand-divider" aria-hidden="true" />
+          <img
+            className="brand-digytron-mark"
+            src="/assets/digytron-mark.png"
+            alt="Digytron"
+            width="28"
+            height="28"
+          />
         </button>
 
         <nav className="nav-links" aria-label="Navegação principal">

@@ -8,7 +8,6 @@
 
 import {
   complementaryTraining,
-  contentLedger,
   digytronMethod,
   focusAreas,
   portfolioProfile,
@@ -18,12 +17,17 @@ import {
 } from '../content'
 import { Icon } from '../icons'
 import { SiteHeader } from '../components/SiteHeader'
-import { ContentStatusTag, StatusTag } from '../components/StatusTag'
 
 type HomePageProps = {
   onOpenCurriculum: () => void
   onHome: (section?: string) => void
 }
+
+const methodHighlights = [
+  { label: 'Entender', detail: digytronMethod[0].detail },
+  { label: 'Construir', detail: digytronMethod[2].detail },
+  { label: 'Provar', detail: digytronMethod[4].detail },
+]
 
 export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
   return (
@@ -32,30 +36,22 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
 
       <main>
         <section className="portrait-hero" aria-labelledby="hero-title">
-          <div className="hero-grid-lines" aria-hidden="true" />
           <div className="hero-light hero-light-one" aria-hidden="true" />
           <div className="hero-light hero-light-two" aria-hidden="true" />
 
           <div className="container portrait-hero-inner">
             <aside className="hero-side hero-side-left" aria-label="Identidade profissional">
               <div className="hero-side-topline">
-                <span className="hero-index">01 / identidade</span>
-                <span className="hero-live"><i aria-hidden="true" /> em atuação</span>
+                <span className="hero-eyebrow">Dyllan Alves Cordeiro</span>
+                <span className="hero-live"><i aria-hidden="true" /> Digytron</span>
               </div>
-              <p className="hero-name">
-                Dyllan
-                <br />
-                <span>Alves</span>
-                <br />
-                Cordeiro
-              </p>
+              <p className="hero-name">Dyllan</p>
               <p className="hero-role">{portfolioProfile.headline}</p>
               <p className="hero-side-copy">
-                Redes, infraestrutura e suporte técnico com uma visão cada vez mais próxima de
-                segurança aplicada.
+                Redes, infraestrutura e suporte técnico com uma visão próxima de segurança aplicada.
               </p>
               <a className="hero-side-contact" href={publicContacts[0].href}>
-                {publicContacts[0].value}
+                Vamos conversar
                 <Icon name="arrow-up-right" size={14} />
               </a>
             </aside>
@@ -64,7 +60,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
               <div className="hero-portrait-image-wrap">
                 <img
                   className="hero-portrait-image"
-                  src="/assets/dyllan-alves-cordeiro.jpeg"
+                  src="/assets/dyllan-alves-cordeiro-cutout.png"
                   alt="Retrato de Dyllan Alves Cordeiro"
                   width="1280"
                   height="1280"
@@ -72,43 +68,35 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 />
               </div>
               <figcaption className="hero-portrait-caption">
-                <span>retrato / 2026</span>
-                <span>01—01</span>
+                <span>Valparaíso de Goiás</span>
+                <span>Engenharia aplicada</span>
               </figcaption>
             </figure>
 
             <aside className="hero-side hero-side-right" aria-label="Áreas de atuação">
-              <div className="hero-side-topline">
-                <span className="hero-index">02 / foco</span>
-                <span className="hero-index">BR — GO</span>
-              </div>
-              <p className="hero-side-label">O que eu faço</p>
+              <p className="hero-side-label">Trabalho com</p>
               <ul className="hero-focus-list">
                 {focusAreas.map((area) => (
                   <li key={area.code}>
-                    <span>{area.code}</span>
                     <strong>{area.title}</strong>
+                    <span>{area.detail}</span>
                   </li>
                 ))}
               </ul>
               <p className="hero-side-copy hero-side-copy-right">
-                Na Digytron, essa base se transforma em engenharia aplicada, produtos digitais e
-                operação técnica documentada.
+                Na Digytron, essa base encontra produto, documentação e operação técnica.
               </p>
             </aside>
 
             <div className="hero-bottom">
               <div className="hero-title-block">
-                <span className="hero-index">03 / posicionamento</span>
+                <span className="hero-kicker">Segurança aplicada</span>
                 <h1 id="hero-title">
-                  Segurança
-                  <br />
-                  demonstrada por <em>clareza.</em>
+                  Segurança que dá para <em>entender.</em>
                 </h1>
               </div>
               <div className="hero-bottom-center">
-                <span className="hero-scroll-mark" aria-hidden="true">↓</span>
-                <span>ver método</span>
+                <span>redes · suporte · Digytron</span>
               </div>
               <div className="hero-bottom-actions">
                 <button className="button button-light" type="button" onClick={onOpenCurriculum}>
@@ -127,33 +115,26 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         <section className="portfolio-section profile-section" id="perfil" aria-labelledby="profile-title">
           <div className="container section-grid profile-section-grid">
             <div className="section-heading-block">
-              <span className="section-index">04 / perfil</span>
-              <h2 id="profile-title">A pessoa vem antes da lista de tecnologias.</h2>
+              <span className="section-eyebrow">Sobre</span>
+              <h2 id="profile-title">Trabalho técnico, explicado de forma simples.</h2>
               <p>{portfolioProfile.intro}</p>
               <div className="profile-meta-row">
                 <span>{portfolioProfile.location}</span>
                 <span>•</span>
-                <span>Digytron / engenharia aplicada</span>
+                <span>Redes, suporte e engenharia aplicada</span>
               </div>
             </div>
 
-            <div className="fact-ledger-card">
-              <div className="card-topline">
-                <span className="mono-label">FACT LEDGER / 05</span>
-                <span className="card-topline-rule" aria-hidden="true" />
-                <span className="mono-label">base factual</span>
-              </div>
-              <div className="fact-ledger-list">
-                {contentLedger.map((item) => (
-                  <div className="fact-ledger-row" key={item.label}>
-                    <div>
-                      <strong>{item.label}</strong>
-                      <span>{item.detail}</span>
-                    </div>
-                    <ContentStatusTag status={item.status} />
-                  </div>
-                ))}
-              </div>
+            <div className="profile-card">
+              <span className="card-eyebrow">Hoje</span>
+              <h3>Na Digytron, a base técnica vira engenharia aplicada.</h3>
+              <p>
+                Produtos digitais e ferramentas construídos com contexto, documentação e cuidado com a operação.
+              </p>
+              <button className="card-link" type="button" onClick={() => onHome('metodo')}>
+                Conhecer o trabalho
+                <Icon name="arrow-up-right" size={15} />
+              </button>
             </div>
           </div>
         </section>
@@ -162,21 +143,17 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
           <div className="container">
             <div className="section-heading-inline">
               <div>
-                <span className="section-index">05 / áreas de atuação</span>
-                <h2 id="focus-title">Onde a experiência encontra o próximo nível.</h2>
+                <span className="section-eyebrow">Áreas de atuação</span>
+                <h2 id="focus-title">Onde eu consigo ajudar.</h2>
               </div>
-              <p>
-                Uma leitura curta do que já aparece no currículo e do que está sendo construído na
-                Digytron.
-              </p>
+              <p>Experiência em redes e suporte, com espaço para construir o próximo nível na Digytron.</p>
             </div>
             <div className="focus-card-grid">
               {focusAreas.map((area) => (
                 <article className="focus-card-v2" key={area.code}>
-                  <div className="focus-card-number">{area.code}</div>
-                  <div>
-                    <h3>{area.title}</h3>
-                    <p>{area.detail}</p>
+                  <div className="focus-card-content">
+                    <span className="focus-card-label">{area.title}</span>
+                    <h3>{area.detail}</h3>
                   </div>
                   <span className="focus-card-arrow" aria-hidden="true">↗</span>
                 </article>
@@ -189,22 +166,21 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
           <div className="container">
             <div className="section-heading-inline experience-heading">
               <div>
-                <span className="section-index">06 / experiência</span>
-                <h2 id="experience-title">Percurso técnico, sem atalhos na narrativa.</h2>
+                <span className="section-eyebrow">Experiência</span>
+                <h2 id="experience-title">Experiência que virou repertório.</h2>
               </div>
-              <span className="section-side-note">5 experiências selecionadas<br />a partir do CV-base</span>
+              <span className="section-side-note">Redes, suporte e engenharia aplicada.</span>
             </div>
 
             <div className="experience-list">
-              {professionalExperiences.map((experience, index) => (
+              {professionalExperiences.map((experience) => (
                 <article className={`experience-row${experience.current ? ' experience-row-featured' : ''}`} key={`${experience.company}-${experience.role}`}>
-                  <div className="experience-index">0{index + 1}</div>
                   <div className="experience-main">
                     <div className="experience-heading-row">
                       <div>
                         <div className="experience-company-line">
                           <h3>{experience.company}</h3>
-                          {experience.current ? <StatusTag tone="mint">ATUAÇÃO ATUAL</StatusTag> : null}
+                          {experience.current ? <span className="experience-current">Hoje</span> : null}
                         </div>
                         <p className="experience-role">{experience.role}</p>
                       </div>
@@ -214,7 +190,6 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                     <ul className="experience-bullets">
                       {experience.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
                     </ul>
-                    <p className="experience-source">{experience.sourceNote}</p>
                   </div>
                 </article>
               ))}
@@ -226,10 +201,10 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
           <div className="container">
             <div className="section-heading-inline">
               <div>
-                <span className="section-index">07 / competências</span>
+                <span className="section-eyebrow">Competências</span>
                 <h2 id="skills-title">Ferramentas que aparecem no trabalho.</h2>
               </div>
-              <p>Lista revisada a partir do currículo-base. Sem badges automáticos, sem certificação presumida.</p>
+              <p>Uma lista objetiva, revisada a partir do currículo-base.</p>
             </div>
 
             <div className="skills-layout">
@@ -244,7 +219,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 ))}
               </div>
               <div className="learning-card">
-                <span className="section-index">formação complementar</span>
+                <span className="section-eyebrow">Formação complementar</span>
                 <h3>Base ampla, próxima da operação.</h3>
                 <ul>
                   {complementaryTraining.map((item) => <li key={item}>{item}</li>)}
@@ -257,26 +232,20 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         <section className="portfolio-section digytron-section" id="metodo" aria-labelledby="dgy-title">
           <div className="container section-grid digytron-grid">
             <div className="dgy-copy">
-              <span className="section-index">08 / digytron</span>
-              <h2 id="dgy-title">Uma atuação que conecta infraestrutura, produto e segurança.</h2>
+              <span className="section-eyebrow">Digytron</span>
+              <h2 id="dgy-title">Infraestrutura, produto e segurança no mesmo contexto.</h2>
               <p>
-                A Digytron é o contexto atual de engenharia aplicada: uma arquitetura digital própria,
-                com pesquisa, produtos e ferramentas construídos de forma documentada e soberana.
+                A Digytron é o espaço atual de engenharia aplicada: pesquisa, produtos e ferramentas construídos de forma documentada e soberana.
               </p>
-              <div className="dgy-note">
-                <span className="dgy-note-mark">/</span>
-                <span>Esta é uma descrição profissional de alto nível. Cases públicos detalhados ainda aguardam evidência e aprovação de citação.</span>
-              </div>
+              <p className="dgy-note-copy">
+                Cases públicos detalhados ainda aguardam evidência e aprovação de citação.
+              </p>
             </div>
             <div className="method-card">
-              <div className="card-topline">
-                <span className="mono-label">MÉTODO / DIGYTRON</span>
-                <span className="mono-label">A—E</span>
-              </div>
+              <span className="card-eyebrow">Como eu trabalho</span>
               <div className="method-list">
-                {digytronMethod.map((item) => (
-                  <div className="method-row" key={item.index}>
-                    <span>{item.index}</span>
+                {methodHighlights.map((item) => (
+                  <div className="method-row" key={item.label}>
                     <strong>{item.label}</strong>
                     <p>{item.detail}</p>
                   </div>
@@ -289,12 +258,12 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         <section className="portfolio-section cv-section" aria-labelledby="cv-title-home">
           <div className="container cv-section-inner">
             <div>
-              <span className="section-index">09 / currículo</span>
-              <h2 id="cv-title-home">Uma página própria para ler, imprimir e levar para a candidatura.</h2>
-              <p>Conteúdo transcrito do CV-base e reorganizado para destacar redes, infraestrutura e Digytron.</p>
+              <span className="section-eyebrow">Currículo</span>
+              <h2 id="cv-title-home">Tudo o que importa, em uma leitura só.</h2>
+              <p>Uma página própria para ler, imprimir e levar para a candidatura.</p>
             </div>
             <button className="button button-light button-dark-surface" type="button" onClick={onOpenCurriculum}>
-              Ver currículo completo
+              Ver currículo
               <Icon name="arrow-up-right" size={16} />
             </button>
           </div>
@@ -303,8 +272,8 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         <section className="portfolio-section contact-section-v2" id="contato" aria-labelledby="contact-title">
           <div className="container section-grid contact-grid-v2">
             <div>
-              <span className="section-index">10 / contato</span>
-              <h2 id="contact-title">Vamos conversar sobre o próximo problema.</h2>
+              <span className="section-eyebrow">Contato</span>
+              <h2 id="contact-title">Vamos conversar.</h2>
               <p className="contact-lede">Para candidaturas, parcerias técnicas ou uma conversa sobre infraestrutura e segurança.</p>
             </div>
             <div className="contact-list-v2">
@@ -322,9 +291,9 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
 
       <footer className="site-footer site-footer-v2">
         <div className="container footer-inner">
-          <span className="brand-context">Dyllan / cybersecurity portfolio</span>
-          <span className="footer-status"><i aria-hidden="true" /> conteúdo local / em revisão final</span>
-          <span className="brand-context">2026</span>
+          <span className="footer-name">Dyllan</span>
+          <span className="footer-context">Digytron · engenharia aplicada</span>
+          <span className="footer-context">2026</span>
         </div>
       </footer>
     </div>

@@ -17,7 +17,6 @@ import {
 } from '../content'
 import { Icon } from '../icons'
 import { SiteHeader } from '../components/SiteHeader'
-import { StatusTag } from '../components/StatusTag'
 
 type CurriculumPageProps = {
   onOpenCurriculum: () => void
@@ -36,8 +35,7 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
             Voltar ao portfólio
           </button>
           <div className="toolbar-status-v2">
-            <span className="mono-label">CV / PUBLIC DRAFT</span>
-            <StatusTag tone="amber">REVISÃO FINAL</StatusTag>
+            <span className="cv-toolbar-label">Currículo profissional</span>
           </div>
         </div>
 
@@ -70,7 +68,6 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
             <section className="cv-block-v2" aria-labelledby="cv-experience-title">
               <div className="cv-block-heading-v2">
                 <span className="cv-section-label-v2" id="cv-experience-title">Experiência profissional</span>
-                <span className="cv-block-count">{professionalExperiences.length.toString().padStart(2, '0')} entradas</span>
               </div>
               <div className="cv-experience-list-v2">
                 {professionalExperiences.map((experience) => (
@@ -136,7 +133,7 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
 
             <footer className="cv-document-footer-v2">
               <span>Conteúdo reorganizado a partir do currículo-base fornecido pelo Dyllan.</span>
-              <span>v0.2 / local</span>
+              <span>Atualização em andamento</span>
             </footer>
           </article>
 
@@ -163,7 +160,7 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
             </div>
 
             <div className="sidebar-panel-v2 sidebar-panel-muted-v2">
-              <span className="mono-label">PENDÊNCIAS</span>
+              <span className="mono-label">ANTES DE PUBLICAR</span>
               <p>Confirmar cargo preferido, datas finais, certificados formais e autorização para cases detalhados antes da publicação.</p>
             </div>
           </aside>
