@@ -8,6 +8,7 @@
 
 import {
   complementaryTraining,
+  digytronProjects,
   education,
   languages,
   portfolioProfile,
@@ -88,6 +89,20 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
               </div>
             </section>
 
+            <section className="cv-block-v2 cv-projects-v2" aria-labelledby="cv-projects-title">
+              <div className="cv-block-heading-v2">
+                <span className="cv-section-label-v2" id="cv-projects-title">Projetos Digytron</span>
+              </div>
+              <div className="cv-project-grid-v2">
+                {digytronProjects.map((project) => (
+                  <article className="cv-project-card-v2" key={project.title}>
+                    <h2>{project.title}</h2>
+                    <p>{project.detail}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
             <div className="cv-columns-v2">
               <section className="cv-block-v2" aria-labelledby="cv-skills-title">
                 <div className="cv-block-heading-v2">
@@ -152,9 +167,9 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
               <span className="mono-label">LEITURA FACTUAL</span>
               <h2>O que entrou nesta versão</h2>
               <ul className="sidebar-check-list-v2">
-                <li>Experiência em redes, suporte e monitoração</li>
-                <li>Atuação técnica de alto nível na Digytron</li>
-                <li>Competências e cursos do CV-base</li>
+                <li>Arquitetura de AR, cibersegurança e software</li>
+                <li>Tratamento de dados e BI</li>
+                <li>Projetos reais da arquitetura Digytron</li>
                 <li>Contatos públicos do documento fornecido</li>
               </ul>
             </div>

@@ -34,13 +34,13 @@ export type Experience = {
 export const portfolioProfile = {
   name: 'Dyllan Alves Cordeiro',
   shortName: 'Dyllan',
-  headline: 'Analista de redes & infraestrutura',
-  positioning: 'Segurança, redes e engenharia aplicada.',
+  headline: 'Arquitetura, cibersegurança & software',
+  positioning: 'Arquitetura de AR, cibersegurança, BI e engenharia de software.',
   location: 'Valparaíso de Goiás, GO',
   intro:
-    'Redes, infraestrutura e suporte técnico. Hoje, esse trabalho também vive na engenharia aplicada da Digytron.',
+    'Atuo na construção de sistemas digitais: arquitetura, segurança, tratamento de dados e software. Na Digytron, essa prática ganha forma em produtos, operações e ferramentas reais.',
   heroStatement: 'Segurança que dá para entender.',
-  heroNote: 'Redes e produto com clareza operacional.',
+  heroNote: 'Arquitetura, segurança e dados com clareza operacional.',
 } as const
 
 export const publicContacts: PublicContact[] = [
@@ -98,14 +98,14 @@ export const professionalExperiences: Experience[] = [
     role: 'Atuação independente em engenharia aplicada',
     period: 'Atual · período exato a confirmar',
     summary:
-      'Construção e organização de produtos digitais, superfícies web e ferramentas de engenharia para uma arquitetura digital própria.',
+      'Arquitetura e evolução de produtos digitais, superfícies web e ferramentas de engenharia para uma operação própria.',
     bullets: [
-      'Pesquisa e desenvolvimento em engenharia aplicada e ferramentas de inteligência artificial.',
-      'Trabalho com clareza operacional, segurança, documentação e separação entre produto e operação.',
-      'Ecossistema técnico local baseado em React, TypeScript, Vite, Tailwind CSS, TanStack, Supabase e integrações de IA.',
+      'Arquitetura de sistemas e desenvolvimento de produtos com React, TypeScript, Vite, Tailwind CSS e TanStack.',
+      'Cibersegurança aplicada a identidade, dados, operação e governança técnica.',
+      'Tratamento de dados e BI para leitura operacional, documentação e decisão.',
     ],
     sourceNote:
-      'Fonte: documentação local da Digytron. Esta descrição não expõe clientes, dados internos ou o Digytron Space.',
+      'Fonte: documentação local de projetos Digytron; não expõe clientes, dados internos ou superfícies fora da autorização.',
     current: true,
   },
   {
@@ -113,10 +113,10 @@ export const professionalExperiences: Experience[] = [
     role: 'Analista de suporte',
     period: 'Emprego atual na data do currículo-base',
     summary:
-      'Atendimento técnico para clientes premium, PJ e governo, com suporte de nível avançado e organização de processos.',
+      'Atuação técnica em infraestrutura de conectividade e soluções para clientes críticos.',
     bullets: [
-      'Implantação de métodos de atendimento para agentes de N1 e elaboração de fluxogramas de suporte técnico.',
-      'Troubleshooting em ONU e OLT e implantação de soluções para Wi-Fi e links dedicados.',
+      'Estruturação de métodos de atendimento e documentação de processos técnicos.',
+      'Implementação de soluções para Wi-Fi, links dedicados e infraestrutura de acesso.',
     ],
     sourceNote: 'Fonte: currículo-base fornecido pelo Dyllan.',
   },
@@ -125,9 +125,9 @@ export const professionalExperiences: Experience[] = [
     role: 'Analista de redes e comunicação de dados',
     period: 'Início informado: 16/08/2021 · término não informado',
     summary:
-      'Monitoração de circuitos e primeira análise de incidentes de latência, perda de pacotes e estabilidade de roteamento.',
+      'Análise de arquitetura e estabilidade de redes de comunicação de dados, com foco em roteamento e desempenho.',
     bullets: [
-      'Leitura de eventos em equipamentos Huawei e investigação de degradação de rede.',
+      'Investigação de degradação de rede em equipamentos Huawei e circuitos de comunicação.',
       'Análise e estabilização do protocolo BGP dentro do escopo de atendimento.',
     ],
     sourceNote: 'Fonte: currículo-base fornecido pelo Dyllan.',
@@ -137,9 +137,9 @@ export const professionalExperiences: Experience[] = [
     role: 'Operador de rede de teleprocessamento',
     period: 'Início informado: 19/04/2021 · término não informado',
     summary:
-      'Monitoração de rede de provedor, atendimento N2 e troubleshooting para conexões residenciais, empresariais e dedicadas.',
+      'Operação de ambientes de telecomunicações e configuração de infraestrutura para diferentes perfis de conexão.',
     bullets: [
-      'Uso de The Dude, Zabbix e PRTG para observabilidade da rede.',
+      'Construção de visibilidade operacional com The Dude, Zabbix e PRTG.',
       'Configuração de ONUs, roteadores e equipamentos Datacom, Huawei, MikroTik, Furukawa, TP-Link e Mercusys.',
     ],
     sourceNote: 'Fonte: currículo-base fornecido pelo Dyllan.',
@@ -149,7 +149,7 @@ export const professionalExperiences: Experience[] = [
     role: 'Suporte técnico',
     period: '01/03/2018 — 01/05/2021',
     summary:
-      'Atendimento ao cliente, configuração de redes, monitoração e suporte de infraestrutura.',
+      'Base prática em infraestrutura, sistemas e suporte de rede.',
     bullets: [
       'Configuração de roteadores e ONUs e uso de Zabbix e MikroTik.',
       'Montagem e configuração de computadores, com apoio pontual em marketing digital.',
@@ -160,38 +160,62 @@ export const professionalExperiences: Experience[] = [
 
 export const focusAreas = [
   {
-    code: '01',
-    title: 'Redes & infraestrutura',
-    detail: 'TCP/IP, roteamento, segmentação, VPN e protocolos de rede.',
+    code: 'architecture',
+    title: 'Arquitetura de AR',
+    detail: 'Arquitetura de sistemas, integrações e camadas de operação.',
   },
   {
-    code: '02',
-    title: 'Observabilidade & suporte',
-    detail: 'Monitoração, logs, troubleshooting e suporte N2/N3.',
+    code: 'cybersecurity',
+    title: 'Cibersegurança',
+    detail: 'Segurança aplicada à identidade, aos dados e à operação.',
   },
   {
-    code: '03',
-    title: 'Engenharia aplicada',
-    detail: 'Produtos digitais, ferramentas de IA e documentação técnica.',
+    code: 'bi',
+    title: 'Tratamento de dados com BI',
+    detail: 'Organização, leitura e uso de dados para decisão e operação.',
+  },
+  {
+    code: 'software',
+    title: 'Engenharia de software',
+    detail: 'Produtos, ferramentas e automações com código bem estruturado.',
   },
 ] as const
 
 export const technicalSkills = [
   {
-    label: 'Redes & protocolos',
-    items: ['TCP/IP', 'VPN', 'VLAN', 'Trunk', 'QoS', 'Gateway', 'MPLS', 'OSPF', 'BGP'],
+    label: 'Arquitetura & segurança',
+    items: ['Arquitetura de AR', 'Cibersegurança', 'Identidade', 'LGPD', 'Governança técnica', 'Observabilidade'],
   },
   {
-    label: 'Monitoramento',
-    items: ['Zabbix', 'PRTG', 'The Dude', 'Troubleshooting', 'Leitura de logs'],
+    label: 'Dados & BI',
+    items: ['Tratamento de dados', 'BI', 'SQL', 'Dados operacionais', 'Dashboards'],
   },
   {
-    label: 'Equipamentos',
-    items: ['Huawei', 'Datacom', 'MikroTik', 'Nokia', 'Furukawa', 'FiberHome', 'Juniper', 'Cisco', 'UniFi'],
+    label: 'Engenharia de software',
+    items: ['React', 'TypeScript', 'Vite', 'Python', 'Java', 'PHP', 'HTML', 'MySQL'],
   },
   {
-    label: 'Sistemas & desenvolvimento',
-    items: ['Linux', 'Windows', 'Office 365', 'Google Workspace', 'Java', 'Python', 'PHP', 'HTML', 'MySQL'],
+    label: 'Stack Digytron',
+    items: ['Supabase', 'TanStack', 'Tailwind CSS', 'OpenAI', 'PDF', 'APIs'],
+  },
+] as const
+
+export const digytronProjects = [
+  {
+    title: 'Soberano DGX',
+    detail: 'Arquitetura de agentes, CPU, LIAM, MCP, skills e governança.',
+  },
+  {
+    title: 'Digytron OS',
+    detail: 'Cockpit operacional para produtos, clientes, engines, infraestrutura e runtime.',
+  },
+  {
+    title: 'Digytron Genesis',
+    detail: 'Workbench de sessões, workspaces e leitura local do trabalho.',
+  },
+  {
+    title: 'Lecion Premium',
+    detail: 'Produto educacional com IA, autenticação, créditos e geração de PDF.',
   },
 ] as const
 

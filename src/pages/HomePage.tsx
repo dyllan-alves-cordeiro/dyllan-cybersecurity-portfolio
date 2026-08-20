@@ -9,6 +9,7 @@
 import {
   complementaryTraining,
   digytronMethod,
+  digytronProjects,
   focusAreas,
   portfolioProfile,
   professionalExperiences,
@@ -41,14 +42,10 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
 
           <div className="container portrait-hero-inner">
             <aside className="hero-side hero-side-left" aria-label="Identidade profissional">
-              <div className="hero-side-topline">
-                <span className="hero-eyebrow">Dyllan Alves Cordeiro</span>
-                <span className="hero-live"><i aria-hidden="true" /> Digytron</span>
-              </div>
-              <p className="hero-name">Dyllan</p>
+              <p className="hero-name">Dyllan Alves Cordeiro</p>
               <p className="hero-role">{portfolioProfile.headline}</p>
               <p className="hero-side-copy">
-                Redes, infraestrutura e suporte técnico com uma visão próxima de segurança aplicada.
+                Arquitetura, segurança e dados aplicados a sistemas que precisam funcionar.
               </p>
               <a className="hero-side-contact" href={publicContacts[0].href}>
                 Vamos conversar
@@ -84,7 +81,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 ))}
               </ul>
               <p className="hero-side-copy hero-side-copy-right">
-                Na Digytron, essa base encontra produto, documentação e operação técnica.
+                Na Digytron, essa base vira produtos digitais, operações e ferramentas de engenharia.
               </p>
             </aside>
 
@@ -96,7 +93,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 </h1>
               </div>
               <div className="hero-bottom-center">
-                <span>redes · suporte · Digytron</span>
+                <span>arquitetura · segurança · BI · software</span>
               </div>
               <div className="hero-bottom-actions">
                 <button className="button button-light" type="button" onClick={onOpenCurriculum}>
@@ -121,7 +118,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
               <div className="profile-meta-row">
                 <span>{portfolioProfile.location}</span>
                 <span>•</span>
-                <span>Redes, suporte e engenharia aplicada</span>
+                <span>Arquitetura, segurança, dados e software</span>
               </div>
             </div>
 
@@ -146,7 +143,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 <span className="section-eyebrow">Áreas de atuação</span>
                 <h2 id="focus-title">Onde eu consigo ajudar.</h2>
               </div>
-              <p>Experiência em redes e suporte, com espaço para construir o próximo nível na Digytron.</p>
+              <p>Quatro frentes que resumem o trabalho que faço hoje.</p>
             </div>
             <div className="focus-card-grid">
               {focusAreas.map((area) => (
@@ -169,7 +166,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 <span className="section-eyebrow">Experiência</span>
                 <h2 id="experience-title">Experiência que virou repertório.</h2>
               </div>
-              <span className="section-side-note">Redes, suporte e engenharia aplicada.</span>
+              <span className="section-side-note">Arquitetura, segurança, dados e software.</span>
             </div>
 
             <div className="experience-list">
@@ -204,7 +201,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 <span className="section-eyebrow">Competências</span>
                 <h2 id="skills-title">Ferramentas que aparecem no trabalho.</h2>
               </div>
-              <p>Uma lista objetiva, revisada a partir do currículo-base.</p>
+              <p>O repertório técnico que sustenta as frentes atuais.</p>
             </div>
 
             <div className="skills-layout">
@@ -233,12 +230,20 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
           <div className="container section-grid digytron-grid">
             <div className="dgy-copy">
               <span className="section-eyebrow">Digytron</span>
-              <h2 id="dgy-title">Infraestrutura, produto e segurança no mesmo contexto.</h2>
+              <h2 id="dgy-title">Projetos reais, construídos no mesmo contexto.</h2>
               <p>
-                A Digytron é o espaço atual de engenharia aplicada: pesquisa, produtos e ferramentas construídos de forma documentada e soberana.
+                Na Digytron, atuo entre arquitetura, cibersegurança, dados e engenharia de software — do Soberano aos produtos que tornam essa operação possível.
               </p>
+              <div className="dgy-project-list">
+                {digytronProjects.map((project) => (
+                  <div className="dgy-project-card" key={project.title}>
+                    <strong>{project.title}</strong>
+                    <span>{project.detail}</span>
+                  </div>
+                ))}
+              </div>
               <p className="dgy-note-copy">
-                Cases públicos detalhados ainda aguardam evidência e aprovação de citação.
+                A descrição é de alto nível; cases detalhados ainda aguardam evidência e aprovação de citação.
               </p>
             </div>
             <div className="method-card">
@@ -274,7 +279,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
             <div>
               <span className="section-eyebrow">Contato</span>
               <h2 id="contact-title">Vamos conversar.</h2>
-              <p className="contact-lede">Para candidaturas, parcerias técnicas ou uma conversa sobre infraestrutura e segurança.</p>
+              <p className="contact-lede">Para candidaturas, parcerias técnicas ou uma conversa sobre arquitetura, segurança, dados e software.</p>
             </div>
             <div className="contact-list-v2">
               {publicContacts.map((contact) => (

@@ -3243,18 +3243,20 @@ body::before {
   }
 
   .brand-lockup {
+    min-width: 44px;
     min-height: 44px;
-    gap: 10px;
-    padding: 5px 11px 5px 13px;
-    border: 1px solid rgba(241, 241, 236, 0.16);
-    border-radius: 999px;
-    background: rgba(8, 10, 10, 0.32);
-    transition: border-color 180ms ease, background 180ms ease;
+    gap: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    transition: color 180ms ease;
   }
 
   .brand-lockup:hover {
-    border-color: rgba(188, 238, 221, 0.45);
-    background: rgba(188, 238, 221, 0.08);
+    border-color: transparent;
+    background: transparent;
+    color: var(--mint);
   }
 
   .brand-mark,
@@ -3267,18 +3269,6 @@ body::before {
     font-size: 0.78rem;
     letter-spacing: 0.04em;
     text-transform: none;
-  }
-
-  .brand-divider {
-    width: 1px;
-    height: 19px;
-    background: rgba(241, 241, 236, 0.24);
-  }
-
-  .brand-digytron-mark {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
   }
 
   .nav-links {
@@ -3345,8 +3335,10 @@ body::before {
 
   .hero-name {
     margin: 22px 0 14px;
+    max-width: 220px;
     color: var(--text);
-    font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+    font-size: clamp(1.65rem, 2.2vw, 2.15rem);
+    line-height: 0.96;
     letter-spacing: -0.06em;
     text-transform: none;
   }
@@ -3620,7 +3612,7 @@ body::before {
   }
 
   .focus-card-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 15px;
     border: 0;
   }
@@ -3809,6 +3801,35 @@ body::before {
     font-size: 0.76rem !important;
   }
 
+  .dgy-project-list {
+    display: grid;
+    gap: 8px;
+    max-width: 520px;
+    margin-top: 24px;
+  }
+
+  .dgy-project-card {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.42fr) minmax(0, 1fr);
+    gap: 16px;
+    border: 1px solid rgba(238, 241, 231, 0.1);
+    border-radius: 15px;
+    padding: 12px 14px;
+    background: rgba(238, 241, 231, 0.035);
+  }
+
+  .dgy-project-card strong {
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 550;
+  }
+
+  .dgy-project-card span {
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
   .method-card {
     padding: 26px;
   }
@@ -3959,6 +3980,35 @@ body::before {
     background: #eef6f2;
   }
 
+  .cv-project-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .cv-project-card-v2 {
+    border: 1px solid #d9ddd6;
+    border-radius: 18px;
+    padding: 17px;
+    background: rgba(255, 255, 255, 0.44);
+  }
+
+  .cv-project-card-v2 h2 {
+    margin: 0;
+    color: #18211f;
+    font-size: 0.98rem;
+    font-weight: 650;
+    letter-spacing: -0.035em;
+  }
+
+  .cv-project-card-v2 p {
+    margin: 8px 0 0;
+    color: #64706b;
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
   .cv-columns-v2 > .cv-block-v2 {
     border: 1px solid #d9ddd6;
     border-radius: 18px;
@@ -4017,16 +4067,6 @@ body::before {
 
   .nav-shell {
     min-height: 74px;
-  }
-
-  .brand-lockup {
-    padding-left: 10px;
-    padding-right: 9px;
-  }
-
-  .brand-digytron-mark {
-    width: 22px;
-    height: 22px;
   }
 
   .portrait-hero-inner {
@@ -4118,6 +4158,15 @@ body::before {
     gap: 7px;
   }
 
+  .dgy-project-card {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .cv-project-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+
   .cv-document-v2 {
     border-radius: 24px;
     padding: 24px 18px;
@@ -4145,7 +4194,23 @@ body::before {
 
   .cv-experience-v2,
   .cv-experience-featured-v2,
-  .cv-columns-v2 > .cv-block-v2 {
+  .cv-columns-v2 > .cv-block-v2,
+  .cv-projects-v2,
+  .cv-project-card-v2 {
     border-radius: 0;
+  }
+
+  .cv-projects-v2,
+  .cv-project-card-v2 {
+    break-inside: avoid;
+  }
+
+  .cv-project-card-v2 {
+    background: #fff;
+  }
+
+  .cv-project-card-v2 h2,
+  .cv-project-card-v2 p {
+    color: #151a1a;
   }
 }
