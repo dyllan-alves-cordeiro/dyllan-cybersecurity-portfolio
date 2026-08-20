@@ -24,14 +24,14 @@ conteúdo público só pode avançar quando o Dyllan fornecer ou aprovar cada it
 | Histórico de redes e suporte | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | AGE Telecom, Stefanini Group, NWI Telecom e SKILL.NET |
 | Digytron BR em nível técnico | CONFIRMADO | Documentação local da Digytron + solicitação explícita desta atualização | Contexto atual de engenharia aplicada; sem clientes, Space ou dados internos |
 | Foto de Dyllan | CONFIRMADO | Arquivo real fornecido em 20/08/2026 | `/public/assets/dyllan-alves-cordeiro.jpeg` e composição central do Hero |
-| Repositório pessoal prévio | NÃO ENCONTRADO | Inspeção local da sessão | Justifica a base isolada criada nesta pasta |
+| Repositório do site | CONFIRMADO | Criado nesta sessão em 20/08/2026 | https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio — nunca Digytron System |
 
 ## Itens pendentes antes de conteúdo público
 
 - Cargo ou posicionamento preferido.
 - Datas finais atualizadas de experiências cujo currículo-base não as informa.
 - Certificados formais, instituições emissoras e datas.
-- GitHub e demais links públicos reais, se existirem.
+- GitHub de outros projetos pessoais, se existirem além deste repositório do site.
 - Aprovação do resumo profissional e da descrição pública da Digytron.
 - Três a cinco experiências/projetos com autorização de citação.
 - Para cada case: contexto, responsabilidade, abordagem, tecnologia e resultado comprovável.
