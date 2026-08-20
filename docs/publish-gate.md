@@ -19,8 +19,8 @@ validar: revisão manual do Dyllan
 - Vercel: conta `dyllan-alves-cordeiro`, time `dyllan1` (Dyllan), projeto `dyllan-cybersecurity-portfolio`
 
 Domínio próprio ainda não definido. Cases detalhados e certificados formais continuam pendentes e o
-site declara isso. O app GitHub da Vercel ainda não está ligado a este repositório; deploys seguintes
-podem ir pelo CLI até essa conexão existir.
+site declara isso. O GitHub `dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio` está ligado ao
+projeto Vercel `dyllan1/dyllan-cybersecurity-portfolio`; push em `main` deve gerar deploy.
 
 ## Dono obrigatório
 

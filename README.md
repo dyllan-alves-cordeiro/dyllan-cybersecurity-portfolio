@@ -19,7 +19,7 @@ fornecidos em 20/08/2026, com uma primeira consolidação da atuação técnica 
 
 - **Ao vivo:** https://dyllan-cybersecurity-portfolio.vercel.app
 - **Código:** https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio
-- **Ambiente:** Vercel no time pessoal `dyllan1` (conta `dyllan-alves-cordeiro`); domínio próprio ainda pendente.
+- **Ambiente:** Vercel no time pessoal `dyllan1` (conta `dyllan-alves-cordeiro`); GitHub ligado ao projeto; domínio próprio ainda pendente.
 - **Idioma de trabalho:** PT-BR; PT-BR + inglês é decisão pendente.
 - **Conteúdo:** PT-BR, baseado no currículo-base e em documentação local de alto nível da Digytron;
   datas finais, cargo preferido, certificados e cases detalhados continuam pendentes.

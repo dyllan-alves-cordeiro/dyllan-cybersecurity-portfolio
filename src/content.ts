@@ -18,7 +18,11 @@ export type PublicContact = {
   label: string
   value: string
   href: string
-  kind: 'email' | 'phone' | 'linkedin'
+  kind: 'email' | 'phone' | 'linkedin' | 'github'
+}
+
+export function contactOpensExternally(kind: PublicContact['kind']) {
+  return kind === 'linkedin' || kind === 'github'
 }
 
 export type Experience = {
@@ -62,6 +66,12 @@ export const publicContacts: PublicContact[] = [
     href: 'https://www.linkedin.com/in/dyllan-alves-cordeiro-87b997167/',
     kind: 'linkedin',
   },
+  {
+    label: 'GitHub',
+    value: 'github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio',
+    href: 'https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio',
+    kind: 'github',
+  },
 ]
 
 export const contentLedger: ContentLedgerItem[] = [
@@ -73,7 +83,7 @@ export const contentLedger: ContentLedgerItem[] = [
   {
     label: 'Contatos públicos',
     status: 'CONFIRMADO',
-    detail: 'E-mail, telefone e LinkedIn foram transcritos do currículo-base; endereço completo foi omitido.',
+    detail: 'E-mail, telefone e LinkedIn vieram do currículo-base; GitHub do site é o repositório pessoal dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio.',
   },
   {
     label: 'Digytron BR',
@@ -301,7 +311,7 @@ export const pendingContent = [
   'Datas finais atualizadas de experiências anteriores',
   'Certificados, instituições emissoras e datas',
   'Três a cinco cases com autorização de citação e resultado verificável',
-  'GitHub e demais links públicos reais, se existirem',
+  'Outros links públicos, se existirem além deste GitHub do site',
   'Domínio definitivo e idioma inicial da publicação',
 ] as const
 

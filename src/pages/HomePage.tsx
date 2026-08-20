@@ -12,6 +12,7 @@ import { Reveal } from '../components/Reveal'
 import { SiteHeader } from '../components/SiteHeader'
 import {
   complementaryTraining,
+  contactOpensExternally,
   digytronMethod,
   digytronProjects,
   digytronStack,
@@ -330,7 +331,14 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         <div className="container footer-inner">
           <span className="footer-name">Dyllan</span>
           <span className="footer-context">Digytron BR · cibersegurança aplicada</span>
-          <span className="footer-context">2026</span>
+          <a
+            className="footer-context"
+            href="https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
         </div>
       </footer>
     </div>
@@ -367,7 +375,12 @@ function ContactSection() {
         </div>
         <div className="contact-list-v2">
           {publicContacts.map((contact) => (
-            <a href={contact.href} key={contact.label} target={contact.kind === 'linkedin' ? '_blank' : undefined} rel={contact.kind === 'linkedin' ? 'noreferrer' : undefined}>
+            <a
+              href={contact.href}
+              key={contact.label}
+              target={contactOpensExternally(contact.kind) ? '_blank' : undefined}
+              rel={contactOpensExternally(contact.kind) ? 'noreferrer' : undefined}
+            >
               <span>{contact.label}</span>
               <strong>{contact.value}</strong>
               <Icon name="arrow-up-right" />

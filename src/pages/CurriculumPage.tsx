@@ -7,6 +7,7 @@
 // DGX:ANCHOR: personal-portfolio-curriculum-page
 
 import {
+  contactOpensExternally,
   complementaryTraining,
   digytronProjects,
   education,
@@ -53,7 +54,12 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
               <div className="cv-contact-block">
                 <span>{portfolioProfile.location}</span>
                 {publicContacts.map((contact) => (
-                  <a href={contact.href} key={contact.label} target={contact.kind === 'linkedin' ? '_blank' : undefined} rel={contact.kind === 'linkedin' ? 'noreferrer' : undefined}>
+                  <a
+                    href={contact.href}
+                    key={contact.label}
+                    target={contactOpensExternally(contact.kind) ? '_blank' : undefined}
+                    rel={contactOpensExternally(contact.kind) ? 'noreferrer' : undefined}
+                  >
                     {contact.value}
                   </a>
                 ))}
@@ -175,13 +181,13 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
                 <li>Cibersegurança como foco do currículo</li>
                 <li>Arquitetura de sistemas, dados e software como apoio</li>
                 <li>Projetos reais da arquitetura Digytron BR</li>
-                <li>Contatos públicos do documento fornecido</li>
+                <li>Contatos públicos do documento fornecido, com GitHub do site</li>
               </ul>
             </div>
 
             <div className="sidebar-panel-v2 sidebar-panel-muted-v2">
-              <span className="mono-label">ANTES DE PUBLICAR</span>
-              <p>Confirmar cargo preferido, datas finais, certificados formais e autorização para cases detalhados antes da publicação.</p>
+              <span className="mono-label">AINDA PENDENTE</span>
+              <p>Cargo preferido, datas finais, certificados formais e autorização para cases detalhados. O site já está público em Vercel.</p>
             </div>
           </aside>
         </div>
