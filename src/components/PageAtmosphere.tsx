@@ -55,8 +55,6 @@ export function PageAtmosphere({ variant = 'page' }: PageAtmosphereProps) {
         <rect width="100%" height="100%" filter={`url(#${ditherId})`} />
       </svg>
 
-      {isHero ? <CeilingLamp reduced={Boolean(reduced)} /> : null}
-
       <div className="atm-field">
         {orbs.map((orb) => (
           <span key={orb} className={`atm-orb ${orb}${reduced ? ' is-frozen' : ''}`} />
@@ -67,39 +65,6 @@ export function PageAtmosphere({ variant = 'page' }: PageAtmosphereProps) {
           </span>
         )}
       </div>
-
-      <div className="hero-horizon hero-horizon-top" />
-      <div className="hero-horizon hero-horizon-bottom" />
-    </div>
-  )
-}
-
-// Luminária de teto: fonte no alto, cone descendo sobre o retrato e poça de luz
-// no busto. A oscilação é do próprio suporte da luz, não da foto.
-function CeilingLamp({ reduced }: { reduced: boolean }) {
-  return (
-    <div className="hero-lamp">
-      <motion.div
-        className="hero-lamp-rig"
-        initial={false}
-        animate={
-          reduced
-            ? { rotate: 0, opacity: 1 }
-            : { rotate: [-1.1, 1.15, -1.1], opacity: [0.88, 1, 0.93, 1, 0.88] }
-        }
-        transition={
-          reduced
-            ? { duration: 0 }
-            : {
-                rotate: { duration: 14, repeat: Infinity, ease: 'easeInOut' },
-                opacity: { duration: 7.4, repeat: Infinity, ease: 'easeInOut' },
-              }
-        }
-      >
-        <span className="hero-lamp-source" />
-        <span className="hero-lamp-cone" />
-        <span className="hero-lamp-pool" />
-      </motion.div>
     </div>
   )
 }

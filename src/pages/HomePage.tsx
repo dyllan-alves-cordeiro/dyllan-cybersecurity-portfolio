@@ -8,7 +8,6 @@
 
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
-import { PageAtmosphere } from '../components/PageAtmosphere'
 import { Reveal } from '../components/Reveal'
 import { SiteHeader } from '../components/SiteHeader'
 import {
@@ -56,7 +55,10 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance }: HomePag
 
       <main>
         <section className="portrait-hero" aria-labelledby="hero-title">
-          <PageAtmosphere variant="hero" />
+          <div className="hero-horizon hero-horizon-top" aria-hidden="true" />
+          <div className="hero-horizon hero-horizon-bottom" aria-hidden="true" />
+          <div className="hero-light hero-light-one" aria-hidden="true" />
+          <div className="hero-light hero-light-two" aria-hidden="true" />
 
           <div className="container portrait-hero-inner">
             <motion.aside

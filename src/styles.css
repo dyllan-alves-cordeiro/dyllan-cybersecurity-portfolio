@@ -4926,95 +4926,6 @@ h2,
   display: block;
 }
 
-.hero-light,
-.hero-light-one,
-.hero-light-two {
-  display: none;
-}
-
-/* DGX:ANCHOR: personal-portfolio-ceiling-lamp */
-/*
-  Luminária de teto. Camada de luz própria, atrás do retrato: fonte no alto,
-  cone descendo e poça no busto. Nada disso encosta no blend da foto.
-*/
-.hero-lamp {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 50%;
-  width: min(102vw, 1180px);
-  height: 86%;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-.hero-lamp-rig {
-  position: absolute;
-  inset: 0;
-  transform-origin: 50% 0%;
-  will-change: transform, opacity;
-}
-
-.hero-lamp-source {
-  position: absolute;
-  top: -46px;
-  left: 50%;
-  width: min(34vw, 220px);
-  height: 108px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at 50% 50%,
-    rgba(216, 252, 240, 0.4),
-    rgba(146, 216, 197, 0.16) 44%,
-    transparent 72%
-  );
-  filter: blur(20px);
-}
-
-.hero-lamp-cone {
-  position: absolute;
-  top: -5%;
-  left: 50%;
-  width: min(80vw, 780px);
-  height: 100%;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    180deg,
-    rgba(198, 246, 230, 0.15) 0%,
-    rgba(152, 222, 202, 0.085) 22%,
-    rgba(114, 192, 174, 0.048) 46%,
-    rgba(86, 160, 145, 0.022) 68%,
-    rgba(70, 140, 126, 0.008) 85%,
-    transparent 100%
-  );
-  clip-path: polygon(45.6% 0%, 54.4% 0%, 97% 100%, 3% 100%);
-  /*
-    Blur alto + queda elíptica a partir do foco apagam a aresta do clip-path:
-    sem isso o cone lê como triângulo chapado, não como luz.
-  */
-  -webkit-mask-image: radial-gradient(125% 104% at 50% -4%, #000 0%, #000 38%, rgba(0, 0, 0, 0.35) 72%, transparent 92%);
-  mask-image: radial-gradient(125% 104% at 50% -4%, #000 0%, #000 38%, rgba(0, 0, 0, 0.35) 72%, transparent 92%);
-  filter: blur(52px);
-}
-
-.hero-lamp-pool {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  width: min(64vw, 640px);
-  height: 44%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at 50% 38%,
-    rgba(128, 208, 188, 0.17),
-    rgba(88, 166, 150, 0.07) 46%,
-    transparent 74%
-  );
-  filter: blur(40px);
-}
-
 /* DGX:ANCHOR: personal-portfolio-ambient-field */
 /*
   Campo ambiente fixo no viewport: as partículas e o rastro atravessam as
@@ -5165,51 +5076,6 @@ h2,
   }
 }
 
-.portrait-hero {
-  background: var(--void);
-}
-
-.portrait-hero::after {
-  content: none;
-  display: none;
-}
-
-.hero-horizon {
-  position: absolute;
-  right: 10%;
-  left: 10%;
-  height: 48px;
-  z-index: 5;
-  pointer-events: none;
-  border: 0;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
-}
-
-.hero-horizon::before,
-.hero-horizon::after {
-  display: none;
-}
-
-.hero-horizon-top {
-  top: 12px;
-  background:
-    linear-gradient(180deg, rgba(159, 224, 200, 0.07) 0%, transparent 78%),
-    linear-gradient(90deg, transparent 0%, rgba(236, 246, 240, 0.48) 50%, transparent 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%, 100% 1px;
-  background-position: top, 0 10px;
-}
-
-.hero-horizon-bottom {
-  bottom: 12px;
-  background:
-    linear-gradient(0deg, rgba(159, 224, 200, 0.06) 0%, transparent 78%),
-    linear-gradient(90deg, transparent 0%, rgba(236, 246, 240, 0.32) 50%, transparent 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%, 100% 1px;
-  background-position: bottom, 0 calc(100% - 10px);
-}
 
 /*
   A dissolução da barra inferior agora mora no próprio alfa do PNG
@@ -5394,12 +5260,6 @@ h2,
 @media (prefers-reduced-motion: reduce) {
   .page-atmosphere-svg {
     opacity: 0.7;
-  }
-
-  /* A luz continua acesa; só para de se mexer. */
-  .hero-lamp-rig {
-    animation: none;
-    transform: none;
   }
 
   .atm-orb {
