@@ -8,6 +8,7 @@
 
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import { PageAtmosphere } from '../components/PageAtmosphere'
 import { Reveal } from '../components/Reveal'
 import { SiteHeader } from '../components/SiteHeader'
 import {
@@ -29,6 +30,7 @@ import { Icon } from '../icons'
 type HomePageProps = {
   onOpenCurriculum: () => void
   onHome: (section?: string) => void
+  onOpenGovernance?: () => void
 }
 
 const methodHighlights = [
@@ -38,23 +40,23 @@ const methodHighlights = [
 ]
 
 const ease = [0.16, 1, 0.3, 1] as const
-const primaryFocus = focusAreas.find((area) => area.primary) ?? focusAreas[0]
-const secondaryFocus = focusAreas.filter((area) => !area.primary)
 
-export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
+export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance }: HomePageProps) {
   const scrolled = useScrolled(56)
   const reduced = useReducedMotion()
 
   return (
     <div className="app-shell home-shell">
-      <SiteHeader onOpenCurriculum={onOpenCurriculum} onHome={onHome} visible={scrolled} />
+      <SiteHeader
+        onOpenCurriculum={onOpenCurriculum}
+        onHome={onHome}
+        onOpenGovernance={onOpenGovernance}
+        visible={scrolled}
+      />
 
       <main>
         <section className="portrait-hero" aria-labelledby="hero-title">
-          <div className="hero-horizon hero-horizon-top" aria-hidden="true" />
-          <div className="hero-horizon hero-horizon-bottom" aria-hidden="true" />
-          <div className="hero-light hero-light-one" aria-hidden="true" />
-          <div className="hero-light hero-light-two" aria-hidden="true" />
+          <PageAtmosphere variant="hero" />
 
           <div className="container portrait-hero-inner">
             <motion.aside
@@ -67,7 +69,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
               <p className="hero-name">Dyllan</p>
               <p className="hero-role">{portfolioProfile.headline}</p>
               <p className="hero-side-copy">
-                Cibersegurança para sistemas que precisam permanecer protegidos — e ainda dá para explicar.
+                {portfolioProfile.heroNote}
               </p>
               <a className="hero-side-contact" href={publicContacts[0].href}>
                 Vamos conversar
@@ -79,7 +81,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
               <div className="hero-portrait-image-wrap">
                 <img
                   className="hero-portrait-image"
-                  src="/assets/dyllan-alves-cordeiro-cutout.png"
+                  src="/assets/dyllan-alves-cordeiro-portrait.png"
                   alt="Retrato de Dyllan Alves Cordeiro"
                   width="1280"
                   height="1280"
@@ -88,7 +90,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
               </div>
               <figcaption className="hero-portrait-caption">
                 <span>Valparaíso de Goiás</span>
-                <span>Cibersegurança aplicada</span>
+                <span>Cibersegurança defensiva</span>
               </figcaption>
             </figure>
 
@@ -104,37 +106,43 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
                 {focusAreas.map((area) => (
                   <li key={area.code} className={area.primary ? 'is-primary' : undefined}>
                     <strong>{area.title}</strong>
-                    <span>{area.detail}</span>
+                    <span>{area.summary}</span>
                   </li>
                 ))}
               </ul>
               <p className="hero-side-copy hero-side-copy-right">
-                O restante — dados e software — entra no currículo como apoio, não como título.
+                Infraestrutura, governança e software sustentam o núcleo defensivo.
               </p>
             </motion.aside>
 
             <div className="hero-bottom">
               <div className="hero-title-block">
-                <span className="hero-kicker">Cibersegurança aplicada</span>
+                <span className="hero-kicker">{portfolioProfile.headline}</span>
                 <h1 id="hero-title">
-                  Segurança que dá para <em>entender.</em>
+                  Segurança defensiva onde o risco é <em>real.</em>
                 </h1>
               </div>
               <div className="hero-bottom-center">
-                <span>cibersegurança · arquitetura · dados · software</span>
+                <span>cibersegurança · infraestrutura · governança · software</span>
               </div>
               <div className="hero-bottom-actions">
                 <button className="button-light" type="button" onClick={() => onHome('contato')}>
                   Falar comigo
                   <Icon name="arrow-up-right" />
                 </button>
+                {onOpenGovernance ? (
+                  <button className="hero-text-link" type="button" onClick={onOpenGovernance}>
+                    Governança de IA
+                    <Icon name="arrow-up-right" />
+                  </button>
+                ) : null}
               </div>
             </div>
           </div>
         </section>
 
         <section className="portfolio-section profile-section" id="perfil" aria-labelledby="profile-title">
-          <Reveal className="container section-grid profile-section-grid">
+          <Reveal className="container section-grid profile-section-grid" variant="soft">
             <div className="section-heading-block">
               <span className="section-eyebrow">Sobre</span>
               <h2 id="profile-title">Cibersegurança primeiro. O resto sustenta.</h2>
@@ -142,7 +150,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
               <div className="profile-meta-row">
                 <span>{portfolioProfile.location}</span>
                 <span>•</span>
-                <span>Cibersegurança · arquitetura de sistemas</span>
+                <span>Cibersegurança defensiva · IAM · resiliência</span>
               </div>
             </div>
 
@@ -161,49 +169,47 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         </section>
 
         <section className="portfolio-section focus-section" id="atuacao" aria-labelledby="focus-title">
-          <Reveal className="container">
+          <Reveal className="container" variant="drift">
             <div className="section-heading-inline">
               <div>
                 <span className="section-eyebrow">Áreas de atuação</span>
-                <h2 id="focus-title">Uma frente principal. Três apoios.</h2>
+                <h2 id="focus-title">Um núcleo principal. Três pilares de sustentação.</h2>
               </div>
-              <p>Cibersegurança no título. Arquitetura, dados e software no entorno.</p>
+              <p>Cibersegurança defensiva no centro. Infraestrutura, governança e software no entorno.</p>
             </div>
-            <div className="focus-layout">
-              <article className="focus-card-v2 focus-card-primary">
-                <div className="focus-card-content">
-                  <span className="focus-card-label">{primaryFocus.title}</span>
-                  <h3>{primaryFocus.detail}</h3>
-                </div>
-                <span className="focus-card-arrow" aria-hidden="true">
-                  <Icon name="arrow-up-right" />
-                </span>
-              </article>
-              <div className="focus-secondary-grid">
-                {secondaryFocus.map((area) => (
-                  <article className="focus-card-v2" key={area.code}>
-                    <div className="focus-card-content">
-                      <span className="focus-card-label">{area.title}</span>
-                      <h3>{area.detail}</h3>
-                    </div>
-                    <span className="focus-card-arrow" aria-hidden="true">
-                      <Icon name="arrow-up-right" />
-                    </span>
-                  </article>
-                ))}
-              </div>
+            <div className="focus-editorial-list" role="list">
+              {focusAreas.map((area) => (
+                <article
+                  key={area.code}
+                  className={`focus-editorial-row${area.primary ? ' is-primary' : ''}`}
+                  role="listitem"
+                >
+                  <div className="focus-editorial-left">
+                    <span className="focus-editorial-num">{area.number}</span>
+                    <h3 className="focus-editorial-title">{area.title}</h3>
+                  </div>
+                  <p className="focus-editorial-center">{area.summary}</p>
+                  <div className="focus-editorial-right">
+                    {area.tags.map((tag) => (
+                      <span key={tag} className="focus-tag-item">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
             </div>
           </Reveal>
         </section>
 
         <section className="portfolio-section experience-section" id="experiencia" aria-labelledby="experience-title">
-          <Reveal className="container">
+          <Reveal className="container" variant="lift">
             <div className="section-heading-inline experience-heading">
               <div>
                 <span className="section-eyebrow">Experiência</span>
                 <h2 id="experience-title">Experiência que virou repertório.</h2>
               </div>
-              <span className="section-side-note">Cibersegurança no centro. O restante, em torno.</span>
+              <span className="section-side-note">Cibersegurança defensiva e operações de missão crítica.</span>
             </div>
 
             <div className="experience-list">
@@ -231,7 +237,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         </section>
 
         <section className="portfolio-section skills-section" id="competencias" aria-labelledby="skills-title">
-          <Reveal className="container">
+          <Reveal className="container" variant="base">
             <div className="section-heading-inline">
               <div>
                 <span className="section-eyebrow">Competências</span>
@@ -277,7 +283,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         </section>
 
         <section className="portfolio-section digytron-section" id="metodo" aria-labelledby="dgy-title">
-          <Reveal className="container section-grid digytron-grid">
+          <Reveal className="container section-grid digytron-grid" variant="soft">
             <div className="dgy-copy">
               <span className="section-eyebrow">Digytron BR</span>
               <h2 id="dgy-title">Projetos reais, construídos no mesmo contexto.</h2>
@@ -311,7 +317,7 @@ export function HomePage({ onOpenCurriculum, onHome }: HomePageProps) {
         </section>
 
         <section className="portfolio-section cv-section" aria-labelledby="cv-title-home">
-          <Reveal className="container cv-section-inner">
+          <Reveal className="container cv-section-inner" variant="settle">
             <div>
               <span className="section-eyebrow">Currículo</span>
               <h2 id="cv-title-home">Cibersegurança em uma leitura só.</h2>
@@ -365,7 +371,7 @@ function ContactSection() {
           <div className="contact-parallax-grain" />
         </div>
       )}
-      <Reveal className="container section-grid contact-grid-v2">
+      <Reveal className="container section-grid contact-grid-v2" variant="lift">
         <div>
           <span className="section-eyebrow">Contato</span>
           <h2 id="contact-title">Vamos conversar.</h2>

@@ -18,11 +18,11 @@ export type PublicContact = {
   label: string
   value: string
   href: string
-  kind: 'email' | 'phone' | 'linkedin' | 'github'
+  kind: 'email' | 'phone' | 'linkedin' | 'github' | 'portfolio'
 }
 
 export function contactOpensExternally(kind: PublicContact['kind']) {
-  return kind === 'linkedin' || kind === 'github'
+  return kind === 'linkedin' || kind === 'github' || kind === 'portfolio'
 }
 
 export type Experience = {
@@ -38,13 +38,14 @@ export type Experience = {
 export const portfolioProfile = {
   name: 'Dyllan Alves Cordeiro',
   shortName: 'Dyllan',
-  headline: 'Cibersegurança aplicada',
-  positioning: 'Cibersegurança no centro; arquitetura de sistemas, dados e software em torno dela.',
+  headline: 'Cibersegurança Defensiva, Identidade & Resiliência Operacional',
+  positioning:
+    'Controle rigoroso de acessos (IAM), proteção de dados e arquitetura de redes desenhada para operar com privilégio mínimo e mitigar incidentes.',
   location: 'Valparaíso de Goiás, GO',
   intro:
-    'Trabalho em cibersegurança aplicada: identidade, dados e operação. Arquitetura de sistemas, BI e engenharia de software entram como apoio para construir e manter o que precisa permanecer protegido. Na Digytron BR, essa prática ganha forma em produtos e ferramentas reais.',
-  heroStatement: 'Segurança que dá para entender.',
-  heroNote: 'Cibersegurança com clareza operacional.',
+    'Atuo em cibersegurança defensiva: governança de identidade (IAM), segurança de redes e proteção de dados. Minha base em Sistemas de Informação, arquitetura e engenharia de software sustenta a construção de ambientes protegidos e auditáveis. Na Digytron BR, essa prática ganha forma em operações reais e sistemas governados.',
+  heroStatement: 'Segurança defensiva onde o risco é real: identidade, infraestrutura e governança técnica.',
+  heroNote: 'Cibersegurança com clareza operacional e arquitetura resiliente.',
 } as const
 
 export const publicContacts: PublicContact[] = [
@@ -62,15 +63,21 @@ export const publicContacts: PublicContact[] = [
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/dyllan-alves-cordeiro-87b997167',
-    href: 'https://www.linkedin.com/in/dyllan-alves-cordeiro-87b997167/',
+    value: 'linkedin.com/in/dyllancordeiro',
+    href: 'https://www.linkedin.com/in/dyllancordeiro/',
     kind: 'linkedin',
   },
   {
     label: 'GitHub',
-    value: 'github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio',
-    href: 'https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio',
+    value: 'github.com/dyllan-alves-cordeiro',
+    href: 'https://github.com/dyllan-alves-cordeiro',
     kind: 'github',
+  },
+  {
+    label: 'Portfólio',
+    value: 'dyllan-cybersecurity-portfolio.vercel.app',
+    href: 'https://dyllan-cybersecurity-portfolio.vercel.app',
+    kind: 'portfolio',
   },
 ]
 
@@ -105,118 +112,143 @@ export const contentLedger: ContentLedgerItem[] = [
 export const professionalExperiences: Experience[] = [
   {
     company: 'Digytron BR',
-    role: 'Atuação independente em engenharia aplicada',
-    period: 'Atual · período exato a confirmar',
+    role: 'Engenharia de Software & Segurança Aplicada',
+    period: '2022 — Atual',
     summary:
-      'Cibersegurança e evolução de produtos digitais, superfícies web e ferramentas de engenharia para uma operação própria.',
+      'Governança de identidade, segurança de dados e evolução de ferramentas de engenharia para operação própria.',
     bullets: [
-      'Cibersegurança aplicada a identidade, dados, operação e governança técnica.',
-      'Arquitetura de sistemas e desenvolvimento de produtos com React, TypeScript, Vite, Tailwind CSS e TanStack.',
-      'Tratamento de dados e BI para leitura operacional, documentação e decisão.',
+      'Implementação de políticas de controle de acesso (RBAC/IAM), aplicando o princípio do menor privilégio em sistemas corporativos.',
+      'Gestão e custódia segura de credenciais, chaves de API e segredos de produção, prevenindo vazamentos e acessos não autorizados.',
+      'Modelagem de segurança de dados em bancos relacionais com Row Level Security (RLS) e conformidade técnica com a LGPD.',
+      'Estabelecimento de trilhas de auditoria e logs para rastreabilidade de eventos críticos.',
     ],
     sourceNote:
-      'Fonte: documentação local de projetos Digytron; não expõe clientes, dados internos ou superfícies fora da autorização.',
+      'Fonte: documentação técnica e governança operacional Digytron BR.',
     current: true,
   },
   {
-    company: 'AGE Telecom',
-    role: 'Analista de suporte',
-    period: 'Emprego atual na data do currículo-base',
+    company: 'Stefanini Group',
+    role: 'Analista de Redes e Operações (Projeto Caixa Econômica Federal)',
+    period: '2021',
     summary:
-      'Atuação técnica em infraestrutura de conectividade e soluções para clientes críticos.',
+      'Monitoramento contínuo de circuitos e tráfego de dados de missão crítica em ambiente bancário nacional.',
     bullets: [
-      'Estruturação de métodos de atendimento e documentação de processos técnicos.',
-      'Implementação de soluções para Wi-Fi, links dedicados e infraestrutura de acesso.',
+      'Monitoramento contínuo de circuitos e tráfego de dados de missão crítica em ambiente bancário nacional.',
+      'Detecção proativa de anomalias de rede, degradação de rotas e incidentes, atuando sob rígidos protocolos de auditoria, conformidade e SLAs bancários.',
+      'Estabilização e análise de integridade de roteamento BGP na infraestrutura Huawei.',
     ],
-    sourceNote: 'Fonte: currículo-base fornecido pelo Dyllan.',
+    sourceNote: 'Fonte: currículo-base profissional.',
   },
   {
-    company: 'Stefanini Group',
-    role: 'Analista de redes e comunicação de dados',
-    period: 'Início informado: 16/08/2021 · término não informado',
+    company: 'AGE Telecom',
+    role: 'Analista de Suporte & Redes',
+    period: '2021 — 2022',
     summary:
-      'Análise de arquitetura e estabilidade de redes de comunicação de dados, com foco em roteamento e desempenho.',
+      'Infraestrutura de conectividade segura e soluções para clientes críticos e contas corporativas.',
     bullets: [
-      'Investigação de degradação de rede em equipamentos Huawei e circuitos de comunicação.',
-      'Análise e estabilização do protocolo BGP dentro do escopo de atendimento.',
+      'Segmentação de tráfego (VLANs), implantação de enlaces seguros e túneis VPN corporativos para interconexão de filiais.',
+      'Configuração e endurecimento de roteadores, ONUs e equipamentos de borda (Huawei, Datacom, MikroTik).',
+      'Padronização de procedimentos técnicos e controle de SLAs para mitigação de paradas não programadas.',
     ],
-    sourceNote: 'Fonte: currículo-base fornecido pelo Dyllan.',
+    sourceNote: 'Fonte: currículo-base profissional.',
   },
   {
     company: 'NWI Telecom',
-    role: 'Operador de rede de teleprocessamento',
-    period: 'Início informado: 19/04/2021 · término não informado',
+    role: 'Operador de Rede de Teleprocessamento',
+    period: '2021',
     summary:
-      'Operação de ambientes de telecomunicações e configuração de infraestrutura para diferentes perfis de conexão.',
+      'Operação de infraestrutura de telecomunicações, observabilidade de rede e segurança de tráfego.',
     bullets: [
-      'Construção de visibilidade operacional com The Dude, Zabbix e PRTG.',
-      'Configuração de ONUs, roteadores e equipamentos Datacom, Huawei, MikroTik, Furukawa, TP-Link e Mercusys.',
+      'Construção e acompanhamento de visibilidade operacional ativa com Zabbix, PRTG e The Dude.',
+      'Configuração de equipamentos de rede e controle de integridade de tráfego em enlaces corporativos.',
     ],
-    sourceNote: 'Fonte: currículo-base fornecido pelo Dyllan.',
+    sourceNote: 'Fonte: currículo-base profissional.',
   },
   {
     company: 'SKILL.NET',
-    role: 'Suporte técnico',
-    period: '01/03/2018 — 01/05/2021',
+    role: 'Suporte Técnico & Operações de Redes',
+    period: '2018 — 2021',
     summary:
-      'Base prática em infraestrutura, sistemas e suporte de rede.',
+      'Rotinas de suporte seguro, administração de redes locais e manutenção de integridade física/lógica.',
     bullets: [
-      'Configuração de roteadores e ONUs e uso de Zabbix e MikroTik.',
-      'Montagem e configuração de computadores, com apoio pontual em marketing digital.',
+      'Rotinas de suporte seguro, administração de redes locais, manutenção de integridade física/lógica e controle documental auditável.',
+      'Configuração de roteadores, switches, ONUs e monitoramento de disponibilidade de ativos via MikroTik e Zabbix.',
     ],
-    sourceNote: 'Fonte: currículo-base fornecido pelo Dyllan.',
+    sourceNote: 'Fonte: currículo-base profissional.',
   },
 ]
 
-export const focusAreas = [
+export type FocusArea = {
+  code: string
+  number: string
+  title: string
+  summary: string
+  tags: readonly string[]
+  primary?: boolean
+}
+
+export const focusAreas: readonly FocusArea[] = [
   {
     code: 'cybersecurity',
-    title: 'Cibersegurança',
-    detail: 'Identidade, dados e operação — o centro do trabalho público.',
+    number: '01',
+    title: 'Cibersegurança Defensiva',
+    summary: 'Governança de identidade, proteção ativa de dados e arquitetura defensiva.',
+    tags: ['IAM & Least Privilege', 'Row Level Security (RLS)', 'LGPD & ISO 27001', 'Custódia de Segredos'],
     primary: true,
   },
   {
-    code: 'architecture',
-    title: 'Arquitetura de sistemas',
-    detail: 'Integrações, camadas de operação e estrutura dos produtos.',
+    code: 'infrastructure',
+    number: '02',
+    title: 'Segurança de Redes & Infra',
+    summary: 'Estabilidade de tráfego crítico, isolamento de borda e observabilidade contínua.',
+    tags: ['Roteamento BGP & TCP/IP', 'VPNs & VLANs Corporativas', 'Zabbix & PRTG', 'Hardening Linux'],
     primary: false,
   },
   {
-    code: 'bi',
-    title: 'Dados e BI',
-    detail: 'Organização e leitura de dados para decisão operacional.',
+    code: 'data-governance',
+    number: '03',
+    title: 'Dados, Governança & BI',
+    summary: 'Rastreabilidade, modelagem segura de registros e auditoria de operações.',
+    tags: ['Rastreabilidade de Dados', 'Minimização de PII', 'Conciliação & Auditoria', 'Dashboards Operacionais'],
     primary: false,
   },
   {
     code: 'software',
-    title: 'Software',
-    detail: 'Produtos, ferramentas e automações com código estruturado.',
+    number: '04',
+    title: 'Engenharia de Software',
+    summary: 'Desenvolvimento estruturado, APIs resilientes e scripts de automação operacional.',
+    tags: ['React & TypeScript', 'APIs Seguras & Webhooks', 'Automação de Rotinas', 'Arquitetura em Camadas'],
     primary: false,
   },
 ] as const
 
 export const skillFocus = {
-  title: 'Cibersegurança',
+  title: 'Cibersegurança Defensiva',
   detail:
-    'O foco público do currículo. Identidade, dados, operação e governança técnica — sem números, clientes ou certificações que ainda não foram confirmados.',
-  items: ['Identidade', 'LGPD', 'Governança técnica', 'Observabilidade'],
+    'O foco público do currículo: governança de identidade (IAM), proteção de dados, segurança de redes e conformidade técnica auditável.',
+  items: [
+    'IAM & Least Privilege',
+    'Segurança de Redes (BGP/VPNs)',
+    'LGPD & ISO 27001',
+    'Observabilidade & Auditoria',
+  ],
 } as const
 
 export const supportingSkills = [
   {
-    label: 'Arquitetura de sistemas',
-    detail: 'Como os produtos se encaixam e o que precisa permanecer estável.',
-    items: ['Sistemas', 'Integrações', 'Camadas de operação'],
+    label: 'Arquitetura & Infraestrutura',
+    detail: 'Redes resilientes, isolamento de ambientes e observabilidade contínua.',
+    items: ['Segmentação de Redes (VLANs)', 'BGP & Roteamento', 'VPNs & Enlaces Seguros', 'Zabbix & PRTG'],
   },
   {
-    label: 'Dados e BI',
-    detail: 'Leitura operacional para decisão, não vitrine de dashboard.',
-    items: ['SQL', 'Dados operacionais', 'Dashboards'],
+    label: 'Governança & Compliance',
+    detail: 'Conformidade técnica, mitigação de riscos e auditoria.',
+    items: ['LGPD Aplicada', 'ISO 27001', 'Trilhas de Auditoria', 'Políticas de Acesso'],
   },
   {
-    label: 'Software',
-    detail: 'Ferramentas usadas no trabalho real, sem lista ornamental.',
-    items: ['React', 'TypeScript', 'Vite', 'Python', 'Java', 'PHP', 'HTML', 'MySQL'],
+    label: 'Software & Automação',
+    detail: 'Código estruturado, APIs seguras e scripts operacionais.',
+    items: ['APIs Seguras', 'TypeScript / React', 'Python & Scripts', 'PostgreSQL / RLS'],
   },
 ] as const
 
@@ -236,11 +268,11 @@ export const technicalSkills = [
 export const digytronProjects = [
   {
     title: 'Soberano DGX',
-    detail: 'Arquitetura de agentes, CPU, LIAM, MCP, skills e governança.',
+    detail: 'Como o humano governa a IA: critério escrito, despacho e prova.',
   },
   {
     title: 'Digytron OS',
-    detail: 'Cockpit operacional para produtos, clientes, engines, infraestrutura e runtime.',
+    detail: 'Operação própria: produtos digitais e ferramentas no mesmo contexto.',
   },
   {
     title: 'Digytron Genesis',
@@ -262,15 +294,13 @@ export const education = [
 ] as const
 
 export const complementaryTraining = [
-  'Redes de computadores',
-  'ISO 27001 e segurança da informação',
-  'ISO 9001 e ISO 14001',
-  'LGPD — conceitos básicos',
-  'Compliance',
-  'Linux',
-  'Java e algoritmos',
-  'Hardware',
-  'Ferramentas Google para produtividade',
+  'ISO 27001 — Segurança da Informação',
+  'LGPD — Privacidade e Proteção de Dados',
+  'Compliance e Governança Corporativa',
+  'Redes TCP/IP, BGP e Roteamento Seguro',
+  'Linux Hardening e Administração de Sistemas',
+  'ISO 9001 e Gestão da Qualidade',
+  'Excel Avançado e Análise de Dados',
 ] as const
 
 export const languages = [

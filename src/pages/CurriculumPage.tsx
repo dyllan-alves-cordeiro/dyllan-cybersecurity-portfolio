@@ -18,18 +18,31 @@ import {
   skillFocus,
   supportingSkills,
 } from '../content'
+import { PageAtmosphere } from '../components/PageAtmosphere'
 import { Icon } from '../icons'
 import { SiteHeader } from '../components/SiteHeader'
 
 type CurriculumPageProps = {
   onOpenCurriculum: () => void
   onHome: (section?: string) => void
+  onOpenGovernance?: () => void
 }
 
-export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps) {
+export function CurriculumPage({
+  onOpenCurriculum,
+  onHome,
+  onOpenGovernance,
+}: CurriculumPageProps) {
   return (
     <div className="app-shell curriculum-shell">
-      <SiteHeader onOpenCurriculum={onOpenCurriculum} onHome={onHome} isCurriculum visible />
+      <PageAtmosphere variant="page" />
+      <SiteHeader
+        onOpenCurriculum={onOpenCurriculum}
+        onHome={onHome}
+        onOpenGovernance={onOpenGovernance}
+        isCurriculum
+        visible
+      />
 
       <main className="curriculum-main-v2">
         <div className="container curriculum-toolbar-v2 print-hidden">
@@ -37,8 +50,20 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
             <Icon name="arrow-left" />
             Voltar ao portfólio
           </button>
-          <div className="toolbar-status-v2">
-            <span className="cv-toolbar-label">Currículo profissional</span>
+          <div className="toolbar-actions-v2">
+            <a
+              className="cv-toolbar-download"
+              href="/assets/curriculo-dyllan-ciberseguranca.pdf"
+              download="Curriculo - Dyllan Alves Cordeiro - Ciberseguranca Defensiva.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon name="arrow-up-right" />
+              Baixar PDF Oficial
+            </a>
+            <button className="cv-toolbar-print" type="button" onClick={() => window.print()}>
+              Imprimir
+            </button>
           </div>
         </div>
 
@@ -158,36 +183,62 @@ export function CurriculumPage({ onOpenCurriculum, onHome }: CurriculumPageProps
             </section>
 
             <footer className="cv-document-footer-v2">
-              <span>Conteúdo reorganizado a partir do currículo-base fornecido pelo Dyllan.</span>
-              <span>Atualização em andamento</span>
+              <span>Conteúdo factual e auditável de Cibersegurança Defensiva.</span>
+              <span>Versão oficial 2026</span>
             </footer>
           </article>
 
           <aside className="cv-sidebar-v2 print-hidden" aria-label="Ações e estado do currículo">
             <div className="sidebar-panel-v2 sidebar-panel-accent-v2">
               <span className="mono-label">EXPORTAÇÃO</span>
-              <h2>Leve esta página com você.</h2>
-              <p>Use a impressão do navegador para salvar uma versão PDF limpa, em A4, sem a navegação lateral.</p>
-              <button className="button-light" type="button" onClick={() => window.print()}>
-                Salvar como PDF
-                <Icon name="arrow-up-right" />
-              </button>
+              <h2>Leve este currículo com você.</h2>
+              <p>Baixe a versão executiva oficial em PDF (A4 de 1 página) ou utilize a impressão direta do navegador.</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '14px' }}>
+                <a
+                  className="button-light"
+                  href="/assets/curriculo-dyllan-ciberseguranca.pdf"
+                  download="Curriculo - Dyllan Alves Cordeiro - Ciberseguranca Defensiva.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Baixar PDF Oficial
+                  <Icon name="arrow-up-right" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => window.print()}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'var(--muted)',
+                    fontFamily: 'var(--mono)',
+                    fontSize: '0.66rem',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    padding: '4px 0',
+                  }}
+                >
+                  Imprimir via navegador →
+                </button>
+              </div>
             </div>
 
             <div className="sidebar-panel-v2">
               <span className="mono-label">LEITURA FACTUAL</span>
-              <h2>O que entrou nesta versão</h2>
+              <h2>Pilares desta versão</h2>
               <ul className="sidebar-check-list-v2">
-                <li>Cibersegurança como foco do currículo</li>
-                <li>Arquitetura de sistemas, dados e software como apoio</li>
-                <li>Projetos reais da arquitetura Digytron BR</li>
-                <li>Contatos públicos do documento fornecido, com GitHub do site</li>
+                <li>Cibersegurança Defensiva e IAM como foco principal</li>
+                <li>Governança de identidade, privilégio mínimo e RLS</li>
+                <li>Operação de redes bancárias de missão crítica (Stefanini / CEF)</li>
+                <li>LGPD técnica, ISO 27001 e conformidade auditável</li>
               </ul>
             </div>
 
             <div className="sidebar-panel-v2 sidebar-panel-muted-v2">
-              <span className="mono-label">AINDA PENDENTE</span>
-              <p>Cargo preferido, datas finais, certificados formais e autorização para cases detalhados. O site já está público em Vercel.</p>
+              <span className="mono-label">STATUS OPERACIONAL</span>
+              <p>Currículo consolidado e auditável. Repositório oficial e documentação sob governança contínua.</p>
             </div>
           </aside>
         </div>

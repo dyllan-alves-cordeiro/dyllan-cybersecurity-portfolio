@@ -66,7 +66,7 @@ export function SiteHeader({
                   </button>
                 </>
               )}
-              {onOpenGovernance ? (
+              {onOpenGovernance && !isGovernance ? (
                 <button className="nav-text-button" type="button" onClick={onOpenGovernance}>
                   Governança de IA
                 </button>

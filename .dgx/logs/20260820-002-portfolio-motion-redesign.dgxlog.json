@@ -28,7 +28,7 @@
     "task_ref": null,
     "session_close_ref": null,
     "started_at": "2026-08-20T18:10:12.459438+00:00",
-    "closed_at": null,
+    "closed_at": "2026-08-20T22:34:02.717347+00:00",
     "round_baseline": {
       "phase": "round_baseline",
       "available": true,
@@ -38,6 +38,16 @@
       "behind": 0,
       "worktree_clean": false,
       "observed_at": "2026-08-20T18:10:12.457565+00:00"
+    },
+    "pre_delivery_state": {
+      "phase": "pre_delivery_state",
+      "available": true,
+      "head": "71864efea72e85dc0f8dd4c1089e4467250c6bcd",
+      "branch": "main",
+      "ahead": 0,
+      "behind": 0,
+      "worktree_clean": false,
+      "observed_at": "2026-08-20T22:34:02.716861+00:00"
     }
   },
   "intent_snapshot": {
@@ -48,48 +58,72 @@
         "title": "header-pill-on-scroll",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-8144",
+          "ev-2-5656",
+          "ev-3-9013"
+        ]
       },
       {
         "id": "ob-2",
         "title": "copy-cyber-first",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-8144",
+          "ev-2-5656",
+          "ev-3-9013"
+        ]
       },
       {
         "id": "ob-3",
         "title": "skills-redesign",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-8144",
+          "ev-2-5656",
+          "ev-3-9013"
+        ]
       },
       {
         "id": "ob-4",
         "title": "section-motion",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-8144",
+          "ev-2-5656",
+          "ev-3-9013"
+        ]
       },
       {
         "id": "ob-5",
         "title": "contact-parallax",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-8144",
+          "ev-2-5656",
+          "ev-3-9013"
+        ]
       },
       {
         "id": "ob-6",
         "title": "visual-tokens",
         "required": true,
         "evidence_required": true,
-        "status": "pending",
-        "evidence_ids": []
+        "status": "completed",
+        "evidence_ids": [
+          "ev-1-8144",
+          "ev-2-5656",
+          "ev-3-9013"
+        ]
       }
     ],
     "constraints": [],
@@ -106,9 +140,101 @@
     "expected_close_status": null
   },
   "amendments": [],
-  "execution_trail": [],
+  "execution_trail": [
+    {
+      "timestamp": "2026-08-20T22:33:08.873693+00:00",
+      "summary": "Redesign visual e copy ciber-first foram para main e o site público. O log não tinha checkpoint durante a execução; este checkpoint fecha as obrigações contra o HEAD publicado.",
+      "completed_obligation_ids": [
+        "ob-1",
+        "ob-2",
+        "ob-3",
+        "ob-4",
+        "ob-5",
+        "ob-6"
+      ],
+      "discoveries": [],
+      "decisions": [
+        "Publicação GitHub+Vercel autorizada depois do objetivo original 'sem publicar'."
+      ],
+      "blockers": [],
+      "evidence": [
+        {
+          "id": "ev-1-8144",
+          "type": "other",
+          "summary": "",
+          "ref": "a1a6ee5",
+          "timestamp": "2026-08-20T22:33:08.873702+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-2-5656",
+          "type": "other",
+          "summary": "",
+          "ref": "71864ef",
+          "timestamp": "2026-08-20T22:33:08.873702+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-3-9013",
+          "type": "other",
+          "summary": "",
+          "ref": "https://dyllan-cybersecurity-portfolio.vercel.app",
+          "timestamp": "2026-08-20T22:33:08.873702+00:00",
+          "confidence": "low"
+        }
+      ],
+      "plan_changes": []
+    }
+  ],
   "preclose_history": [],
-  "closure_report": null,
+  "closure_report": {
+    "status": "partial",
+    "round_status": "partial",
+    "delivery_intent": "push",
+    "alias_normalized": false,
+    "delivered": [
+      "redesign visual no ar",
+      "GitHub pessoal ligado à Vercel",
+      "URL pública evidenciada"
+    ],
+    "not_delivered": [
+      "domínio próprio",
+      "cases detalhados",
+      "certificados formais"
+    ],
+    "blockers": [],
+    "validators": [],
+    "evidence": [],
+    "feedback": {},
+    "self_score": 0.82,
+    "score": {
+      "self_score": 0.82,
+      "completion_score": 10.0,
+      "evidence_score": 3.0,
+      "validation_score": null,
+      "honesty_score": 8.0,
+      "final_score": 6.41,
+      "confidence": "high",
+      "basis": {
+        "components_present": [
+          "completion",
+          "evidence",
+          "honesty",
+          "self_score"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "completion",
+          "evidence",
+          "honesty"
+        ],
+        "weight_covered": 0.8,
+        "weight_total": 1.0
+      }
+    },
+    "next_actions": [],
+    "honest_line": "Rodada visual entregue e publicada na conta dyllan-alves-cordeiro. Objetivo original dizia sem publicar; o Dyllan autorizou depois. Codex/OpenCode não foram despachados nesta fatia."
+  },
   "revisions": [],
   "activities": {},
   "provenance": "mcp_v3",
@@ -116,16 +242,16 @@
     "source_schema_version": 3,
     "v3_fields_imputed": {
       "model_resolution": "present",
-      "artifact_manifest": "absent",
-      "pendency_delta": "absent",
-      "closure_bundle": "absent",
+      "artifact_manifest": "present",
+      "pendency_delta": "present",
+      "closure_bundle": "present",
       "return_to_gk": "absent",
-      "skill_ledger": "absent",
-      "function_ledger": "absent",
-      "material_work": "absent",
-      "gap_fixes": "absent",
-      "unresolved_gaps": "absent",
-      "technical_decisions": "absent"
+      "skill_ledger": "present",
+      "function_ledger": "present",
+      "material_work": "present",
+      "gap_fixes": "present",
+      "unresolved_gaps": "present",
+      "technical_decisions": "present"
     }
   },
   "skill_ledger": [
@@ -146,9 +272,9 @@
     {
       "skill": "dgx-gk-senior",
       "activation_level": "RECOMMENDED",
-      "state": "RECOMMENDED",
+      "state": "APPLIED",
       "evidence_ids": [],
-      "notes": "router: layer:PROFILE"
+      "notes": "decidiu fechar a fatia visual e abrir leitura de mercado antes da massa multi-rota"
     },
     {
       "skill": "dgx-identity",
@@ -160,9 +286,12 @@
     {
       "skill": "dgx-senior-engineer",
       "activation_level": "REQUIRED",
-      "state": "ACTIVATED",
-      "evidence_ids": [],
-      "notes": "router: layer:PROFILE; operation:mutation · carregada no gate de conexão (load != apply)"
+      "state": "EVIDENCED",
+      "evidence_ids": [
+        "git:a1a6ee5",
+        "git:71864ef"
+      ],
+      "notes": "publicação e checkpoint contra HEAD real"
     },
     {
       "skill": "dgx-seo",
@@ -172,5 +301,136 @@
       "notes": "router: objectives:copy; domains:frontend; operation:mutation"
     }
   ],
-  "function_ledger": []
+  "function_ledger": [],
+  "artifact_manifest": {
+    "dgx_log_json": ".dgx/logs/20260820-002-portfolio-motion-redesign.dgxlog.json",
+    "dgx_log_md": ".dgx/logs/20260820-002-portfolio-motion-redesign.dgxlog.md",
+    "output_json": ".dgx/outputs/20260820-002-portfolio-motion-redesign.output.json",
+    "return_to_gk_md": null,
+    "session_close_ref": null,
+    "additional": {}
+  },
+  "pendency_delta": {
+    "created_ids": [],
+    "resolved_ids": [],
+    "carried_ids": [],
+    "human_action_ids": []
+  },
+  "closure_bundle": {
+    "schema_version": 3,
+    "round_id": "20260820-002-portfolio-motion-redesign",
+    "generated_at": "2026-08-20T22:34:02.717347+00:00",
+    "generated_by": "dgx.log_write action=close schema_version=3",
+    "audit": {
+      "total_required": 6,
+      "completed_with_evidence": 6,
+      "completed_no_evidence": 0,
+      "pending": 0,
+      "blocked": 0,
+      "not_applicable": 0,
+      "waived": 0,
+      "pending_ids": [],
+      "blocked_ids": [],
+      "no_evidence_ids": [],
+      "completed_ids": [
+        "ob-1",
+        "ob-2",
+        "ob-3",
+        "ob-4",
+        "ob-5",
+        "ob-6"
+      ],
+      "success_blockers": [],
+      "allowed_statuses": [
+        "success",
+        "partial",
+        "blocked",
+        "aborted"
+      ]
+    },
+    "status": {
+      "requested": "partial",
+      "accepted": "partial",
+      "coherent": true
+    },
+    "delivered": [
+      "redesign visual no ar",
+      "GitHub pessoal ligado à Vercel",
+      "URL pública evidenciada"
+    ],
+    "not_delivered": [
+      "domínio próprio",
+      "cases detalhados",
+      "certificados formais"
+    ],
+    "validators": [],
+    "evidence": [],
+    "git": {
+      "head": "71864efea72e85dc0f8dd4c1089e4467250c6bcd",
+      "branch": "main",
+      "ahead": 0,
+      "behind": 0,
+      "worktree_clean": false,
+      "observed_commit": null,
+      "observed_push": false
+    },
+    "artifact_paths": {
+      "dgx_log": ".dgx/logs/20260820-002-portfolio-motion-redesign.dgxlog.json",
+      "output_json": ".dgx/outputs/20260820-002-portfolio-motion-redesign.output.json",
+      "return_to_gk_md": null
+    },
+    "pendency_delta": {
+      "created_ids": [],
+      "resolved_ids": [],
+      "carried_ids": [],
+      "human_action_ids": []
+    },
+    "session_references": {
+      "session_close_ref": null,
+      "capsule_v2_ref": null
+    },
+    "score": {
+      "self_score": 0.82,
+      "completion_score": 10.0,
+      "evidence_score": 3.0,
+      "validation_score": null,
+      "honesty_score": 8.0,
+      "final_score": 6.41,
+      "confidence": "high",
+      "basis": {
+        "components_present": [
+          "completion",
+          "evidence",
+          "honesty",
+          "self_score"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "completion",
+          "evidence",
+          "honesty"
+        ],
+        "weight_covered": 0.8,
+        "weight_total": 1.0
+      }
+    },
+    "confidence": "high",
+    "honest_line": "Rodada visual entregue e publicada na conta dyllan-alves-cordeiro. Objetivo original dizia sem publicar; o Dyllan autorizou depois. Codex/OpenCode não foram despachados nesta fatia.",
+    "next_round": "20260820-003-portfolio-surfaces-ia",
+    "friction": [],
+    "decisions": [
+      "A próxima rodada é multi-rota: ciber na home, aplicativos e governança de IA em rotas próprias."
+    ],
+    "discoveries": [],
+    "documentation_drifts": [],
+    "material_work": [],
+    "gap_fixes": [],
+    "unresolved_gaps": [],
+    "technical_decisions": [],
+    "output_sha256": "6ed43279db85255ae7bd743ea620722e715f8bfe79fd8a3649d8476c8827b85d"
+  },
+  "material_work": [],
+  "gap_fixes": [],
+  "unresolved_gaps": [],
+  "technical_decisions": []
 }

@@ -1,1 +1,261 @@
-/* loaded by App; page styles live in styles-governance.css from the page worktree */
+/*
+DGX FILE HEADER
+nivel: L2-medium
+arquivo: src/styles-governance.css
+papel: Visual exclusivo da rota /governanca-ia. Prefixos .gov-
+validar: desktop + 390px
+*/
+/* DGX:ANCHOR: personal-portfolio-governance-visual */
+
+.gov-shell {
+  padding-bottom: 80px;
+  background: var(--void);
+}
+
+.gov-hero {
+  padding: 148px 0 80px;
+  border-bottom: var(--stroke) solid var(--line);
+  background: transparent;
+}
+
+.gov-section {
+  padding: 88px 0;
+  border-bottom: var(--stroke) solid var(--line);
+  background: transparent;
+}
+
+.gov-hero-inner {
+  max-width: 760px;
+}
+
+.gov-hero h1 {
+  margin: 14px 0 22px;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.gov-lede,
+.gov-rail-lede,
+.gov-criteria-grid p {
+  max-width: 58ch;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.gov-meta {
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gov-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.gov-text-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gov-text-link:hover {
+  color: var(--mint);
+}
+
+.gov-section {
+  padding: 88px 0;
+  border-bottom: var(--stroke) solid var(--line);
+}
+
+.gov-section h2 {
+  max-width: 18ch;
+  margin: 12px 0 28px;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.gov-method-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gov-method-list li {
+  display: grid;
+  gap: 10px;
+  min-height: 180px;
+  padding: 22px 0;
+  border-top: var(--stroke) solid var(--line);
+}
+
+.gov-method-list span {
+  color: var(--mint);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+}
+
+.gov-method-list strong {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.gov-method-list p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.gov-rail-lede {
+  margin-bottom: 36px;
+}
+
+.gov-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+}
+
+.gov-rail {
+  scrollbar-width: thin;
+}
+
+.gov-rail-card {
+  min-height: 240px;
+  padding: 22px 22px 26px;
+  border: var(--stroke) solid var(--line);
+  border-radius: 22px;
+  scroll-snap-align: start;
+}
+
+.gov-rail-version {
+  color: var(--mint);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.gov-rail-card h3 {
+  margin: 16px 0 12px;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.gov-rail-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.gov-criteria-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.gov-criteria-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gov-criteria-list li {
+  padding: 20px 0;
+  border-top: var(--stroke) solid var(--line);
+}
+
+.gov-criteria-list strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.gov-criteria-list p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.gov-contact-list {
+  display: grid;
+  margin-top: 28px;
+  border-top: var(--stroke) solid var(--line);
+}
+
+.gov-contact-list a {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) 18px;
+  gap: 16px;
+  min-height: 64px;
+  align-items: center;
+  border-bottom: var(--stroke) solid var(--line);
+}
+
+.gov-contact-list a span {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.59rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gov-contact-list a strong {
+  overflow-wrap: anywhere;
+  font-size: 0.82rem;
+  font-weight: 450;
+}
+
+.gov-contact-list a:hover {
+  color: var(--mint);
+}
+
+@media (max-width: 860px) {
+  .gov-hero {
+    padding: 112px 0 56px;
+  }
+
+  .gov-method-list,
+  .gov-criteria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gov-rail {
+    grid-auto-columns: minmax(78%, 1fr);
+  }
+
+  .gov-section {
+    padding: 64px 0;
+  }
+}

@@ -24,6 +24,14 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
 
+  useEffect(() => {
+    const titles: Record<string, string> = {
+      '/curriculo': 'Dyllan — currículo',
+      '/governanca-ia': 'Dyllan — governança de IA',
+    }
+    document.title = titles[path] ?? 'Dyllan — portfólio de cibersegurança'
+  }, [path])
+
   const openCurriculum = () => {
     if (path !== '/curriculo') {
       window.history.pushState({}, '', '/curriculo')
@@ -54,7 +62,13 @@ export default function App() {
   }
 
   if (path === '/curriculo') {
-    return <CurriculumPage onOpenCurriculum={openCurriculum} onHome={goHome} />
+    return (
+      <CurriculumPage
+        onOpenCurriculum={openCurriculum}
+        onHome={goHome}
+        onOpenGovernance={openGovernance}
+      />
+    )
   }
 
   if (path === '/governanca-ia') {
@@ -67,5 +81,11 @@ export default function App() {
     )
   }
 
-  return <HomePage onOpenCurriculum={openCurriculum} onHome={goHome} />
+  return (
+    <HomePage
+      onOpenCurriculum={openCurriculum}
+      onHome={goHome}
+      onOpenGovernance={openGovernance}
+    />
+  )
 }

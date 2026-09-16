@@ -566,7 +566,6 @@ button:disabled {
 
 .profile-note,
 .ledger-card,
-.focus-card,
 .empty-case,
 .contact-gate,
 .sidebar-block {
@@ -1884,6 +1883,24 @@ body::before {
   padding-bottom: 3px;
 }
 
+.hero-text-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero-text-link:hover {
+  color: var(--mint);
+}
+
 .button-light {
   display: inline-flex;
   min-height: 48px;
@@ -2473,6 +2490,58 @@ body::before {
   display: flex;
   align-items: center;
   gap: 13px;
+}
+
+.toolbar-actions-v2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cv-toolbar-download {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  background: var(--mint);
+  color: #050607;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cv-toolbar-download:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.cv-toolbar-print {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.cv-toolbar-print:hover {
+  color: var(--fg);
+  border-color: var(--mint);
 }
 
 .curriculum-layout-v2 {
@@ -3478,46 +3547,13 @@ body::before {
     width: min(43vw, 580px);
     height: min(57vh, 560px);
     min-height: 450px;
-    overflow: visible;
-    background: radial-gradient(ellipse at 50% 60%, rgba(64, 139, 125, 0.32), transparent 61%);
-    filter: none;
-    isolation: isolate;
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .hero-portrait-image-wrap::before {
-    position: absolute;
-    z-index: 0;
-    inset: 12% 10% 2%;
-    border-radius: 50%;
-    background: radial-gradient(ellipse at 50% 54%, rgba(74, 163, 145, 0.28), transparent 63%);
-    filter: blur(34px);
-    content: '';
-    pointer-events: none;
-  }
-
-  .hero-portrait-image-wrap::after {
-    position: absolute;
-    z-index: 2;
-    inset: 48% -8% -16%;
-    height: auto;
-    background: linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, 0.14) 34%, #070909 100%);
-    box-shadow: none;
-    content: '';
-    pointer-events: none;
   }
 
   .hero-portrait-image {
     position: relative;
     z-index: 1;
     object-fit: contain;
-    object-position: center bottom;
-    opacity: 1;
-    mix-blend-mode: normal;
-    filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.22));
-    mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
+    object-position: center 18%;
   }
 
   .hero-portrait-caption {
@@ -4403,14 +4439,25 @@ h2,
   pointer-events: none;
 }
 
+/*
+  A pílula entra com opacidade 0 → 1 em 0.55s (motion no SiteHeader). O
+  contorno antigo começava em 0s e gastava metade do gesto por baixo dessa
+  entrada — por isso quase não se via. Agora ele espera a pílula ficar opaca.
+*/
 .nav-shell-armed::before {
-  border: var(--stroke) solid rgba(159, 224, 200, 0.55);
-  animation: pill-contour 1.05s var(--ease) both;
+  border: 1.5px solid rgba(159, 224, 200, 0.72);
+  box-shadow: 0 0 16px rgba(159, 224, 200, 0.28);
+  animation: pill-contour 1.25s var(--ease) 0.28s both;
 }
 
 .nav-shell-armed::after {
-  box-shadow: 0 0 0 0 rgba(159, 224, 200, 0.42);
-  animation: pill-pulse 1.7s ease-out 0.12s both;
+  box-shadow: 0 0 0 0 rgba(159, 224, 200, 0.5);
+  animation: pill-pulse 1.9s ease-out 0.36s both;
+}
+
+/* Respiração lenta: depois do gesto de entrada a pílula continua viva. */
+.nav-shell-armed {
+  animation: pill-breathe 6.4s ease-in-out 2.1s infinite;
 }
 
 .brand-lockup {
@@ -4759,13 +4806,32 @@ h2,
 
 @keyframes pill-pulse {
   0% {
-    opacity: 0.7;
-    box-shadow: 0 0 0 0 rgba(159, 224, 200, 0.4);
+    opacity: 0.85;
+    box-shadow: 0 0 0 0 rgba(159, 224, 200, 0.48);
   }
 
   100% {
     opacity: 0;
-    box-shadow: 0 0 0 22px rgba(159, 224, 200, 0);
+    box-shadow: 0 0 0 26px rgba(159, 224, 200, 0);
+  }
+}
+
+@keyframes pill-breathe {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 18px 40px rgba(0, 0, 0, 0.28),
+      0 0 0 1px rgba(159, 224, 200, 0.05),
+      0 0 16px -6px rgba(159, 224, 200, 0.16);
+  }
+
+  50% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 18px 40px rgba(0, 0, 0, 0.28),
+      0 0 0 1px rgba(159, 224, 200, 0.18),
+      0 0 26px -3px rgba(159, 224, 200, 0.44);
   }
 }
 
@@ -4776,6 +4842,10 @@ h2,
   .contact-parallax-grain {
     animation: none;
     display: none;
+  }
+
+  .nav-shell-armed {
+    animation: none;
   }
 }
 
@@ -4823,7 +4893,528 @@ h2,
     display: none;
   }
 
-  .curriculum-shell .nav-text-button {
+  .curriculum-shell .nav-text-button,
+  .gov-shell .nav-text-button {
     display: inline-flex;
+  }
+}
+
+/* DGX:ANCHOR: personal-portfolio-hero-atmosphere */
+.app-shell {
+  position: relative;
+  isolation: isolate;
+  background: var(--void);
+}
+
+.page-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.portrait-hero .page-atmosphere {
+  position: absolute;
+}
+
+.page-atmosphere-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-light,
+.hero-light-one,
+.hero-light-two {
+  display: none;
+}
+
+/* DGX:ANCHOR: personal-portfolio-ceiling-lamp */
+/*
+  Luminária de teto. Camada de luz própria, atrás do retrato: fonte no alto,
+  cone descendo e poça no busto. Nada disso encosta no blend da foto.
+*/
+.hero-lamp {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  width: min(102vw, 1180px);
+  height: 86%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.hero-lamp-rig {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 0%;
+  will-change: transform, opacity;
+}
+
+.hero-lamp-source {
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  width: min(34vw, 220px);
+  height: 108px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(216, 252, 240, 0.4),
+    rgba(146, 216, 197, 0.16) 44%,
+    transparent 72%
+  );
+  filter: blur(20px);
+}
+
+.hero-lamp-cone {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  width: min(80vw, 780px);
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    rgba(198, 246, 230, 0.15) 0%,
+    rgba(152, 222, 202, 0.085) 22%,
+    rgba(114, 192, 174, 0.048) 46%,
+    rgba(86, 160, 145, 0.022) 68%,
+    rgba(70, 140, 126, 0.008) 85%,
+    transparent 100%
+  );
+  clip-path: polygon(45.6% 0%, 54.4% 0%, 97% 100%, 3% 100%);
+  /*
+    Blur alto + queda elíptica a partir do foco apagam a aresta do clip-path:
+    sem isso o cone lê como triângulo chapado, não como luz.
+  */
+  -webkit-mask-image: radial-gradient(125% 104% at 50% -4%, #000 0%, #000 38%, rgba(0, 0, 0, 0.35) 72%, transparent 92%);
+  mask-image: radial-gradient(125% 104% at 50% -4%, #000 0%, #000 38%, rgba(0, 0, 0, 0.35) 72%, transparent 92%);
+  filter: blur(52px);
+}
+
+.hero-lamp-pool {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: min(64vw, 640px);
+  height: 44%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 50% 38%,
+    rgba(128, 208, 188, 0.17),
+    rgba(88, 166, 150, 0.07) 46%,
+    transparent 74%
+  );
+  filter: blur(40px);
+}
+
+/* DGX:ANCHOR: personal-portfolio-ambient-field */
+/*
+  Campo ambiente fixo no viewport: as partículas e o rastro atravessam as
+  bordas de seção em vez de morrer dentro de uma delas.
+*/
+.atm-field {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.atm-orb {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(204, 249, 232, 0.92), rgba(159, 224, 200, 0.34) 44%, transparent 70%);
+  filter: blur(1.1px);
+  opacity: 0;
+  animation: atm-drift 34s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.atm-orb-1 {
+  left: 12%;
+  animation-duration: 38s;
+  animation-delay: -4s;
+}
+
+.atm-orb-2 {
+  left: 31%;
+  width: 5px;
+  height: 5px;
+  animation-duration: 46s;
+  animation-delay: -19s;
+}
+
+.atm-orb-3 {
+  left: 58%;
+  width: 9px;
+  height: 9px;
+  animation-duration: 41s;
+  animation-delay: -30s;
+}
+
+.atm-orb-4 {
+  left: 76%;
+  width: 6px;
+  height: 6px;
+  animation-duration: 52s;
+  animation-delay: -11s;
+}
+
+.atm-orb-5 {
+  left: 91%;
+  width: 4px;
+  height: 4px;
+  animation-duration: 44s;
+  animation-delay: -25s;
+}
+
+.atm-orb.is-frozen {
+  animation: none;
+  opacity: 0.34;
+  transform: translate3d(0, 46vh, 0);
+}
+
+@keyframes atm-drift {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 106vh, 0) scale(0.78);
+  }
+
+  10% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.62;
+    transform: translate3d(28px, 52vh, 0) scale(1.08);
+  }
+
+  88% {
+    opacity: 0.28;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-16px, -8vh, 0) scale(0.82);
+  }
+}
+
+/* Rastro verde: o trilho carrega o ângulo, o rastro só corre no eixo dele. */
+.atm-star-track {
+  position: absolute;
+  top: 8%;
+  left: -22%;
+  width: 144%;
+  height: 2px;
+  transform: rotate(8deg);
+  transform-origin: 0 50%;
+}
+
+.atm-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(92px, 12vw, 168px);
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(159, 224, 200, 0) 0%,
+    rgba(159, 224, 200, 0.42) 58%,
+    rgba(226, 255, 242, 0.96) 100%
+  );
+  filter: drop-shadow(0 0 7px rgba(159, 224, 200, 0.55));
+  opacity: 0;
+  /* linear de propósito: rastro de verdade atravessa em velocidade constante. */
+  animation: atm-star-fly 5.6s linear 2.4s infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes atm-star-fly {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  3% {
+    opacity: 0.9;
+  }
+
+  27% {
+    opacity: 0.9;
+  }
+
+  31% {
+    opacity: 0;
+    transform: translate3d(162vw, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(162vw, 0, 0);
+  }
+}
+
+.portrait-hero {
+  background: var(--void);
+}
+
+.portrait-hero::after {
+  content: none;
+  display: none;
+}
+
+.hero-horizon {
+  position: absolute;
+  right: 10%;
+  left: 10%;
+  height: 48px;
+  z-index: 5;
+  pointer-events: none;
+  border: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+}
+
+.hero-horizon::before,
+.hero-horizon::after {
+  display: none;
+}
+
+.hero-horizon-top {
+  top: 12px;
+  background:
+    linear-gradient(180deg, rgba(159, 224, 200, 0.07) 0%, transparent 78%),
+    linear-gradient(90deg, transparent 0%, rgba(236, 246, 240, 0.48) 50%, transparent 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 1px;
+  background-position: top, 0 10px;
+}
+
+.hero-horizon-bottom {
+  bottom: 12px;
+  background:
+    linear-gradient(0deg, rgba(159, 224, 200, 0.06) 0%, transparent 78%),
+    linear-gradient(90deg, transparent 0%, rgba(236, 246, 240, 0.32) 50%, transparent 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 1px;
+  background-position: bottom, 0 calc(100% - 10px);
+}
+
+/*
+  A dissolução da barra inferior agora mora no próprio alfa do PNG
+  (dyllan-alves-cordeiro-portrait.png), então aqui não entra máscara nenhuma.
+  A máscara antiga caía a partir de 64% da altura da caixa e apagava o busto.
+*/
+.hero-portrait-image-wrap {
+  overflow: hidden;
+  background: transparent;
+  filter: none;
+  isolation: isolate;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.hero-portrait-image-wrap::before,
+.hero-portrait-image-wrap::after {
+  content: none;
+  display: none;
+}
+
+.hero-portrait-image {
+  object-fit: contain;
+  object-position: center 18%;
+  opacity: 1;
+  mix-blend-mode: normal;
+  filter: contrast(1.04) saturate(1.02);
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.hero-focus-list {
+  gap: 0;
+}
+
+.hero-focus-list li,
+.hero-focus-list li.is-primary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+  margin: 0;
+  border: 0;
+  border-bottom: var(--stroke) solid var(--line);
+  border-radius: 0;
+  padding: 9px 0;
+  background: transparent;
+}
+
+.hero-focus-list li.is-primary {
+  border-bottom-color: rgba(159, 224, 200, 0.34);
+}
+
+.hero-focus-list li.is-primary strong {
+  color: var(--mint);
+}
+
+.hero-focus-list span {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+.focus-section {
+  padding-bottom: 88px;
+}
+
+.focus-editorial-list {
+  display: flex;
+  flex-direction: column;
+  border-top: var(--stroke) solid var(--line);
+  margin-top: 32px;
+}
+
+.focus-editorial-row {
+  display: grid;
+  grid-template-columns: 280px 1fr 1.1fr;
+  align-items: baseline;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: var(--stroke) solid var(--line);
+  background: transparent;
+  transition: border-color 0.2s ease;
+}
+
+.focus-editorial-row:hover {
+  border-bottom-color: var(--line-strong);
+}
+
+.focus-editorial-row.is-primary {
+  border-bottom-color: rgba(159, 224, 200, 0.32);
+}
+
+.focus-editorial-row.is-primary .focus-editorial-num {
+  color: var(--mint);
+  text-shadow: 0 0 12px rgba(159, 224, 200, 0.25);
+}
+
+.focus-editorial-row.is-primary .focus-editorial-title {
+  color: var(--text);
+}
+
+.focus-editorial-left {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.focus-editorial-num {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--mint);
+  letter-spacing: 0.1em;
+}
+
+.focus-editorial-title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.focus-editorial-center {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 44ch;
+}
+
+.focus-editorial-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 14px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--mint);
+}
+
+.focus-tag-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.focus-tag-item:not(:last-child)::after {
+  content: '·';
+  margin-left: 14px;
+  color: var(--faint);
+}
+
+.gov-shell,
+.curriculum-shell {
+  position: relative;
+  isolation: isolate;
+  background: var(--void);
+}
+
+.gov-shell > *:not(.page-atmosphere),
+.curriculum-shell > *:not(.page-atmosphere) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .focus-editorial-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .focus-editorial-right {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-atmosphere-svg {
+    opacity: 0.7;
+  }
+
+  /* A luz continua acesa; só para de se mexer. */
+  .hero-lamp-rig {
+    animation: none;
+    transform: none;
+  }
+
+  .atm-orb {
+    animation: none;
+    opacity: 0.34;
+    transform: translate3d(0, 46vh, 0);
+  }
+
+  .atm-star-track {
+    display: none;
+  }
+}
+
+@media print {
+  .page-atmosphere {
+    display: none;
   }
 }
