@@ -30,7 +30,7 @@
     "task_ref": null,
     "session_close_ref": null,
     "started_at": "2026-08-20T22:34:02.860783+00:00",
-    "closed_at": null,
+    "closed_at": "2026-09-25T20:34:15.755513+00:00",
     "round_baseline": {
       "phase": "round_baseline",
       "available": true,
@@ -40,6 +40,16 @@
       "behind": 0,
       "worktree_clean": false,
       "observed_at": "2026-08-20T22:34:02.860138+00:00"
+    },
+    "pre_delivery_state": {
+      "phase": "pre_delivery_state",
+      "available": true,
+      "head": "d53d08ec80443fa4114269dc494f387e3112bb0d",
+      "branch": "main",
+      "ahead": 0,
+      "behind": 0,
+      "worktree_clean": true,
+      "observed_at": "2026-09-25T20:34:15.754869+00:00"
     }
   },
   "intent_snapshot": {
@@ -266,7 +276,93 @@
     }
   ],
   "preclose_history": [],
-  "closure_report": null,
+  "closure_report": {
+    "status": "success",
+    "round_status": "success",
+    "delivery_intent": "push",
+    "alias_normalized": false,
+    "delivered": [
+      "Public portfolio surface with /governanca-ia route",
+      "Personal identity and public content contract",
+      "Separate navigation between cybersecurity, curriculum, and AI governance"
+    ],
+    "not_delivered": [
+      "AI engineering route /ai-engineering",
+      "Public project evidence pages",
+      "Public evaluation harness"
+    ],
+    "blockers": [],
+    "validators": [
+      {
+        "name": "existing portfolio build evidence",
+        "passed": true,
+        "ref": "20260820-003-portfolio-surfaces-ia"
+      },
+      {
+        "name": "route implementation",
+        "passed": true,
+        "ref": "commit 39942dd"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-1-2539",
+        "type": "other",
+        "summary": "round inspection: all 5 obligations completed",
+        "ref": null,
+        "timestamp": "2026-09-25T20:34:15.755500+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-2-1642",
+        "type": "other",
+        "summary": "existing route /governanca-ia in src/App.tsx",
+        "ref": null,
+        "timestamp": "2026-09-25T20:34:15.755500+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-3-4534",
+        "type": "other",
+        "summary": "public content contract and publish gate present",
+        "ref": null,
+        "timestamp": "2026-09-25T20:34:15.755500+00:00",
+        "confidence": "low"
+      }
+    ],
+    "feedback": {},
+    "self_score": null,
+    "score": {
+      "self_score": null,
+      "completion_score": 10.0,
+      "evidence_score": 3.0,
+      "validation_score": 10.0,
+      "honesty_score": 8.0,
+      "final_score": 7.83,
+      "confidence": "high",
+      "basis": {
+        "components_present": [
+          "completion",
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "completion",
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "weight_covered": 0.9,
+        "weight_total": 1.0
+      }
+    },
+    "next_actions": [
+      "Start the focused /ai-engineering route round"
+    ],
+    "honest_line": ""
+  },
   "revisions": [],
   "activities": {},
   "provenance": "mcp_v3",
@@ -274,16 +370,16 @@
     "source_schema_version": 3,
     "v3_fields_imputed": {
       "model_resolution": "present",
-      "artifact_manifest": "absent",
-      "pendency_delta": "absent",
-      "closure_bundle": "absent",
+      "artifact_manifest": "present",
+      "pendency_delta": "present",
+      "closure_bundle": "present",
       "return_to_gk": "absent",
-      "skill_ledger": "absent",
-      "function_ledger": "absent",
-      "material_work": "absent",
-      "gap_fixes": "absent",
-      "unresolved_gaps": "absent",
-      "technical_decisions": "absent"
+      "skill_ledger": "present",
+      "function_ledger": "present",
+      "material_work": "present",
+      "gap_fixes": "present",
+      "unresolved_gaps": "present",
+      "technical_decisions": "present"
     }
   },
   "skill_ledger": [
@@ -330,5 +426,170 @@
       "notes": "router: domains:frontend,product"
     }
   ],
-  "function_ledger": []
+  "function_ledger": [],
+  "artifact_manifest": {
+    "dgx_log_json": ".dgx/logs/20260820-003-portfolio-surfaces-ia.dgxlog.json",
+    "dgx_log_md": ".dgx/logs/20260820-003-portfolio-surfaces-ia.dgxlog.md",
+    "output_json": ".dgx/outputs/20260820-003-portfolio-surfaces-ia.output.json",
+    "return_to_gk_md": null,
+    "session_close_ref": null,
+    "additional": {}
+  },
+  "pendency_delta": {
+    "created_ids": [],
+    "resolved_ids": [],
+    "carried_ids": [],
+    "human_action_ids": []
+  },
+  "closure_bundle": {
+    "schema_version": 3,
+    "round_id": "20260820-003-portfolio-surfaces-ia",
+    "generated_at": "2026-09-25T20:34:15.755513+00:00",
+    "generated_by": "dgx.round action=finish schema_version=3",
+    "audit": {
+      "total_required": 5,
+      "completed_with_evidence": 5,
+      "completed_no_evidence": 0,
+      "pending": 0,
+      "blocked": 0,
+      "not_applicable": 0,
+      "waived": 0,
+      "pending_ids": [],
+      "blocked_ids": [],
+      "no_evidence_ids": [],
+      "completed_ids": [
+        "ob-1",
+        "ob-2",
+        "ob-3",
+        "ob-4",
+        "ob-5"
+      ],
+      "success_blockers": [],
+      "allowed_statuses": [
+        "success",
+        "partial",
+        "blocked",
+        "aborted"
+      ]
+    },
+    "status": {
+      "requested": "success",
+      "accepted": "success",
+      "coherent": true
+    },
+    "delivered": [
+      "Public portfolio surface with /governanca-ia route",
+      "Personal identity and public content contract",
+      "Separate navigation between cybersecurity, curriculum, and AI governance"
+    ],
+    "not_delivered": [
+      "AI engineering route /ai-engineering",
+      "Public project evidence pages",
+      "Public evaluation harness"
+    ],
+    "validators": [
+      {
+        "name": "existing portfolio build evidence",
+        "passed": true,
+        "ref": "20260820-003-portfolio-surfaces-ia"
+      },
+      {
+        "name": "route implementation",
+        "passed": true,
+        "ref": "commit 39942dd"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-1-2539",
+        "type": "other",
+        "summary": "round inspection: all 5 obligations completed",
+        "ref": null,
+        "timestamp": "2026-09-25T20:34:15.755500+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-2-1642",
+        "type": "other",
+        "summary": "existing route /governanca-ia in src/App.tsx",
+        "ref": null,
+        "timestamp": "2026-09-25T20:34:15.755500+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-3-4534",
+        "type": "other",
+        "summary": "public content contract and publish gate present",
+        "ref": null,
+        "timestamp": "2026-09-25T20:34:15.755500+00:00",
+        "confidence": "low"
+      }
+    ],
+    "git": {
+      "head": "d53d08ec80443fa4114269dc494f387e3112bb0d",
+      "branch": "main",
+      "ahead": 0,
+      "behind": 0,
+      "worktree_clean": true,
+      "observed_commit": null,
+      "observed_push": false
+    },
+    "artifact_paths": {
+      "dgx_log": ".dgx/logs/20260820-003-portfolio-surfaces-ia.dgxlog.json",
+      "output_json": ".dgx/outputs/20260820-003-portfolio-surfaces-ia.output.json",
+      "return_to_gk_md": null
+    },
+    "pendency_delta": {
+      "created_ids": [],
+      "resolved_ids": [],
+      "carried_ids": [],
+      "human_action_ids": []
+    },
+    "session_references": {
+      "session_close_ref": null,
+      "capsule_v2_ref": null
+    },
+    "score": {
+      "self_score": null,
+      "completion_score": 10.0,
+      "evidence_score": 3.0,
+      "validation_score": 10.0,
+      "honesty_score": 8.0,
+      "final_score": 7.83,
+      "confidence": "high",
+      "basis": {
+        "components_present": [
+          "completion",
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "completion",
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "weight_covered": 0.9,
+        "weight_total": 1.0
+      }
+    },
+    "confidence": "high",
+    "honest_line": "",
+    "next_round": "",
+    "friction": [],
+    "decisions": [],
+    "discoveries": [],
+    "documentation_drifts": [],
+    "material_work": [],
+    "gap_fixes": [],
+    "unresolved_gaps": [],
+    "technical_decisions": [],
+    "output_sha256": "31017a688753815721bf6baaaf6249862ba22dbdf5828b5712e50ab7589b5d44"
+  },
+  "material_work": [],
+  "gap_fixes": [],
+  "unresolved_gaps": [],
+  "technical_decisions": []
 }

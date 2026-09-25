@@ -1,0 +1,718 @@
+{
+  "schema_version": 3,
+  "round_identity": {
+    "round_id": "20260925-portfolio-ai-engineering-01",
+    "executor": "Codex",
+    "executor_model": "GPT-5",
+    "model_resolution": {
+      "requested_harness": "Codex",
+      "resolved_harness": "Codex",
+      "requested_model": "GPT-5",
+      "resolved_model": "GPT-5",
+      "actual_model": "GPT-5",
+      "model_identifier": "GPT-5",
+      "runtime_reported_identifier": "GPT-5",
+      "selection_source": "runtime_default",
+      "human_override": false,
+      "fallback_used": false
+    },
+    "executor_role": "EXECUTOR",
+    "repos": [
+      "/Users/dyllanalves/Workspace/Dyllan/dyllan-cybersecurity-portfolio"
+    ],
+    "surfaces": [],
+    "round_type": "feature",
+    "leg": "DESIGN_SURFACE",
+    "domains": [
+      "frontend",
+      "design",
+      "documentation",
+      "product"
+    ],
+    "envelope_ref": null,
+    "plan_ref": null,
+    "task_ref": null,
+    "session_close_ref": null,
+    "started_at": "2026-09-25T20:37:12.835459+00:00",
+    "closed_at": "2026-09-25T20:45:45.059497+00:00",
+    "round_baseline": {
+      "phase": "round_baseline",
+      "available": true,
+      "head": "d53d08ec80443fa4114269dc494f387e3112bb0d",
+      "branch": "feat/ai-engineering-surface",
+      "ahead": -1,
+      "behind": 0,
+      "worktree_clean": true,
+      "observed_at": "2026-09-25T20:37:12.831908+00:00"
+    },
+    "pre_delivery_state": {
+      "phase": "pre_delivery_state",
+      "available": true,
+      "head": "62bc215b3371a48bb72a08c3d91fad6c663cb96c",
+      "branch": "feat/ai-engineering-surface",
+      "ahead": -1,
+      "behind": 0,
+      "worktree_clean": true,
+      "observed_at": "2026-09-25T20:45:45.058156+00:00"
+    }
+  },
+  "intent_snapshot": {
+    "objective": "Criar e documentar uma superfície pública /ai-engineering no portfólio pessoal, apresentando com evidência-bounded o trabalho em integração server-side de IA, RAG, workflows com tools e orquestração Coordinator–Executor.",
+    "deliverables": [],
+    "constraints": [],
+    "required_evidence": [],
+    "out_of_scope": [],
+    "write_scope": [
+      "src/App.tsx",
+      "src/main.tsx",
+      "src/components/SiteHeader.tsx",
+      "src/pages/HomePage.tsx",
+      "src/pages/CurriculumPage.tsx",
+      "src/pages/AiGovernancePage.tsx",
+      "src/content-ai-engineering.ts",
+      "src/pages/AiEngineeringPage.tsx",
+      "src/styles-ai-engineering.css",
+      "docs/content-contract.md"
+    ],
+    "definition_of_done": [
+      "A rota /ai-engineering é navegável a partir do shell do portfólio e mantém /governanca-ia e /curriculo funcionais.",
+      "A copy pública em inglês separa BUILT/PRIVATE EVIDENCE de IN PROGRESS e NOT PUBLICLY PROVEN.",
+      "A visualização mostra o fluxo real Coordinate → Dispatch → Execute → Verify sem afirmar cobertura irrestrita de harnesses/modelos.",
+      "Typecheck, lint, build e diff --check passam.",
+      "A branch fica revisável sem alterar main nem publicar a Vercel."
+    ],
+    "expected_close_status": null
+  },
+  "amendments": [],
+  "execution_trail": [
+    {
+      "timestamp": "2026-09-25T20:37:22.941595+00:00",
+      "summary": "Checkpoint antes da primeira escrita da superfície visual.",
+      "completed_obligation_ids": [],
+      "discoveries": [],
+      "decisions": [],
+      "blockers": [],
+      "evidence": [
+        {
+          "id": "ev-1-7221",
+          "type": "other",
+          "summary": "round-start:20260925-portfolio-ai-engineering-01",
+          "ref": null,
+          "timestamp": "2026-09-25T20:37:22.941609+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-2-5039",
+          "type": "other",
+          "summary": "branch:feat/ai-engineering-surface",
+          "ref": null,
+          "timestamp": "2026-09-25T20:37:22.941609+00:00",
+          "confidence": "low"
+        }
+      ],
+      "plan_changes": [],
+      "structured_checkpoint": {
+        "stage": "IMPLEMENTING",
+        "current_action": "Implementar a rota pública /ai-engineering e os contratos mínimos de navegação, copy e estilos responsivos.",
+        "next_action": "Editar App, SiteHeader, páginas, conteúdo, CSS e documentação; depois validar no build e no navegador.",
+        "blockers": [],
+        "files_touched": [
+          "src/App.tsx",
+          "src/main.tsx",
+          "src/components/SiteHeader.tsx",
+          "src/pages/HomePage.tsx",
+          "src/pages/CurriculumPage.tsx",
+          "src/pages/AiGovernancePage.tsx",
+          "src/content-ai-engineering.ts",
+          "src/pages/AiEngineeringPage.tsx",
+          "src/styles-ai-engineering.css",
+          "docs/content-contract.md"
+        ],
+        "evidence_refs": [
+          "round-start:20260925-portfolio-ai-engineering-01",
+          "dgx-design:visual-validation-required"
+        ],
+        "progress": {
+          "mode": "determinate"
+        },
+        "eta": {
+          "mode": "executor_estimate",
+          "min_minutes": 30,
+          "max_minutes": 60,
+          "confidence": "medium"
+        },
+        "completed_units": 0,
+        "total_units": 10,
+        "at": "2026-09-25T20:37:22.941595+00:00"
+      }
+    },
+    {
+      "timestamp": "2026-09-25T20:44:53.623767+00:00",
+      "summary": "Validações técnicas e visuais concluídas; aguardando commit local e fechamento administrativo.",
+      "completed_obligation_ids": [],
+      "discoveries": [],
+      "decisions": [],
+      "blockers": [],
+      "evidence": [
+        {
+          "id": "ev-1-8097",
+          "type": "other",
+          "summary": "npm run typecheck: pass",
+          "ref": null,
+          "timestamp": "2026-09-25T20:44:53.623796+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-2-895",
+          "type": "other",
+          "summary": "npm run lint: pass",
+          "ref": null,
+          "timestamp": "2026-09-25T20:44:53.623796+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-3-671",
+          "type": "other",
+          "summary": "npm run build: pass",
+          "ref": null,
+          "timestamp": "2026-09-25T20:44:53.623796+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-4-1345",
+          "type": "other",
+          "summary": "git diff --check: pass",
+          "ref": null,
+          "timestamp": "2026-09-25T20:44:53.623796+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-5-4479",
+          "type": "other",
+          "summary": "Chrome native preview: /ai-engineering",
+          "ref": null,
+          "timestamp": "2026-09-25T20:44:53.623796+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-6-2340",
+          "type": "other",
+          "summary": "Chrome DevTools mobile emulation: 375x812, scrollWidth=375",
+          "ref": null,
+          "timestamp": "2026-09-25T20:44:53.623796+00:00",
+          "confidence": "low"
+        }
+      ],
+      "plan_changes": [],
+      "structured_checkpoint": {
+        "stage": "VALIDATING",
+        "current_action": "Validar typecheck, lint, build, diff e inspeção visual no Chrome em desktop e viewport mobile de 375px.",
+        "next_action": "Registrar o resultado no round, commitar apenas a superfície e deixar a main/Vercel sem alteração.",
+        "blockers": [],
+        "files_touched": [
+          "docs/content-contract.md",
+          "src/App.tsx",
+          "src/components/SiteHeader.tsx",
+          "src/content-ai-engineering.ts",
+          "src/main.tsx",
+          "src/pages/AiEngineeringPage.tsx",
+          "src/pages/AiGovernancePage.tsx",
+          "src/pages/CurriculumPage.tsx",
+          "src/pages/HomePage.tsx",
+          "src/styles-ai-engineering.css"
+        ],
+        "evidence_refs": [
+          "validation:typecheck=pass",
+          "validation:lint=pass",
+          "validation:build=pass",
+          "validation:diff-check=pass",
+          "visual:chrome-desktop=observed",
+          "visual:chrome-mobile-375=observed",
+          "visual:mobile-horizontal-overflow=none",
+          "navigation:ai-engineering-governanca=observed"
+        ],
+        "progress": {
+          "mode": "determinate"
+        },
+        "eta": {
+          "mode": "executor_estimate",
+          "min_minutes": 10,
+          "max_minutes": 20,
+          "confidence": "high"
+        },
+        "completed_units": 8,
+        "total_units": 10,
+        "at": "2026-09-25T20:44:53.623767+00:00"
+      }
+    }
+  ],
+  "preclose_history": [],
+  "closure_report": {
+    "status": "success",
+    "round_status": "success",
+    "delivery_intent": "commit_local",
+    "alias_normalized": true,
+    "delivered": [
+      "Rota /ai-engineering implementada e integrada ao app shell.",
+      "Navegação entre AI Engineering, Governança de IA, Portfólio e Currículo.",
+      "Copy pública em inglês com posicionamento congelado e limites de evidência.",
+      "Rail visual Coordinate → Dispatch → Execute → Verify.",
+      "Ledger de maturidade de evidência e próximos artefatos públicos.",
+      "Contrato factual atualizado em docs/content-contract.md.",
+      "Commit local 62bc215."
+    ],
+    "not_delivered": [
+      "Push da branch.",
+      "Merge em main.",
+      "Publicação na Vercel.",
+      "Currículo público separado para AI Engineering.",
+      "Repositórios públicos de avaliação, graders e datasets."
+    ],
+    "blockers": [],
+    "validators": [
+      {
+        "name": "typecheck",
+        "passed": true,
+        "ref": "npm run typecheck"
+      },
+      {
+        "name": "lint",
+        "passed": true,
+        "ref": "npm run lint"
+      },
+      {
+        "name": "build",
+        "passed": true,
+        "ref": "npm run build"
+      },
+      {
+        "name": "diff-check",
+        "passed": true,
+        "ref": "git diff --check"
+      },
+      {
+        "name": "visual-desktop",
+        "passed": true,
+        "ref": "Chrome native preview"
+      },
+      {
+        "name": "visual-mobile-375",
+        "passed": true,
+        "ref": "Chrome DevTools emulation 375x812; scrollWidth=375"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-1-8097",
+        "type": "other",
+        "summary": "npm run typecheck: pass",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-2-895",
+        "type": "other",
+        "summary": "npm run lint: pass",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-3-671",
+        "type": "other",
+        "summary": "npm run build: pass",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-4-1345",
+        "type": "other",
+        "summary": "git diff --check: pass",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-5-8524",
+        "type": "other",
+        "summary": "Chrome desktop: visual confirmado",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-6-8175",
+        "type": "other",
+        "summary": "Chrome mobile 375px: visual confirmado",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-7-9510",
+        "type": "other",
+        "summary": "Mobile document scrollWidth=375 e clientWidth=375",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-8-7350",
+        "type": "other",
+        "summary": "Navegação /ai-engineering → /governanca-ia: confirmada",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      }
+    ],
+    "feedback": {},
+    "self_score": null,
+    "score": {
+      "self_score": null,
+      "completion_score": null,
+      "evidence_score": 3.0,
+      "validation_score": 10.0,
+      "honesty_score": 8.0,
+      "final_score": 6.45,
+      "confidence": "medium",
+      "basis": {
+        "components_present": [
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "weight_covered": 0.55,
+        "weight_total": 1.0
+      }
+    },
+    "next_actions": [
+      "Revisão humana da copy e da direção visual.",
+      "Decidir se a branch deve ser publicada para preview e depois mergeada.",
+      "Criar uma versão AI Engineering do currículo público somente após aprovar o conteúdo."
+    ],
+    "honest_line": "A entrega torna o método público e legível, mas não transforma implementação privada em prova pública de avaliação, adoção, resultados mensuráveis ou escala enterprise."
+  },
+  "revisions": [],
+  "activities": {},
+  "provenance": "mcp_v3",
+  "compatibility": {
+    "source_schema_version": 3,
+    "v3_fields_imputed": {
+      "model_resolution": "present",
+      "artifact_manifest": "present",
+      "pendency_delta": "present",
+      "closure_bundle": "present",
+      "return_to_gk": "absent",
+      "skill_ledger": "present",
+      "function_ledger": "present",
+      "material_work": "present",
+      "gap_fixes": "present",
+      "unresolved_gaps": "present",
+      "technical_decisions": "present"
+    }
+  },
+  "skill_ledger": [
+    {
+      "skill": "dgx-backend-data",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature; operation:mutation"
+    },
+    {
+      "skill": "dgx-code-review",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature"
+    },
+    {
+      "skill": "dgx-design",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: domains:design; round_type:feature; operation:mutation; domains(reforco):frontend; leg:DESIGN_SURFACE"
+    },
+    {
+      "skill": "dgx-gk-senior",
+      "activation_level": "RECOMMENDED",
+      "state": "RECOMMENDED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-identity",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE; objectives:portfolio; operation:mutation; domains(reforco):documentation,product · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-infra-resilience",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: operation:mutation"
+    },
+    {
+      "skill": "dgx-integrations-ai",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: objectives:integração; round_type:feature; operation:mutation · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-security-cyber",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature; operation:mutation"
+    },
+    {
+      "skill": "dgx-senior-engineer",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE; operation:mutation · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-seo",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature; operation:mutation"
+    }
+  ],
+  "function_ledger": [],
+  "artifact_manifest": {
+    "dgx_log_json": ".dgx/logs/20260925-portfolio-ai-engineering-01.dgxlog.json",
+    "dgx_log_md": ".dgx/logs/20260925-portfolio-ai-engineering-01.dgxlog.md",
+    "output_json": ".dgx/outputs/20260925-portfolio-ai-engineering-01.output.json",
+    "return_to_gk_md": null,
+    "session_close_ref": null,
+    "additional": {}
+  },
+  "pendency_delta": {
+    "created_ids": [],
+    "resolved_ids": [],
+    "carried_ids": [],
+    "human_action_ids": []
+  },
+  "closure_bundle": {
+    "schema_version": 3,
+    "round_id": "20260925-portfolio-ai-engineering-01",
+    "generated_at": "2026-09-25T20:45:45.059497+00:00",
+    "generated_by": "dgx.round action=finish schema_version=3",
+    "audit": {
+      "total_required": 0,
+      "completed_with_evidence": 0,
+      "completed_no_evidence": 0,
+      "pending": 0,
+      "blocked": 0,
+      "not_applicable": 0,
+      "waived": 0,
+      "pending_ids": [],
+      "blocked_ids": [],
+      "no_evidence_ids": [],
+      "completed_ids": [],
+      "success_blockers": [],
+      "allowed_statuses": [
+        "success",
+        "partial",
+        "blocked",
+        "aborted"
+      ]
+    },
+    "status": {
+      "requested": "success",
+      "accepted": "success",
+      "coherent": true
+    },
+    "delivered": [
+      "Rota /ai-engineering implementada e integrada ao app shell.",
+      "Navegação entre AI Engineering, Governança de IA, Portfólio e Currículo.",
+      "Copy pública em inglês com posicionamento congelado e limites de evidência.",
+      "Rail visual Coordinate → Dispatch → Execute → Verify.",
+      "Ledger de maturidade de evidência e próximos artefatos públicos.",
+      "Contrato factual atualizado em docs/content-contract.md.",
+      "Commit local 62bc215."
+    ],
+    "not_delivered": [
+      "Push da branch.",
+      "Merge em main.",
+      "Publicação na Vercel.",
+      "Currículo público separado para AI Engineering.",
+      "Repositórios públicos de avaliação, graders e datasets."
+    ],
+    "validators": [
+      {
+        "name": "typecheck",
+        "passed": true,
+        "ref": "npm run typecheck"
+      },
+      {
+        "name": "lint",
+        "passed": true,
+        "ref": "npm run lint"
+      },
+      {
+        "name": "build",
+        "passed": true,
+        "ref": "npm run build"
+      },
+      {
+        "name": "diff-check",
+        "passed": true,
+        "ref": "git diff --check"
+      },
+      {
+        "name": "visual-desktop",
+        "passed": true,
+        "ref": "Chrome native preview"
+      },
+      {
+        "name": "visual-mobile-375",
+        "passed": true,
+        "ref": "Chrome DevTools emulation 375x812; scrollWidth=375"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-1-8097",
+        "type": "other",
+        "summary": "npm run typecheck: pass",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-2-895",
+        "type": "other",
+        "summary": "npm run lint: pass",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-3-671",
+        "type": "other",
+        "summary": "npm run build: pass",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-4-1345",
+        "type": "other",
+        "summary": "git diff --check: pass",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-5-8524",
+        "type": "other",
+        "summary": "Chrome desktop: visual confirmado",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-6-8175",
+        "type": "other",
+        "summary": "Chrome mobile 375px: visual confirmado",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-7-9510",
+        "type": "other",
+        "summary": "Mobile document scrollWidth=375 e clientWidth=375",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-8-7350",
+        "type": "other",
+        "summary": "Navegação /ai-engineering → /governanca-ia: confirmada",
+        "ref": null,
+        "timestamp": "2026-09-25T20:45:45.059487+00:00",
+        "confidence": "low"
+      }
+    ],
+    "git": {
+      "head": "62bc215b3371a48bb72a08c3d91fad6c663cb96c",
+      "branch": "feat/ai-engineering-surface",
+      "ahead": -1,
+      "behind": 0,
+      "worktree_clean": true,
+      "observed_commit": null,
+      "observed_push": false
+    },
+    "artifact_paths": {
+      "dgx_log": ".dgx/logs/20260925-portfolio-ai-engineering-01.dgxlog.json",
+      "output_json": ".dgx/outputs/20260925-portfolio-ai-engineering-01.output.json",
+      "return_to_gk_md": null
+    },
+    "pendency_delta": {
+      "created_ids": [],
+      "resolved_ids": [],
+      "carried_ids": [],
+      "human_action_ids": []
+    },
+    "session_references": {
+      "session_close_ref": null,
+      "capsule_v2_ref": null
+    },
+    "score": {
+      "self_score": null,
+      "completion_score": null,
+      "evidence_score": 3.0,
+      "validation_score": 10.0,
+      "honesty_score": 8.0,
+      "final_score": 6.45,
+      "confidence": "medium",
+      "basis": {
+        "components_present": [
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "weight_covered": 0.55,
+        "weight_total": 1.0
+      }
+    },
+    "confidence": "medium",
+    "honest_line": "A entrega torna o método público e legível, mas não transforma implementação privada em prova pública de avaliação, adoção, resultados mensuráveis ou escala enterprise.",
+    "next_round": "",
+    "friction": [],
+    "decisions": [],
+    "discoveries": [],
+    "documentation_drifts": [],
+    "material_work": [],
+    "gap_fixes": [],
+    "unresolved_gaps": [],
+    "technical_decisions": [],
+    "output_sha256": "561ede0d149aed5a9a0e3fde5bf4789ea11dc0c548d5d7c67b39000bd00fcdea"
+  },
+  "material_work": [],
+  "gap_fixes": [],
+  "unresolved_gaps": [],
+  "technical_decisions": []
+}
