@@ -24,12 +24,14 @@ type AiGovernancePageProps = {
   onOpenCurriculum: () => void
   onHome: (section?: string) => void
   onOpenGovernance?: () => void
+  onOpenAiEngineering?: () => void
 }
 
 export function AiGovernancePage({
   onOpenCurriculum,
   onHome,
   onOpenGovernance,
+  onOpenAiEngineering,
 }: AiGovernancePageProps) {
   const reduced = useReducedMotion()
   const mail = governanceContacts.find((contact) => contact.kind === 'email')
@@ -41,6 +43,7 @@ export function AiGovernancePage({
         onOpenCurriculum={onOpenCurriculum}
         onHome={onHome}
         onOpenGovernance={onOpenGovernance}
+        onOpenAiEngineering={onOpenAiEngineering}
         isGovernance
         visible
       />

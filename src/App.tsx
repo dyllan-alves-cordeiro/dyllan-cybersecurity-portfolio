@@ -6,6 +6,7 @@
 // DGX:ANCHOR: personal-portfolio-app-shell
 
 import { useEffect, useState } from 'react'
+import { AiEngineeringPage } from './pages/AiEngineeringPage'
 import { AiGovernancePage } from './pages/AiGovernancePage'
 import { CurriculumPage } from './pages/CurriculumPage'
 import { HomePage } from './pages/HomePage'
@@ -28,6 +29,7 @@ export default function App() {
     const titles: Record<string, string> = {
       '/curriculo': 'Dyllan — currículo',
       '/governanca-ia': 'Dyllan — governança de IA',
+      '/ai-engineering': 'Dyllan — AI engineering',
     }
     document.title = titles[path] ?? 'Dyllan — portfólio de cibersegurança'
   }, [path])
@@ -61,12 +63,21 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const openAiEngineering = () => {
+    if (path !== '/ai-engineering') {
+      window.history.pushState({}, '', '/ai-engineering')
+      setPath('/ai-engineering')
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   if (path === '/curriculo') {
     return (
       <CurriculumPage
         onOpenCurriculum={openCurriculum}
         onHome={goHome}
         onOpenGovernance={openGovernance}
+        onOpenAiEngineering={openAiEngineering}
       />
     )
   }
@@ -77,6 +88,18 @@ export default function App() {
         onOpenCurriculum={openCurriculum}
         onHome={goHome}
         onOpenGovernance={openGovernance}
+        onOpenAiEngineering={openAiEngineering}
+      />
+    )
+  }
+
+  if (path === '/ai-engineering') {
+    return (
+      <AiEngineeringPage
+        onOpenCurriculum={openCurriculum}
+        onHome={goHome}
+        onOpenGovernance={openGovernance}
+        onOpenAiEngineering={openAiEngineering}
       />
     )
   }
@@ -86,6 +109,7 @@ export default function App() {
       onOpenCurriculum={openCurriculum}
       onHome={goHome}
       onOpenGovernance={openGovernance}
+      onOpenAiEngineering={openAiEngineering}
     />
   )
 }

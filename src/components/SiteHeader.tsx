@@ -13,7 +13,9 @@ type SiteHeaderProps = {
   onHome: (section?: string) => void
   isCurriculum?: boolean
   isGovernance?: boolean
+  isAiEngineering?: boolean
   onOpenGovernance?: () => void
+  onOpenAiEngineering?: () => void
   visible?: boolean
 }
 
@@ -24,7 +26,9 @@ export function SiteHeader({
   onHome,
   isCurriculum = false,
   isGovernance = false,
+  isAiEngineering = false,
   onOpenGovernance,
+  onOpenAiEngineering,
   visible = true,
 }: SiteHeaderProps) {
   const reduced = useReducedMotion()
@@ -49,6 +53,10 @@ export function SiteHeader({
                 <button className="nav-text-button" type="button" onClick={() => onHome()}>
                   Cibersegurança
                 </button>
+              ) : isAiEngineering ? (
+                <button className="nav-text-button" type="button" onClick={() => onHome()}>
+                  Portfólio
+                </button>
               ) : isCurriculum ? (
                 <button className="nav-text-button" type="button" onClick={() => onHome()}>
                   Portfólio
@@ -69,6 +77,11 @@ export function SiteHeader({
               {onOpenGovernance && !isGovernance ? (
                 <button className="nav-text-button" type="button" onClick={onOpenGovernance}>
                   Governança de IA
+                </button>
+              ) : null}
+              {onOpenAiEngineering && !isAiEngineering ? (
+                <button className="nav-text-button" type="button" onClick={onOpenAiEngineering}>
+                  AI Engineering
                 </button>
               ) : null}
               <button className="button-light nav-cv-button" type="button" onClick={onOpenCurriculum}>

@@ -26,12 +26,14 @@ type CurriculumPageProps = {
   onOpenCurriculum: () => void
   onHome: (section?: string) => void
   onOpenGovernance?: () => void
+  onOpenAiEngineering?: () => void
 }
 
 export function CurriculumPage({
   onOpenCurriculum,
   onHome,
   onOpenGovernance,
+  onOpenAiEngineering,
 }: CurriculumPageProps) {
   return (
     <div className="app-shell curriculum-shell">
@@ -40,6 +42,7 @@ export function CurriculumPage({
         onOpenCurriculum={onOpenCurriculum}
         onHome={onHome}
         onOpenGovernance={onOpenGovernance}
+        onOpenAiEngineering={onOpenAiEngineering}
         isCurriculum
         visible
       />

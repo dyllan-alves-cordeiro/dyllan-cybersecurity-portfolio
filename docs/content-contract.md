@@ -39,6 +39,24 @@ conteúdo público só pode avançar quando o Dyllan fornecer ou aprovar cada it
 - Idioma inicial: PT-BR apenas ou PT-BR + inglês.
 - Aprovação final da foto em produção e da versão visual.
 
+## Superfície `/ai-engineering`
+
+A rota de AI Engineering é uma superfície pública profissional em inglês. Ela pode afirmar apenas o
+posicionamento congelado de fundador/full-stack engineer, experiência prática com integração server-side de
+modelos, workflows com tools, padrões de RAG, continuidade de sessão e o método Coordinator–Executor dentro de
+uma matriz de harness/modelo suportada.
+
+Ela deve separar explicitamente quatro estados de evidência:
+
+- `BUILT / PRIVATE EVIDENCE`: implementação real que não pode expor repositórios, segredos, clientes ou dados internos;
+- `PUBLIC SURFACE / IN PROGRESS`: documentação pública do método e dos limites;
+- `PUBLIC EVALUATION / NOT YET MEASURED`: datasets, graders, regressão, qualidade, latência, custo e segurança ainda não publicados;
+- `ENTERPRISE OUTCOMES / NOT PUBLICLY PROVEN`: adoção, escala e resultados mensuráveis não devem ser inferidos da implementação privada.
+
+Não publicar nessa rota: `INCB` sem definição e prova auditável, cobertura irrestrita de qualquer harness/modelo,
+proficiência em espanhol, métricas de produção não divulgadas, escala enterprise, nomes de clientes ou a promessa de
+que uma implementação privada equivale a uma avaliação pública.
+
 ## Conteúdo omitido da versão pública
 
 - Endereço completo, data de nascimento, estado civil e informação sobre filhos.

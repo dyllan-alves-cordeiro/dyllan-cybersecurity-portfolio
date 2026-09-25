@@ -30,6 +30,7 @@ type HomePageProps = {
   onOpenCurriculum: () => void
   onHome: (section?: string) => void
   onOpenGovernance?: () => void
+  onOpenAiEngineering?: () => void
 }
 
 const methodHighlights = [
@@ -40,7 +41,7 @@ const methodHighlights = [
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance }: HomePageProps) {
+export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiEngineering }: HomePageProps) {
   const scrolled = useScrolled(56)
   const reduced = useReducedMotion()
 
@@ -50,6 +51,7 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance }: HomePag
         onOpenCurriculum={onOpenCurriculum}
         onHome={onHome}
         onOpenGovernance={onOpenGovernance}
+        onOpenAiEngineering={onOpenAiEngineering}
         visible={scrolled}
       />
 
