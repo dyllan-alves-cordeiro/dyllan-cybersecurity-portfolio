@@ -12,7 +12,7 @@ validar: revisão manual do Dyllan
 
 ## Estado atual
 
-`PUBLISHED` — primeira URL pública evidenciada em 20/08/2026:
+`PUBLISHED` — versão bilíngue web publicada e evidenciada em 25/09/2026:
 
 - Site: https://dyllan-cybersecurity-portfolio.vercel.app
 - GitHub: https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio
@@ -38,13 +38,17 @@ qualquer org/conta da Digytron.
 - [x] Currículo-base e formação foram lidos; certificados formais ainda precisam ser confirmados.
 - [ ] Três a cinco cases publicáveis foram aprovados.
 - [x] Idioma inicial: PT-BR.
+- [x] Apresentação web em inglês com toggle global, confirmação e persistência entre rotas.
 - [ ] Domínio-alvo próprio definido.
 - [x] Estratégia de hospedagem: Vercel.
 - [x] Build e checagem visual inicial desktop/mobile foram executados localmente.
 - [x] Dyllan autorizou a publicação nesta sessão.
+- [x] Smoke público HTTP/HTTPS confirmou as quatro rotas e o fluxo PT/EN.
 
 ## Regra de honestidade
 
 Build verde, screenshot ou URL local não significam publicação. O botão de impressão do CV gera
 uma visualização local para salvar em PDF; isso não é um PDF público nem uma publicação.
-`PUBLISHED` nesta sessão cobre a URL `*.vercel.app` evidenciada. Domínio próprio continua pendente.
+`PUBLISHED` nesta sessão cobre a URL `*.vercel.app` evidenciada. O site web é bilíngue; o PDF
+oficial baixável continua em português até que uma versão inglesa separada seja gerada e revisada.
+Domínio próprio continua pendente.
