@@ -34,7 +34,7 @@
     "task_ref": null,
     "session_close_ref": null,
     "started_at": "2026-09-25T21:11:29.339632+00:00",
-    "closed_at": null,
+    "closed_at": "2026-09-25T21:36:44.249698+00:00",
     "round_baseline": {
       "phase": "round_baseline",
       "available": true,
@@ -44,6 +44,16 @@
       "behind": 0,
       "worktree_clean": true,
       "observed_at": "2026-09-25T21:11:29.335731+00:00"
+    },
+    "pre_delivery_state": {
+      "phase": "pre_delivery_state",
+      "available": true,
+      "head": "63b6f26bb583beb69f318e45a671594635d5f83c",
+      "branch": "feat/ai-engineering-surface",
+      "ahead": -1,
+      "behind": 0,
+      "worktree_clean": true,
+      "observed_at": "2026-09-25T21:36:44.248712+00:00"
     }
   },
   "intent_snapshot": {
@@ -353,7 +363,151 @@
     }
   ],
   "preclose_history": [],
-  "closure_report": null,
+  "closure_report": {
+    "status": "success",
+    "round_status": "success",
+    "delivery_intent": "commit_local",
+    "alias_normalized": true,
+    "delivered": [
+      "Commit 63b6f26 feat(portfolio): add bilingual language switch",
+      "src/components/LanguageSwitcher.tsx",
+      "src/i18n.ts",
+      "src/content-bilingual.ts",
+      "Localized shared App, SiteHeader, HomePage, CurriculumPage, AiGovernancePage, and AiEngineeringPage",
+      "docs/content-contract.md updated with PT-BR default and bilingual rules"
+    ],
+    "not_delivered": [
+      "Push to origin/main",
+      "Vercel or public production publish",
+      "Separate English downloadable PDF; the existing official PDF remains Portuguese"
+    ],
+    "blockers": [],
+    "validators": [
+      {
+        "name": "npm run typecheck",
+        "passed": true,
+        "ref": "tsc --noEmit"
+      },
+      {
+        "name": "npm run lint",
+        "passed": true,
+        "ref": "eslint ."
+      },
+      {
+        "name": "npm run build",
+        "passed": true,
+        "ref": "Vite production build"
+      },
+      {
+        "name": "Chrome desktop smoke",
+        "passed": true,
+        "ref": "dropdown, confirmation, language switch, route persistence"
+      },
+      {
+        "name": "Chrome mobile smoke",
+        "passed": true,
+        "ref": "375px four-route no-overflow and persistence"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-1-2183",
+        "type": "other",
+        "summary": "npm run typecheck passed",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-2-4036",
+        "type": "other",
+        "summary": "npm run lint passed",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-3-8018",
+        "type": "other",
+        "summary": "npm run build passed",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-4-7930",
+        "type": "other",
+        "summary": "Desktop Chrome interaction verified: dropdown, centered confirmation, route persistence, and language switch",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-5-3754",
+        "type": "other",
+        "summary": "Mobile Chrome at 375px verified on all four routes with no horizontal overflow",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-6-849",
+        "type": "other",
+        "summary": "Mobile interaction verified: confirmation, document.lang=en, and localStorage persistence",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-7-4303",
+        "type": "other",
+        "summary": "Console clean after favicon cleanup",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-8-8995",
+        "type": "other",
+        "summary": "git status clean on feat/ai-engineering-surface",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      }
+    ],
+    "feedback": {},
+    "self_score": null,
+    "score": {
+      "self_score": null,
+      "completion_score": null,
+      "evidence_score": 3.0,
+      "validation_score": 10.0,
+      "honesty_score": 8.0,
+      "final_score": 6.45,
+      "confidence": "medium",
+      "basis": {
+        "components_present": [
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "weight_covered": 0.55,
+        "weight_total": 1.0
+      }
+    },
+    "next_actions": [
+      "Review the local commit in the portfolio",
+      "Decide separately whether to push or publish",
+      "If needed, generate and visually review a separate English PDF"
+    ],
+    "honest_line": "The public web portfolio is bilingual and the preference persists across routes. The existing official downloadable PDF is still Portuguese; the English state exposes that boundary instead of presenting a translated PDF as official."
+  },
   "revisions": [],
   "activities": {},
   "provenance": "mcp_v3",
@@ -361,16 +515,16 @@
     "source_schema_version": 3,
     "v3_fields_imputed": {
       "model_resolution": "present",
-      "artifact_manifest": "absent",
-      "pendency_delta": "absent",
-      "closure_bundle": "absent",
+      "artifact_manifest": "present",
+      "pendency_delta": "present",
+      "closure_bundle": "present",
       "return_to_gk": "absent",
-      "skill_ledger": "absent",
-      "function_ledger": "absent",
-      "material_work": "absent",
-      "gap_fixes": "absent",
-      "unresolved_gaps": "absent",
-      "technical_decisions": "absent"
+      "skill_ledger": "present",
+      "function_ledger": "present",
+      "material_work": "present",
+      "gap_fixes": "present",
+      "unresolved_gaps": "present",
+      "technical_decisions": "present"
     }
   },
   "skill_ledger": [
@@ -445,5 +599,226 @@
       "notes": "router: round_type:feature; operation:mutation"
     }
   ],
-  "function_ledger": []
+  "function_ledger": [],
+  "artifact_manifest": {
+    "dgx_log_json": ".dgx/logs/20260925-portfolio-language-toggle-01.dgxlog.json",
+    "dgx_log_md": ".dgx/logs/20260925-portfolio-language-toggle-01.dgxlog.md",
+    "output_json": ".dgx/outputs/20260925-portfolio-language-toggle-01.output.json",
+    "return_to_gk_md": null,
+    "session_close_ref": null,
+    "additional": {}
+  },
+  "pendency_delta": {
+    "created_ids": [],
+    "resolved_ids": [],
+    "carried_ids": [],
+    "human_action_ids": []
+  },
+  "closure_bundle": {
+    "schema_version": 3,
+    "round_id": "20260925-portfolio-language-toggle-01",
+    "generated_at": "2026-09-25T21:36:44.249698+00:00",
+    "generated_by": "dgx.round action=finish schema_version=3",
+    "audit": {
+      "total_required": 0,
+      "completed_with_evidence": 0,
+      "completed_no_evidence": 0,
+      "pending": 0,
+      "blocked": 0,
+      "not_applicable": 0,
+      "waived": 0,
+      "pending_ids": [],
+      "blocked_ids": [],
+      "no_evidence_ids": [],
+      "completed_ids": [],
+      "success_blockers": [],
+      "allowed_statuses": [
+        "success",
+        "partial",
+        "blocked",
+        "aborted"
+      ]
+    },
+    "status": {
+      "requested": "success",
+      "accepted": "success",
+      "coherent": true
+    },
+    "delivered": [
+      "Commit 63b6f26 feat(portfolio): add bilingual language switch",
+      "src/components/LanguageSwitcher.tsx",
+      "src/i18n.ts",
+      "src/content-bilingual.ts",
+      "Localized shared App, SiteHeader, HomePage, CurriculumPage, AiGovernancePage, and AiEngineeringPage",
+      "docs/content-contract.md updated with PT-BR default and bilingual rules"
+    ],
+    "not_delivered": [
+      "Push to origin/main",
+      "Vercel or public production publish",
+      "Separate English downloadable PDF; the existing official PDF remains Portuguese"
+    ],
+    "validators": [
+      {
+        "name": "npm run typecheck",
+        "passed": true,
+        "ref": "tsc --noEmit"
+      },
+      {
+        "name": "npm run lint",
+        "passed": true,
+        "ref": "eslint ."
+      },
+      {
+        "name": "npm run build",
+        "passed": true,
+        "ref": "Vite production build"
+      },
+      {
+        "name": "Chrome desktop smoke",
+        "passed": true,
+        "ref": "dropdown, confirmation, language switch, route persistence"
+      },
+      {
+        "name": "Chrome mobile smoke",
+        "passed": true,
+        "ref": "375px four-route no-overflow and persistence"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-1-2183",
+        "type": "other",
+        "summary": "npm run typecheck passed",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-2-4036",
+        "type": "other",
+        "summary": "npm run lint passed",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-3-8018",
+        "type": "other",
+        "summary": "npm run build passed",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-4-7930",
+        "type": "other",
+        "summary": "Desktop Chrome interaction verified: dropdown, centered confirmation, route persistence, and language switch",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-5-3754",
+        "type": "other",
+        "summary": "Mobile Chrome at 375px verified on all four routes with no horizontal overflow",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-6-849",
+        "type": "other",
+        "summary": "Mobile interaction verified: confirmation, document.lang=en, and localStorage persistence",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-7-4303",
+        "type": "other",
+        "summary": "Console clean after favicon cleanup",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      },
+      {
+        "id": "ev-8-8995",
+        "type": "other",
+        "summary": "git status clean on feat/ai-engineering-surface",
+        "ref": null,
+        "timestamp": "2026-09-25T21:36:44.249689+00:00",
+        "confidence": "low"
+      }
+    ],
+    "git": {
+      "head": "63b6f26bb583beb69f318e45a671594635d5f83c",
+      "branch": "feat/ai-engineering-surface",
+      "ahead": -1,
+      "behind": 0,
+      "worktree_clean": true,
+      "observed_commit": null,
+      "observed_push": false
+    },
+    "artifact_paths": {
+      "dgx_log": ".dgx/logs/20260925-portfolio-language-toggle-01.dgxlog.json",
+      "output_json": ".dgx/outputs/20260925-portfolio-language-toggle-01.output.json",
+      "return_to_gk_md": null
+    },
+    "pendency_delta": {
+      "created_ids": [],
+      "resolved_ids": [],
+      "carried_ids": [],
+      "human_action_ids": []
+    },
+    "session_references": {
+      "session_close_ref": null,
+      "capsule_v2_ref": null
+    },
+    "score": {
+      "self_score": null,
+      "completion_score": null,
+      "evidence_score": 3.0,
+      "validation_score": 10.0,
+      "honesty_score": 8.0,
+      "final_score": 6.45,
+      "confidence": "medium",
+      "basis": {
+        "components_present": [
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "components_total": 5,
+        "derived_components_present": [
+          "evidence",
+          "honesty",
+          "validation"
+        ],
+        "weight_covered": 0.55,
+        "weight_total": 1.0
+      }
+    },
+    "confidence": "medium",
+    "honest_line": "The public web portfolio is bilingual and the preference persists across routes. The existing official downloadable PDF is still Portuguese; the English state exposes that boundary instead of presenting a translated PDF as official.",
+    "next_round": "",
+    "friction": [],
+    "decisions": [
+      "Use PT-BR as the default language",
+      "Persist the selection locally across portfolio routes",
+      "Require explicit confirmation before changing language",
+      "Keep the official downloadable PDF Portuguese until an English PDF is separately generated and reviewed",
+      "Do not invent or strengthen claims during translation"
+    ],
+    "discoveries": [],
+    "documentation_drifts": [],
+    "material_work": [],
+    "gap_fixes": [],
+    "unresolved_gaps": [],
+    "technical_decisions": [],
+    "output_sha256": "3760a51f9bc3c9692288600fc19e81eada4fcb74edc95f56695e57b69a25d79d"
+  },
+  "material_work": [],
+  "gap_fixes": [],
+  "unresolved_gaps": [],
+  "technical_decisions": []
 }

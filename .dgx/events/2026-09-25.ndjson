@@ -7,3 +7,4 @@
 {"t":"2026-09-25T21:11:38.300332Z","kind":"round.checkpoint","repo":"dyllan-cybersecurity-portfolio","pid":99946,"session_id":null,"round_id":"20260925-portfolio-language-toggle-01","summary":"Checkpoint antes da primeira escrita da camada bilingue.","completed":0}
 {"t":"2026-09-25T21:31:14.108519Z","kind":"round.checkpoint","repo":"dyllan-cybersecurity-portfolio","pid":99946,"session_id":null,"round_id":"20260925-portfolio-language-toggle-01","summary":"","completed":0}
 {"t":"2026-09-25T21:33:42.036751Z","kind":"round.checkpoint","repo":"dyllan-cybersecurity-portfolio","pid":99946,"session_id":null,"round_id":"20260925-portfolio-language-toggle-01","summary":"","completed":0}
+{"t":"2026-09-25T21:36:44.253686Z","kind":"round.finish","repo":"dyllan-cybersecurity-portfolio","pid":99946,"session_id":null,"round_id":"20260925-portfolio-language-toggle-01","status":"done_local","delivery_intent":"commit_local","self_score":null}

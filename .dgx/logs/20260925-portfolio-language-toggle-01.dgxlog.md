@@ -2,9 +2,9 @@
 
 - executor: Codex (EXECUTOR)
 - round_type: feature · domains: frontend, design, documentation, product
-- status: open
-- final_score: None (confidence: ?)
-- honest_line: 
+- status: success
+- final_score: 6.45 (confidence: medium)
+- honest_line: The public web portfolio is bilingual and the preference persists across routes. The existing official downloadable PDF is still Portuguese; the English state exposes that boundary instead of presenting a translated PDF as official.
 
 ## Obligations
 
@@ -19,6 +19,12 @@
 - selection_source: runtime_default
 - human_override: False · fallback_used: False
 
+## Pendency Delta (v3)
+- created_ids: —
+- resolved_ids: —
+- carried_ids: —
+- human_action_ids: —
+
 ## Skill Ledger (v3)
 - dgx-backend-data: NOT_APPLICABLE / NOT_APPLICABLE (evidence: —)
 - dgx-code-review: NOT_APPLICABLE / NOT_APPLICABLE (evidence: —)
@@ -30,3 +36,8 @@
 - dgx-security-cyber: NOT_APPLICABLE / NOT_APPLICABLE (evidence: —)
 - dgx-senior-engineer: REQUIRED / ACTIVATED (evidence: —)
 - dgx-seo: NOT_APPLICABLE / NOT_APPLICABLE (evidence: —)
+
+## Artifact Manifest (v3)
+- dgx_log_json: .dgx/logs/20260925-portfolio-language-toggle-01.dgxlog.json
+- dgx_log_md: .dgx/logs/20260925-portfolio-language-toggle-01.dgxlog.md
+- output_json: .dgx/outputs/20260925-portfolio-language-toggle-01.output.json
