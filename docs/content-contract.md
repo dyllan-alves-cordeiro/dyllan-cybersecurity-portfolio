@@ -36,15 +36,19 @@ conteúdo público só pode avançar quando o Dyllan fornecer ou aprovar cada it
 - Três a cinco experiências/projetos com autorização de citação.
 - Para cada case: contexto, responsabilidade, abordagem, tecnologia e resultado comprovável.
 - Domínio desejado.
-- Idioma inicial: PT-BR apenas ou PT-BR + inglês.
+- Idioma inicial: PT-BR default, com apresentação em inglês disponível no switch global.
 - Aprovação final da foto em produção e da versão visual.
 
 ## Superfície `/ai-engineering`
 
-A rota de AI Engineering é uma superfície pública profissional em inglês. Ela pode afirmar apenas o
+A rota de AI Engineering é uma superfície pública profissional bilíngue, com português como estado inicial. Ela pode afirmar apenas o
 posicionamento congelado de fundador/full-stack engineer, experiência prática com integração server-side de
 modelos, workflows com tools, padrões de RAG, continuidade de sessão e o método Coordinator–Executor dentro de
 uma matriz de harness/modelo suportada.
+
+O switch de idioma é global e persistido entre as rotas públicas. A tradução deve preservar o mesmo limite factual
+em PT-BR e em inglês; mudar o idioma não autoriza adicionar métricas, escala enterprise, clientes, certificações ou
+resultados que não estejam provados na fonte editorial.
 
 Ela deve separar explicitamente quatro estados de evidência:
 

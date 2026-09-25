@@ -1,0 +1,449 @@
+{
+  "schema_version": 3,
+  "round_identity": {
+    "round_id": "20260925-portfolio-language-toggle-01",
+    "executor": "Codex",
+    "executor_model": "GPT-5",
+    "model_resolution": {
+      "requested_harness": "Codex",
+      "resolved_harness": "Codex",
+      "requested_model": "GPT-5",
+      "resolved_model": "GPT-5",
+      "actual_model": "GPT-5",
+      "model_identifier": "GPT-5",
+      "runtime_reported_identifier": "GPT-5",
+      "selection_source": "runtime_default",
+      "human_override": false,
+      "fallback_used": false
+    },
+    "executor_role": "EXECUTOR",
+    "repos": [
+      "/Users/dyllanalves/Workspace/Dyllan/dyllan-cybersecurity-portfolio"
+    ],
+    "surfaces": [],
+    "round_type": "feature",
+    "leg": "DESIGN_SURFACE",
+    "domains": [
+      "frontend",
+      "design",
+      "documentation",
+      "product"
+    ],
+    "envelope_ref": null,
+    "plan_ref": null,
+    "task_ref": null,
+    "session_close_ref": null,
+    "started_at": "2026-09-25T21:11:29.339632+00:00",
+    "closed_at": null,
+    "round_baseline": {
+      "phase": "round_baseline",
+      "available": true,
+      "head": "14aff620663c17846e7b4ee269e4bac4ad94c421",
+      "branch": "feat/ai-engineering-surface",
+      "ahead": -1,
+      "behind": 0,
+      "worktree_clean": true,
+      "observed_at": "2026-09-25T21:11:29.335731+00:00"
+    }
+  },
+  "intent_snapshot": {
+    "objective": "Adicionar idioma global PT/EN ao portfólio pessoal, com português como padrão, toggle fixo no header, dropdown de vidro para a alternativa e confirmação central antes da troca; traduzir de forma consistente a home, AI Engineering, Governança de IA e Currículo.",
+    "deliverables": [],
+    "constraints": [],
+    "required_evidence": [],
+    "out_of_scope": [],
+    "write_scope": [
+      "src/App.tsx",
+      "src/components/SiteHeader.tsx",
+      "src/components/LanguageSwitcher.tsx",
+      "src/pages/HomePage.tsx",
+      "src/pages/CurriculumPage.tsx",
+      "src/pages/AiGovernancePage.tsx",
+      "src/pages/AiEngineeringPage.tsx",
+      "src/content.ts",
+      "src/content-governance.ts",
+      "src/content-ai-engineering.ts",
+      "src/styles.css",
+      "src/styles-ai-engineering.css",
+      "src/styles-governance.css",
+      "docs/content-contract.md"
+    ],
+    "definition_of_done": [
+      "Português é o idioma inicial e a escolha é persistida entre rotas.",
+      "O header apresenta apenas o idioma atual; ao abrir, oferece a alternativa em um mini dropdown de vidro.",
+      "A troca abre uma confirmação central acessível; cancelar mantém o idioma atual e confirmar atualiza a superfície.",
+      "Home, AI Engineering, Governança de IA e Currículo têm apresentação PT/EN coerente.",
+      "Typecheck, lint, build, diff-check e validação visual desktop/mobile passam.",
+      "A main e a Vercel permanecem inalteradas; entrega em branch revisável."
+    ],
+    "expected_close_status": null
+  },
+  "amendments": [],
+  "execution_trail": [
+    {
+      "timestamp": "2026-09-25T21:11:38.299169+00:00",
+      "summary": "Checkpoint antes da primeira escrita da camada bilingue.",
+      "completed_obligation_ids": [],
+      "discoveries": [],
+      "decisions": [],
+      "blockers": [],
+      "evidence": [
+        {
+          "id": "ev-1-3422",
+          "type": "other",
+          "summary": "round-start:20260925-portfolio-language-toggle-01",
+          "ref": null,
+          "timestamp": "2026-09-25T21:11:38.299180+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-2-5111",
+          "type": "other",
+          "summary": "worktree-clean:14aff62",
+          "ref": null,
+          "timestamp": "2026-09-25T21:11:38.299180+00:00",
+          "confidence": "low"
+        }
+      ],
+      "plan_changes": [],
+      "structured_checkpoint": {
+        "stage": "IMPLEMENTING",
+        "current_action": "Criar o estado global de idioma, o toggle fixo, o dropdown glass e a confirmação central; depois conectar as quatro superfícies editoriais.",
+        "next_action": "Ler os contratos atuais de conteúdo e componentes, implementar o componente compartilhado e substituir textos por traduções preservando os fatos.",
+        "blockers": [],
+        "files_touched": [
+          "src/App.tsx",
+          "src/components/SiteHeader.tsx",
+          "src/components/LanguageSwitcher.tsx",
+          "src/pages/HomePage.tsx",
+          "src/pages/CurriculumPage.tsx",
+          "src/pages/AiGovernancePage.tsx",
+          "src/pages/AiEngineeringPage.tsx",
+          "src/content.ts",
+          "src/content-governance.ts",
+          "src/content-ai-engineering.ts",
+          "src/styles.css",
+          "src/styles-ai-engineering.css",
+          "src/styles-governance.css",
+          "docs/content-contract.md"
+        ],
+        "evidence_refs": [
+          "round-start:20260925-portfolio-language-toggle-01",
+          "dgx-design:visual-validation-required"
+        ],
+        "progress": {
+          "mode": "determinate"
+        },
+        "eta": {
+          "mode": "executor_estimate",
+          "min_minutes": 45,
+          "max_minutes": 90,
+          "confidence": "medium"
+        },
+        "completed_units": 0,
+        "total_units": 12,
+        "at": "2026-09-25T21:11:38.299169+00:00"
+      }
+    },
+    {
+      "timestamp": "2026-09-25T21:31:14.105800+00:00",
+      "summary": "",
+      "completed_obligation_ids": [],
+      "discoveries": [],
+      "decisions": [],
+      "blockers": [],
+      "evidence": [
+        {
+          "id": "ev-1-7341",
+          "type": "other",
+          "summary": "npm run typecheck",
+          "ref": null,
+          "timestamp": "2026-09-25T21:31:14.105813+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-2-809",
+          "type": "other",
+          "summary": "npm run lint",
+          "ref": null,
+          "timestamp": "2026-09-25T21:31:14.105813+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-3-5206",
+          "type": "other",
+          "summary": "npm run build",
+          "ref": null,
+          "timestamp": "2026-09-25T21:31:14.105813+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-4-258",
+          "type": "other",
+          "summary": "Chrome desktop PT/EN toggle, menu, confirmation, route persistence",
+          "ref": null,
+          "timestamp": "2026-09-25T21:31:14.105813+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-5-5239",
+          "type": "other",
+          "summary": "Chrome DevTools mobile 375x812 PT/EN toggle, centered confirmation, no horizontal overflow",
+          "ref": null,
+          "timestamp": "2026-09-25T21:31:14.105813+00:00",
+          "confidence": "low"
+        }
+      ],
+      "plan_changes": [],
+      "structured_checkpoint": {
+        "stage": "VALIDATING",
+        "current_action": "Typecheck, lint, build and Chrome verification completed; finalizing repository evidence.",
+        "next_action": "Commit the scoped implementation locally, then record delivery truth.",
+        "blockers": [],
+        "files_touched": [
+          "src/App.tsx",
+          "src/components/SiteHeader.tsx",
+          "src/components/LanguageSwitcher.tsx",
+          "src/i18n.ts",
+          "src/pages/HomePage.tsx",
+          "src/pages/CurriculumPage.tsx",
+          "src/pages/AiGovernancePage.tsx",
+          "src/pages/AiEngineeringPage.tsx",
+          "src/content-bilingual.ts",
+          "src/content-governance.ts",
+          "src/content-ai-engineering.ts",
+          "src/styles.css",
+          "docs/content-contract.md"
+        ],
+        "evidence_refs": [
+          "validation:typecheck=pass",
+          "validation:lint=pass",
+          "validation:build=pass",
+          "visual:chrome-desktop=observed",
+          "visual:chrome-mobile-375=observed",
+          "visual:mobile-horizontal-overflow=none",
+          "interaction:menu-confirmation-persistence=observed",
+          "content:pt-en-route-persistence=observed"
+        ],
+        "progress": {
+          "mode": "determinate"
+        },
+        "eta": {
+          "mode": "executor_estimate",
+          "min_minutes": 5,
+          "max_minutes": 10,
+          "confidence": "high"
+        },
+        "completed_units": 11,
+        "total_units": 12,
+        "at": "2026-09-25T21:31:14.105800+00:00"
+      }
+    },
+    {
+      "timestamp": "2026-09-25T21:33:42.034367+00:00",
+      "summary": "",
+      "completed_obligation_ids": [],
+      "discoveries": [],
+      "decisions": [],
+      "blockers": [],
+      "evidence": [
+        {
+          "id": "ev-1-7341",
+          "type": "other",
+          "summary": "npm run typecheck",
+          "ref": null,
+          "timestamp": "2026-09-25T21:33:42.034391+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-2-809",
+          "type": "other",
+          "summary": "npm run lint",
+          "ref": null,
+          "timestamp": "2026-09-25T21:33:42.034391+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-3-5206",
+          "type": "other",
+          "summary": "npm run build",
+          "ref": null,
+          "timestamp": "2026-09-25T21:33:42.034391+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-4-4146",
+          "type": "other",
+          "summary": "git diff --check",
+          "ref": null,
+          "timestamp": "2026-09-25T21:33:42.034391+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-5-5201",
+          "type": "other",
+          "summary": "Chrome desktop PT/EN interaction and route persistence",
+          "ref": null,
+          "timestamp": "2026-09-25T21:33:42.034391+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-6-8551",
+          "type": "other",
+          "summary": "Chrome DevTools 375px checks on /, /curriculo, /governanca-ia and /ai-engineering",
+          "ref": null,
+          "timestamp": "2026-09-25T21:33:42.034391+00:00",
+          "confidence": "low"
+        },
+        {
+          "id": "ev-7-552",
+          "type": "other",
+          "summary": "Chrome DevTools console clean after favicon addition",
+          "ref": null,
+          "timestamp": "2026-09-25T21:33:42.034391+00:00",
+          "confidence": "low"
+        }
+      ],
+      "plan_changes": [],
+      "structured_checkpoint": {
+        "stage": "VALIDATING",
+        "current_action": "Responsive header correction and favicon cleanup validated after the first mobile pass.",
+        "next_action": "Create one local semantic commit for the implementation and DGX evidence.",
+        "blockers": [],
+        "files_touched": [
+          "index.html",
+          "src/App.tsx",
+          "src/components/SiteHeader.tsx",
+          "src/components/LanguageSwitcher.tsx",
+          "src/i18n.ts",
+          "src/pages/HomePage.tsx",
+          "src/pages/CurriculumPage.tsx",
+          "src/pages/AiGovernancePage.tsx",
+          "src/pages/AiEngineeringPage.tsx",
+          "src/content-bilingual.ts",
+          "src/content-governance.ts",
+          "src/content-ai-engineering.ts",
+          "src/styles.css",
+          "docs/content-contract.md"
+        ],
+        "evidence_refs": [
+          "validation:typecheck=pass",
+          "validation:lint=pass",
+          "validation:build=pass",
+          "validation:diff-check=pass",
+          "visual:chrome-desktop=observed",
+          "visual:chrome-mobile-375=observed",
+          "visual:all-public-routes-mobile-overflow=none",
+          "interaction:menu-confirmation-persistence=observed",
+          "console:mobile-ai=clean"
+        ],
+        "progress": {
+          "mode": "determinate"
+        },
+        "eta": {
+          "mode": "executor_estimate",
+          "min_minutes": 2,
+          "max_minutes": 5,
+          "confidence": "high"
+        },
+        "completed_units": 11,
+        "total_units": 12,
+        "at": "2026-09-25T21:33:42.034367+00:00"
+      }
+    }
+  ],
+  "preclose_history": [],
+  "closure_report": null,
+  "revisions": [],
+  "activities": {},
+  "provenance": "mcp_v3",
+  "compatibility": {
+    "source_schema_version": 3,
+    "v3_fields_imputed": {
+      "model_resolution": "present",
+      "artifact_manifest": "absent",
+      "pendency_delta": "absent",
+      "closure_bundle": "absent",
+      "return_to_gk": "absent",
+      "skill_ledger": "absent",
+      "function_ledger": "absent",
+      "material_work": "absent",
+      "gap_fixes": "absent",
+      "unresolved_gaps": "absent",
+      "technical_decisions": "absent"
+    }
+  },
+  "skill_ledger": [
+    {
+      "skill": "dgx-backend-data",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature; operation:mutation"
+    },
+    {
+      "skill": "dgx-code-review",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature"
+    },
+    {
+      "skill": "dgx-design",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: domains:design; round_type:feature; operation:mutation; domains(reforco):frontend; leg:DESIGN_SURFACE · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-gk-senior",
+      "activation_level": "RECOMMENDED",
+      "state": "RECOMMENDED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-identity",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE; objectives:portfolio; operation:mutation; domains(reforco):documentation,product · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-infra-resilience",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: operation:mutation"
+    },
+    {
+      "skill": "dgx-integrations-ai",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature; operation:mutation · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-security-cyber",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature; operation:mutation"
+    },
+    {
+      "skill": "dgx-senior-engineer",
+      "activation_level": "REQUIRED",
+      "state": "ACTIVATED",
+      "evidence_ids": [],
+      "notes": "router: layer:PROFILE; operation:mutation · carregada no gate de conexão (load != apply)"
+    },
+    {
+      "skill": "dgx-seo",
+      "activation_level": "NOT_APPLICABLE",
+      "state": "NOT_APPLICABLE",
+      "evidence_ids": [],
+      "notes": "router: round_type:feature; operation:mutation"
+    }
+  ],
+  "function_ledger": []
+}

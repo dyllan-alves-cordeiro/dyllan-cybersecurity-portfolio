@@ -10,6 +10,9 @@ import { AiEngineeringPage } from './pages/AiEngineeringPage'
 import { AiGovernancePage } from './pages/AiGovernancePage'
 import { CurriculumPage } from './pages/CurriculumPage'
 import { HomePage } from './pages/HomePage'
+import { isLanguage, type Language } from './i18n'
+
+const languageStorageKey = 'dyllan-portfolio-language'
 
 function normalizedPath(pathname: string) {
   const path = pathname.replace(/\/+$/, '')
@@ -18,6 +21,14 @@ function normalizedPath(pathname: string) {
 
 export default function App() {
   const [path, setPath] = useState(() => normalizedPath(window.location.pathname))
+  const [language, setLanguage] = useState<Language>(() => {
+    try {
+      const stored = window.localStorage.getItem(languageStorageKey)
+      return isLanguage(stored) ? stored : 'pt'
+    } catch {
+      return 'pt'
+    }
+  })
 
   useEffect(() => {
     const handlePopState = () => setPath(normalizedPath(window.location.pathname))
@@ -26,13 +37,32 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const titles: Record<string, string> = {
-      '/curriculo': 'Dyllan — currículo',
-      '/governanca-ia': 'Dyllan — governança de IA',
-      '/ai-engineering': 'Dyllan — AI engineering',
+    const titles: Record<Language, Record<string, string>> = {
+      pt: {
+        '/curriculo': 'Dyllan — currículo',
+        '/governanca-ia': 'Dyllan — governança de IA',
+        '/ai-engineering': 'Dyllan — engenharia de IA',
+        '/': 'Dyllan — portfólio de cibersegurança',
+      },
+      en: {
+        '/curriculo': 'Dyllan — curriculum',
+        '/governanca-ia': 'Dyllan — AI governance',
+        '/ai-engineering': 'Dyllan — AI engineering',
+        '/': 'Dyllan — cybersecurity portfolio',
+      },
     }
-    document.title = titles[path] ?? 'Dyllan — portfólio de cibersegurança'
-  }, [path])
+    document.title = titles[language][path] ?? titles[language]['/']
+    document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en'
+  }, [language, path])
+
+  const changeLanguage = (nextLanguage: Language) => {
+    setLanguage(nextLanguage)
+    try {
+      window.localStorage.setItem(languageStorageKey, nextLanguage)
+    } catch {
+      // A apresentação continua funcionando mesmo quando o navegador bloqueia storage.
+    }
+  }
 
   const openCurriculum = () => {
     if (path !== '/curriculo') {
@@ -78,6 +108,8 @@ export default function App() {
         onHome={goHome}
         onOpenGovernance={openGovernance}
         onOpenAiEngineering={openAiEngineering}
+        language={language}
+        onLanguageChange={changeLanguage}
       />
     )
   }
@@ -89,6 +121,8 @@ export default function App() {
         onHome={goHome}
         onOpenGovernance={openGovernance}
         onOpenAiEngineering={openAiEngineering}
+        language={language}
+        onLanguageChange={changeLanguage}
       />
     )
   }
@@ -100,6 +134,8 @@ export default function App() {
         onHome={goHome}
         onOpenGovernance={openGovernance}
         onOpenAiEngineering={openAiEngineering}
+        language={language}
+        onLanguageChange={changeLanguage}
       />
     )
   }
@@ -110,6 +146,8 @@ export default function App() {
       onHome={goHome}
       onOpenGovernance={openGovernance}
       onOpenAiEngineering={openAiEngineering}
+      language={language}
+      onLanguageChange={changeLanguage}
     />
   )
 }

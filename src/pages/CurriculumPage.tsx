@@ -6,27 +6,20 @@
 // validar: npm run typecheck && npm run build && visual print
 // DGX:ANCHOR: personal-portfolio-curriculum-page
 
-import {
-  contactOpensExternally,
-  complementaryTraining,
-  digytronProjects,
-  education,
-  languages,
-  portfolioProfile,
-  professionalExperiences,
-  publicContacts,
-  skillFocus,
-  supportingSkills,
-} from '../content'
+import { contactOpensExternally } from '../content'
+import { getPortfolioContent } from '../content-bilingual'
 import { PageAtmosphere } from '../components/PageAtmosphere'
 import { Icon } from '../icons'
 import { SiteHeader } from '../components/SiteHeader'
+import type { Language } from '../i18n'
 
 type CurriculumPageProps = {
   onOpenCurriculum: () => void
   onHome: (section?: string) => void
   onOpenGovernance?: () => void
   onOpenAiEngineering?: () => void
+  language: Language
+  onLanguageChange: (language: Language) => void
 }
 
 export function CurriculumPage({
@@ -34,7 +27,22 @@ export function CurriculumPage({
   onHome,
   onOpenGovernance,
   onOpenAiEngineering,
+  language,
+  onLanguageChange,
 }: CurriculumPageProps) {
+  const {
+    profile: portfolioProfile,
+    contacts: publicContacts,
+    experiences: professionalExperiences,
+    projects: digytronProjects,
+    education,
+    languages,
+    skillFocus,
+    supportingSkills,
+    training: complementaryTraining,
+    curriculumCopy: copy,
+  } = getPortfolioContent(language)
+
   return (
     <div className="app-shell curriculum-shell">
       <PageAtmosphere variant="page" />
@@ -43,6 +51,8 @@ export function CurriculumPage({
         onHome={onHome}
         onOpenGovernance={onOpenGovernance}
         onOpenAiEngineering={onOpenAiEngineering}
+        language={language}
+        onLanguageChange={onLanguageChange}
         isCurriculum
         visible
       />
@@ -51,7 +61,7 @@ export function CurriculumPage({
         <div className="container curriculum-toolbar-v2 print-hidden">
           <button className="back-link-v2" type="button" onClick={() => onHome()}>
             <Icon name="arrow-left" />
-            Voltar ao portfólio
+            {copy.back}
           </button>
           <div className="toolbar-actions-v2">
             <a
@@ -62,10 +72,10 @@ export function CurriculumPage({
               rel="noreferrer"
             >
               <Icon name="arrow-up-right" />
-              Baixar PDF Oficial
+              {copy.download}
             </a>
             <button className="cv-toolbar-print" type="button" onClick={() => window.print()}>
-              Imprimir
+              {copy.print}
             </button>
           </div>
         </div>
@@ -74,7 +84,7 @@ export function CurriculumPage({
           <article className="cv-document-v2" aria-labelledby="cv-title">
             <header className="cv-header-v2">
               <div>
-                <span className="cv-kicker">Currículo profissional</span>
+                <span className="cv-kicker">{copy.kicker}</span>
                 <h1 id="cv-title">{portfolioProfile.name}</h1>
                 <p className="cv-role-v2">{portfolioProfile.headline}</p>
                 <p className="cv-positioning-v2">{portfolioProfile.positioning}</p>
@@ -97,13 +107,13 @@ export function CurriculumPage({
             <div className="cv-rule-v2" />
 
             <section className="cv-profile-v2" aria-labelledby="cv-profile-title">
-              <span className="cv-section-label-v2" id="cv-profile-title">Perfil</span>
+              <span className="cv-section-label-v2" id="cv-profile-title">{copy.profile}</span>
               <p>{portfolioProfile.intro}</p>
             </section>
 
             <section className="cv-block-v2" aria-labelledby="cv-experience-title">
               <div className="cv-block-heading-v2">
-                <span className="cv-section-label-v2" id="cv-experience-title">Experiência profissional</span>
+                <span className="cv-section-label-v2" id="cv-experience-title">{copy.experience}</span>
               </div>
               <div className="cv-experience-list-v2">
                 {professionalExperiences.map((experience) => (
@@ -126,7 +136,7 @@ export function CurriculumPage({
 
             <section className="cv-block-v2 cv-projects-v2" aria-labelledby="cv-projects-title">
               <div className="cv-block-heading-v2">
-                <span className="cv-section-label-v2" id="cv-projects-title">Projetos Digytron BR</span>
+                <span className="cv-section-label-v2" id="cv-projects-title">{copy.projects}</span>
               </div>
               <div className="cv-project-grid-v2">
                 {digytronProjects.map((project) => (
@@ -141,7 +151,7 @@ export function CurriculumPage({
             <div className="cv-columns-v2">
               <section className="cv-block-v2" aria-labelledby="cv-skills-title">
                 <div className="cv-block-heading-v2">
-                  <span className="cv-section-label-v2" id="cv-skills-title">Competências</span>
+                  <span className="cv-section-label-v2" id="cv-skills-title">{copy.skills}</span>
                 </div>
                 <div className="cv-skill-groups-v2">
                   <div>
@@ -159,7 +169,7 @@ export function CurriculumPage({
 
               <section className="cv-block-v2" aria-labelledby="cv-education-title">
                 <div className="cv-block-heading-v2">
-                  <span className="cv-section-label-v2" id="cv-education-title">Formação</span>
+                  <span className="cv-section-label-v2" id="cv-education-title">{copy.education}</span>
                 </div>
                 {education.map((item) => (
                   <div className="cv-education-item-v2" key={item.institution}>
@@ -170,7 +180,7 @@ export function CurriculumPage({
                   </div>
                 ))}
                 <div className="cv-language-list-v2">
-                  <h3>Idiomas</h3>
+                  <h3>{copy.languages}</h3>
                   {languages.map((item) => (
                     <p key={item.language}><strong>{item.language}</strong><span>{item.level}</span></p>
                   ))}
@@ -180,22 +190,22 @@ export function CurriculumPage({
 
             <section className="cv-block-v2 cv-training-v2" aria-labelledby="cv-training-title">
               <div className="cv-block-heading-v2">
-                <span className="cv-section-label-v2" id="cv-training-title">Cursos e formação complementar</span>
+                <span className="cv-section-label-v2" id="cv-training-title">{copy.training}</span>
               </div>
               <p>{complementaryTraining.join(' · ')}</p>
             </section>
 
             <footer className="cv-document-footer-v2">
-              <span>Conteúdo factual e auditável de Cibersegurança Defensiva.</span>
-              <span>Versão oficial 2026</span>
+              <span>{copy.footerFact}</span>
+              <span>{copy.version}</span>
             </footer>
           </article>
 
-          <aside className="cv-sidebar-v2 print-hidden" aria-label="Ações e estado do currículo">
+          <aside className="cv-sidebar-v2 print-hidden" aria-label={copy.sidebarAria}>
             <div className="sidebar-panel-v2 sidebar-panel-accent-v2">
-              <span className="mono-label">EXPORTAÇÃO</span>
-              <h2>Leve este currículo com você.</h2>
-              <p>Baixe a versão executiva oficial em PDF (A4 de 1 página) ou utilize a impressão direta do navegador.</p>
+              <span className="mono-label">{copy.exportKicker}</span>
+              <h2>{copy.exportTitle}</h2>
+              <p>{copy.exportBody}</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '14px' }}>
                 <a
                   className="button-light"
@@ -204,7 +214,7 @@ export function CurriculumPage({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Baixar PDF Oficial
+                  {copy.download}
                   <Icon name="arrow-up-right" />
                 </a>
                 <button
@@ -223,25 +233,22 @@ export function CurriculumPage({
                     padding: '4px 0',
                   }}
                 >
-                  Imprimir via navegador →
+                  {copy.printBrowser}
                 </button>
               </div>
             </div>
 
             <div className="sidebar-panel-v2">
-              <span className="mono-label">LEITURA FACTUAL</span>
-              <h2>Pilares desta versão</h2>
+              <span className="mono-label">{copy.factualKicker}</span>
+              <h2>{copy.factualTitle}</h2>
               <ul className="sidebar-check-list-v2">
-                <li>Cibersegurança Defensiva e IAM como foco principal</li>
-                <li>Governança de identidade, privilégio mínimo e RLS</li>
-                <li>Operação de redes bancárias de missão crítica (Stefanini / CEF)</li>
-                <li>LGPD técnica, ISO 27001 e conformidade auditável</li>
+                {copy.factualItems.map((item) => <li key={item}>{item}</li>)}
               </ul>
             </div>
 
             <div className="sidebar-panel-v2 sidebar-panel-muted-v2">
-              <span className="mono-label">STATUS OPERACIONAL</span>
-              <p>Currículo consolidado e auditável. Repositório oficial e documentação sob governança contínua.</p>
+              <span className="mono-label">{copy.operationalKicker}</span>
+              <p>{copy.operationalBody}</p>
             </div>
           </aside>
         </div>

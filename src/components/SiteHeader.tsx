@@ -6,6 +6,8 @@
 // DGX:ANCHOR: personal-portfolio-site-header
 
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { LanguageSwitcher } from './LanguageSwitcher'
+import { headerCopy, type Language } from '../i18n'
 import { Icon } from '../icons'
 
 type SiteHeaderProps = {
@@ -16,6 +18,8 @@ type SiteHeaderProps = {
   isAiEngineering?: boolean
   onOpenGovernance?: () => void
   onOpenAiEngineering?: () => void
+  language: Language
+  onLanguageChange: (language: Language) => void
   visible?: boolean
 }
 
@@ -29,9 +33,12 @@ export function SiteHeader({
   isAiEngineering = false,
   onOpenGovernance,
   onOpenAiEngineering,
+  language,
+  onLanguageChange,
   visible = true,
 }: SiteHeaderProps) {
   const reduced = useReducedMotion()
+  const copy = headerCopy[language]
 
   return (
     <AnimatePresence>
@@ -48,44 +55,45 @@ export function SiteHeader({
               <span className="brand-name">Dyllan</span>
             </button>
 
-            <nav className="nav-links" aria-label="Navegação principal">
+            <nav className="nav-links" aria-label={copy.navigation}>
               {isGovernance ? (
                 <button className="nav-text-button" type="button" onClick={() => onHome()}>
-                  Cibersegurança
+                  {copy.cybersecurity}
                 </button>
               ) : isAiEngineering ? (
                 <button className="nav-text-button" type="button" onClick={() => onHome()}>
-                  Portfólio
+                  {copy.portfolio}
                 </button>
               ) : isCurriculum ? (
                 <button className="nav-text-button" type="button" onClick={() => onHome()}>
-                  Portfólio
+                  {copy.portfolio}
                 </button>
               ) : (
                 <>
                   <button className="nav-text-button" type="button" onClick={() => onHome('perfil')}>
-                    Sobre
+                    {copy.about}
                   </button>
                   <button className="nav-text-button" type="button" onClick={() => onHome('experiencia')}>
-                    Experiência
+                    {copy.experience}
                   </button>
                   <button className="nav-text-button" type="button" onClick={() => onHome('competencias')}>
-                    Competências
+                    {copy.skills}
                   </button>
                 </>
               )}
               {onOpenGovernance && !isGovernance ? (
                 <button className="nav-text-button" type="button" onClick={onOpenGovernance}>
-                  Governança de IA
+                  {copy.governance}
                 </button>
               ) : null}
               {onOpenAiEngineering && !isAiEngineering ? (
                 <button className="nav-text-button" type="button" onClick={onOpenAiEngineering}>
-                  AI Engineering
+                  {copy.aiEngineering}
                 </button>
               ) : null}
+              <LanguageSwitcher language={language} onLanguageChange={onLanguageChange} />
               <button className="button-light nav-cv-button" type="button" onClick={onOpenCurriculum}>
-                Currículo
+                {copy.curriculum}
                 <Icon name={isCurriculum ? 'arrow-left' : 'arrow-up-right'} />
               </button>
             </nav>

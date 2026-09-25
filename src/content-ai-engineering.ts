@@ -7,6 +7,7 @@
 // DGX:ANCHOR: personal-portfolio-ai-engineering-content
 
 import { publicContacts } from './content'
+import type { Language } from './i18n'
 
 export const aiEngineeringProfile = {
   kicker: 'AI ENGINEERING / PERSONAL SURFACE',
@@ -116,3 +117,210 @@ export const aiNextArtifacts = [
 export const aiEngineeringContacts = publicContacts.filter(
   (contact) => contact.kind !== 'phone' && contact.kind !== 'portfolio',
 )
+
+type AiEngineeringCopy = {
+  profile: {
+    kicker: string
+    headline: string
+    lede: string
+    supportingLine: string
+    locationNote: string
+  }
+  stages: readonly AiExecutionStage[]
+  capabilities: readonly {
+    label: string
+    state: string
+    detail: string
+  }[]
+  evidence: readonly {
+    label: string
+    state: string
+    detail: string
+  }[]
+  nextArtifacts: readonly string[]
+  ui: {
+    publicPosition: string
+    publicPositionTitle: string
+    publicPositionBody: string
+    evidenceState: string
+    method: string
+    methodTitle: string
+    methodBody: string
+    capabilities: string
+    capabilitiesTitle: string
+    capabilitiesBody: string
+    evidenceMaturity: string
+    evidenceTitle: string
+    evidenceBody: string
+    nextArtifactsLabel: string
+    nextArtifactsTitle: string
+    contact: string
+    contactTitle: string
+    openCurriculum: string
+    readGovernance: string
+  }
+}
+
+const aiEngineeringProfilePt = {
+  kicker: 'ENGENHARIA DE IA / SUPERFÍCIE PESSOAL',
+  headline: 'Eu construo sistemas de IA que podem ser delegados, inspecionados e levados adiante.',
+  lede:
+    'Founder e engenheiro full-stack com experiência prática entregando produtos apoiados por IA e sistemas de IA operacionais, com maior força em integração de modelos no servidor, workflows com tools e entrega de produto ponta a ponta. Avaliação pública, resultados mensuráveis em produção e evidência em escala enterprise ainda estão sendo construídos.',
+  supportingLine:
+    'Meu foco atual é a fronteira entre um modelo e o sistema ao redor dele: montagem de contexto, padrões de RAG, tools, handoffs estruturados e continuidade entre sessões.',
+  locationNote: 'Brasil · mais de 5 anos em engenharia de software · 2 anos trabalhando com sistemas LLM',
+} as const
+
+const aiExecutionStagesPt: readonly AiExecutionStage[] = [
+  {
+    index: '01',
+    label: 'Coordenar',
+    short: 'A intenção vira uma tarefa delimitada.',
+    detail: 'A sessão supervisora define o objetivo, o escopo, os critérios de aceitação e as decisões sob controle humano.',
+    status: 'LIMITE',
+  },
+  {
+    index: '02',
+    label: 'Despachar',
+    short: 'O trabalho é roteado por capacidade.',
+    detail: 'Um envelope estruturado seleciona um harness, uma configuração de modelo, um perfil e o retorno esperado.',
+    status: 'ROTEADO',
+  },
+  {
+    index: '03',
+    label: 'Executar',
+    short: 'O executor permanece dentro do limite.',
+    detail: 'Um executor headless trata a lógica, a infraestrutura e as integrações delimitadas; capacidades não suportadas falham explicitamente.',
+    status: 'ESCOPO',
+  },
+  {
+    index: '04',
+    label: 'Verificar',
+    short: 'Uma afirmação não é uma entrega.',
+    detail: 'Retornos estruturados, testes, estado do Git e evidência observável decidem se o trabalho está completo.',
+    status: 'PROVADO',
+  },
+]
+
+const aiEngineeringCapabilitiesPt = [
+  {
+    label: 'Integração de IA no servidor',
+    state: 'CONSTRUÍDO / EVIDÊNCIA PRIVADA',
+    detail:
+      'Chamadas de modelo, streaming autenticado, montagem de prompt e contexto, workflows de documentos/PDF e controles de custo ou créditos fazem parte dos sistemas que construo. A implementação é privada; a camada pública de prova ainda está sendo preparada.',
+  },
+  {
+    label: 'Orquestração multiagente governada',
+    state: 'CONSTRUÍDO / EVIDÊNCIA PRIVADA',
+    detail:
+      'O método Coordenador–Executor transforma uma sessão supervisora em trabalho delimitado, despachado por uma matriz de harness/modelo suportada, com envelopes estruturados, retornos e limites explícitos de capacidade.',
+  },
+  {
+    label: 'RAG e workflows com tools',
+    state: 'CONSTRUÍDO / EVIDÊNCIA PRIVADA',
+    detail:
+      'Contexto orientado a recuperação, tools web e de documentos, integrações de API e handoffs operacionais são tratados como questões de desenho de sistema, não apenas como recursos de prompt.',
+  },
+  {
+    label: 'Entrega voltada ao cliente',
+    state: 'CONSTRUÍDO / EVIDÊNCIA DE EXPERIÊNCIA',
+    detail:
+      'As funções anteriores incluíram atendimento de alto volume, suporte técnico premium e operação B2B para um cliente bancário. Essa experiência orienta como desenho escalação, clareza e comunicação de incidentes.',
+  },
+] as const
+
+const aiEvidenceLedgerPt = [
+  {
+    label: 'Implementação',
+    state: 'CONSTRUÍDO',
+    detail: 'Despacho Coordenador–Executor, padrões de continuidade de sessão, retornos estruturados, integração de modelos no servidor, tools e entrega de produto existem em sistemas privados.',
+  },
+  {
+    label: 'Superfície pública',
+    state: 'EM ANDAMENTO',
+    detail: 'Esta página torna o método inspecionável sem expor repositórios privados, dados de clientes, segredos ou caminhos operacionais internos.',
+  },
+  {
+    label: 'Harness de avaliação',
+    state: 'AINDA NÃO PÚBLICO',
+    detail: 'Datasets representativos, graders, avaliação de regressão, qualidade, latência, custo e resultados de segurança ainda precisam ser publicados como artefatos auditáveis.',
+  },
+  {
+    label: 'Resultados enterprise',
+    state: 'NÃO PROVADO PUBLICAMENTE',
+    detail: 'Adoção, resultados mensuráveis em produção e evidência em escala enterprise não são reivindicados aqui até que possam ser divulgados e verificados.',
+  },
+] as const
+
+const aiNextArtifactsPt = [
+  'Um harness de avaliação aberto com dados representativos, graders e relatórios de regressão.',
+  'Uma integração governada com tools e banco de dados que possa ser testada sem expor dados de clientes.',
+  'Um case público com contexto, responsabilidade, arquitetura e resultado mensurável.',
+] as const
+
+const aiEngineeringUi: Record<Language, AiEngineeringCopy['ui']> = {
+  pt: {
+    publicPosition: 'POSICIONAMENTO PÚBLICO',
+    publicPositionTitle: 'O método está visível. A prova está sendo aberta.',
+    publicPositionBody: 'Esta superfície descreve um método de engenharia real sem transformar implementação privada em afirmação pública de escala, adoção ou resultado.',
+    evidenceState: 'EVIDÊNCIA DELIMITADA / 2026',
+    method: 'O método',
+    methodTitle: 'Uma sessão supervisora. Quatro limites explícitos.',
+    methodBody: 'Continuidade não é um slogan de memória. É um contrato: o trabalho tem um dono, um escopo, um retorno esperado e um ponto de verificação.',
+    capabilities: 'O que eu construo',
+    capabilitiesTitle: 'Sistemas de IA são mais do que uma chamada de modelo.',
+    capabilitiesBody: 'O trabalho de engenharia vive ao redor do modelo: contexto, acesso, tools, modos de falha, impacto no cliente e a evidência necessária para confiar em uma mudança.',
+    evidenceMaturity: 'Maturidade da evidência',
+    evidenceTitle: 'O limite também faz parte do trabalho.',
+    evidenceBody: 'Quero que recrutador, colaborador ou cliente saiba exatamente o que pode ser inspecionado hoje e qual artefato público ainda precisa ser construído. Essa distinção é deliberada.',
+    nextArtifactsLabel: 'Próximos artefatos públicos',
+    nextArtifactsTitle: 'Tornar a evidência tão inspecionável quanto o método.',
+    contact: 'Contato',
+    contactTitle: 'Se a vaga pergunta como o sistema ao redor do modelo é construído, vamos conversar.',
+    openCurriculum: 'Abrir currículo',
+    readGovernance: 'Ler governança de IA',
+  },
+  en: {
+    publicPosition: 'PUBLIC POSITION',
+    publicPositionTitle: 'Method is visible. Proof is being opened.',
+    publicPositionBody: 'This surface describes a real engineering method without turning private implementation into a public claim of scale, adoption, or outcome.',
+    evidenceState: 'EVIDENCE BOUNDED / 2026',
+    method: 'The method',
+    methodTitle: 'One supervisory session. Four explicit boundaries.',
+    methodBody: 'Continuity is not a memory slogan. It is a contract: the work has an owner, a scope, an expected return, and a verification point.',
+    capabilities: 'What I build',
+    capabilitiesTitle: 'AI systems are more than a model call.',
+    capabilitiesBody: 'The engineering work lives around the model: context, access, tools, failure modes, customer impact, and the evidence needed to trust a change.',
+    evidenceMaturity: 'Evidence maturity',
+    evidenceTitle: 'The boundary is part of the work.',
+    evidenceBody: 'I want a recruiter, collaborator, or client to know exactly what can be inspected today and what still needs a public artifact. That distinction is deliberate.',
+    nextArtifactsLabel: 'Next public artifacts',
+    nextArtifactsTitle: 'Make the evidence as inspectable as the method.',
+    contact: 'Contact',
+    contactTitle: 'If the role asks how the system around the model gets built, let’s talk.',
+    openCurriculum: 'Open curriculum',
+    readGovernance: 'Read AI governance',
+  },
+}
+
+export function getAiEngineeringContent(language: Language): AiEngineeringCopy {
+  if (language === 'pt') {
+    return {
+      profile: aiEngineeringProfilePt,
+      stages: aiExecutionStagesPt,
+      capabilities: aiEngineeringCapabilitiesPt,
+      evidence: aiEvidenceLedgerPt,
+      nextArtifacts: aiNextArtifactsPt,
+      ui: aiEngineeringUi.pt,
+    }
+  }
+
+  return {
+    profile: aiEngineeringProfile,
+    stages: aiExecutionStages,
+    capabilities: aiEngineeringCapabilities,
+    evidence: aiEvidenceLedger,
+    nextArtifacts: aiNextArtifacts,
+    ui: aiEngineeringUi.en,
+  }
+}

@@ -10,20 +10,10 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import { Reveal } from '../components/Reveal'
 import { SiteHeader } from '../components/SiteHeader'
-import {
-  complementaryTraining,
-  contactOpensExternally,
-  digytronMethod,
-  digytronProjects,
-  digytronStack,
-  focusAreas,
-  portfolioProfile,
-  professionalExperiences,
-  publicContacts,
-  skillFocus,
-  supportingSkills,
-} from '../content'
+import { contactOpensExternally } from '../content'
+import { getPortfolioContent } from '../content-bilingual'
 import { useScrolled } from '../hooks/useScrolled'
+import type { Language } from '../i18n'
 import { Icon } from '../icons'
 
 type HomePageProps = {
@@ -31,19 +21,41 @@ type HomePageProps = {
   onHome: (section?: string) => void
   onOpenGovernance?: () => void
   onOpenAiEngineering?: () => void
+  language: Language
+  onLanguageChange: (language: Language) => void
 }
-
-const methodHighlights = [
-  { label: 'Entender', detail: digytronMethod[0].detail },
-  { label: 'Construir', detail: digytronMethod[2].detail },
-  { label: 'Provar', detail: digytronMethod[4].detail },
-]
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiEngineering }: HomePageProps) {
+export function HomePage({
+  onOpenCurriculum,
+  onHome,
+  onOpenGovernance,
+  onOpenAiEngineering,
+  language,
+  onLanguageChange,
+}: HomePageProps) {
   const scrolled = useScrolled(56)
   const reduced = useReducedMotion()
+  const content = getPortfolioContent(language)
+  const {
+    profile: portfolioProfile,
+    contacts: publicContacts,
+    focusAreas,
+    experiences: professionalExperiences,
+    skillFocus,
+    supportingSkills,
+    stack: digytronStack,
+    training: complementaryTraining,
+    projects: digytronProjects,
+    method: digytronMethod,
+    homeCopy: copy,
+  } = content
+  const methodHighlights = [
+    { label: copy.methodLabels[0], detail: digytronMethod[0].detail },
+    { label: copy.methodLabels[1], detail: digytronMethod[2].detail },
+    { label: copy.methodLabels[2], detail: digytronMethod[4].detail },
+  ]
 
   return (
     <div className="app-shell home-shell">
@@ -52,6 +64,8 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
         onHome={onHome}
         onOpenGovernance={onOpenGovernance}
         onOpenAiEngineering={onOpenAiEngineering}
+        language={language}
+        onLanguageChange={onLanguageChange}
         visible={scrolled}
       />
 
@@ -65,7 +79,7 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
           <div className="container portrait-hero-inner">
             <motion.aside
               className="hero-side hero-side-left"
-              aria-label="Identidade profissional"
+              aria-label={copy.identityAria}
               initial={reduced ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.08, ease }}
@@ -76,36 +90,36 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
                 {portfolioProfile.heroNote}
               </p>
               <a className="hero-side-contact" href={publicContacts[0].href}>
-                Vamos conversar
+                {copy.talkToMe}
                 <Icon name="arrow-up-right" />
               </a>
             </motion.aside>
 
-            <figure className="hero-portrait" aria-label="Retrato de Dyllan Alves Cordeiro">
+            <figure className="hero-portrait" aria-label={copy.portraitAria}>
               <div className="hero-portrait-image-wrap">
                 <img
                   className="hero-portrait-image"
                   src="/assets/dyllan-alves-cordeiro-portrait.png"
-                  alt="Retrato de Dyllan Alves Cordeiro"
+                  alt={copy.portraitAria}
                   width="1280"
                   height="1280"
                   decoding="async"
                 />
               </div>
               <figcaption className="hero-portrait-caption">
-                <span>Valparaíso de Goiás</span>
-                <span>Cibersegurança defensiva</span>
+                <span>{copy.location}</span>
+                <span>{copy.portraitFocus}</span>
               </figcaption>
             </figure>
 
             <motion.aside
               className="hero-side hero-side-right"
-              aria-label="Áreas de atuação"
+              aria-label={copy.focusAria}
               initial={reduced ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.16, ease }}
             >
-              <p className="hero-side-label">Trabalho com</p>
+              <p className="hero-side-label">{copy.workWith}</p>
               <ul className="hero-focus-list">
                 {focusAreas.map((area) => (
                   <li key={area.code} className={area.primary ? 'is-primary' : undefined}>
@@ -115,7 +129,7 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
                 ))}
               </ul>
               <p className="hero-side-copy hero-side-copy-right">
-                Infraestrutura, governança e software sustentam o núcleo defensivo.
+                {copy.focusSupportingLine}
               </p>
             </motion.aside>
 
@@ -123,20 +137,20 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
               <div className="hero-title-block">
                 <span className="hero-kicker">{portfolioProfile.headline}</span>
                 <h1 id="hero-title">
-                  Segurança defensiva onde o risco é <em>real.</em>
+                  {copy.heroTitle.replace(/ real\.$/, '')} <em>real.</em>
                 </h1>
               </div>
               <div className="hero-bottom-center">
-                <span>cibersegurança · infraestrutura · governança · software</span>
+                <span>{copy.heroCenter}</span>
               </div>
               <div className="hero-bottom-actions">
                 <button className="button-light" type="button" onClick={() => onHome('contato')}>
-                  Falar comigo
+                  {copy.contactButton}
                   <Icon name="arrow-up-right" />
                 </button>
                 {onOpenGovernance ? (
                   <button className="hero-text-link" type="button" onClick={onOpenGovernance}>
-                    Governança de IA
+                    {copy.governanceButton}
                     <Icon name="arrow-up-right" />
                   </button>
                 ) : null}
@@ -148,24 +162,22 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
         <section className="portfolio-section profile-section" id="perfil" aria-labelledby="profile-title">
           <Reveal className="container section-grid profile-section-grid" variant="soft">
             <div className="section-heading-block">
-              <span className="section-eyebrow">Sobre</span>
-              <h2 id="profile-title">Cibersegurança primeiro. O resto sustenta.</h2>
+              <span className="section-eyebrow">{copy.aboutEyebrow}</span>
+              <h2 id="profile-title">{copy.aboutTitle}</h2>
               <p>{portfolioProfile.intro}</p>
               <div className="profile-meta-row">
                 <span>{portfolioProfile.location}</span>
                 <span>•</span>
-                <span>Cibersegurança defensiva · IAM · resiliência</span>
+                <span>{copy.aboutMeta}</span>
               </div>
             </div>
 
             <div className="profile-card">
               <span className="card-eyebrow">Digytron BR</span>
-              <h3>A operação própria onde a segurança vira engenharia.</h3>
-              <p>
-                Produtos digitais e ferramentas construídos com contexto, documentação e cuidado com a operação.
-              </p>
+              <h3>{copy.operationCardTitle}</h3>
+              <p>{copy.operationCardCopy}</p>
               <button className="card-link" type="button" onClick={() => onHome('metodo')}>
-                Conhecer o trabalho
+                {copy.operationCardLink}
                 <Icon name="arrow-up-right" />
               </button>
             </div>
@@ -176,10 +188,10 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
           <Reveal className="container" variant="drift">
             <div className="section-heading-inline">
               <div>
-                <span className="section-eyebrow">Áreas de atuação</span>
-                <h2 id="focus-title">Um núcleo principal. Três pilares de sustentação.</h2>
+                <span className="section-eyebrow">{copy.focusEyebrow}</span>
+                <h2 id="focus-title">{copy.focusTitle}</h2>
               </div>
-              <p>Cibersegurança defensiva no centro. Infraestrutura, governança e software no entorno.</p>
+              <p>{copy.focusCopy}</p>
             </div>
             <div className="focus-editorial-list" role="list">
               {focusAreas.map((area) => (
@@ -210,10 +222,10 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
           <Reveal className="container" variant="lift">
             <div className="section-heading-inline experience-heading">
               <div>
-                <span className="section-eyebrow">Experiência</span>
-                <h2 id="experience-title">Experiência que virou repertório.</h2>
+                <span className="section-eyebrow">{copy.experienceEyebrow}</span>
+                <h2 id="experience-title">{copy.experienceTitle}</h2>
               </div>
-              <span className="section-side-note">Cibersegurança defensiva e operações de missão crítica.</span>
+              <span className="section-side-note">{copy.experienceSideNote}</span>
             </div>
 
             <div className="experience-list">
@@ -244,15 +256,15 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
           <Reveal className="container" variant="base">
             <div className="section-heading-inline">
               <div>
-                <span className="section-eyebrow">Competências</span>
-                <h2 id="skills-title">O que sustenta o foco. Sem vitrine.</h2>
+                <span className="section-eyebrow">{copy.skillsEyebrow}</span>
+                <h2 id="skills-title">{copy.skillsTitle}</h2>
               </div>
-              <p>Uma leitura do repertório, não um mosaico de pílulas.</p>
+              <p>{copy.skillsCopy}</p>
             </div>
 
             <div className="skills-redesign">
               <article className="skill-focus-card">
-                <span className="section-eyebrow">Foco</span>
+                <span className="section-eyebrow">{copy.focusLabel}</span>
                 <h3>{skillFocus.title}</h3>
                 <p>{skillFocus.detail}</p>
                 <ul className="skill-line-list">
@@ -269,15 +281,15 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
                   </article>
                 ))}
                 <article className="skill-support-card skill-support-quiet">
-                  <h3>Stack Digytron BR</h3>
-                  <p>Ferramentas da operação própria, em leitura de alto nível.</p>
+                  <h3>{copy.stackTitle}</h3>
+                  <p>{copy.stackCopy}</p>
                   <p className="skill-support-line">{digytronStack.join(' · ')}</p>
                 </article>
               </div>
 
               <aside className="learning-card">
-                <span className="section-eyebrow">Formação complementar</span>
-                <h3>Base ampla, próxima da operação.</h3>
+                <span className="section-eyebrow">{copy.learningEyebrow}</span>
+                <h3>{copy.learningTitle}</h3>
                 <ul>
                   {complementaryTraining.map((item) => <li key={item}>{item}</li>)}
                 </ul>
@@ -289,11 +301,9 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
         <section className="portfolio-section digytron-section" id="metodo" aria-labelledby="dgy-title">
           <Reveal className="container section-grid digytron-grid" variant="soft">
             <div className="dgy-copy">
-              <span className="section-eyebrow">Digytron BR</span>
-              <h2 id="dgy-title">Projetos reais, construídos no mesmo contexto.</h2>
-              <p>
-                Na Digytron BR, a cibersegurança atravessa a arquitetura — do Soberano aos produtos que tornam essa operação possível.
-              </p>
+              <span className="section-eyebrow">{copy.digytronEyebrow}</span>
+              <h2 id="dgy-title">{copy.digytronTitle}</h2>
+              <p>{copy.digytronCopy}</p>
               <div className="dgy-project-list">
                 {digytronProjects.map((project) => (
                   <div className="dgy-project-card" key={project.title}>
@@ -303,11 +313,11 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
                 ))}
               </div>
               <p className="dgy-note-copy">
-                A descrição é de alto nível; cases detalhados ainda aguardam evidência e aprovação de citação.
+                {copy.digytronNote}
               </p>
             </div>
             <div className="method-card">
-              <span className="card-eyebrow">Como eu trabalho</span>
+              <span className="card-eyebrow">{copy.methodTitle}</span>
               <div className="method-list">
                 {methodHighlights.map((item) => (
                   <div className="method-row" key={item.label}>
@@ -323,24 +333,24 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
         <section className="portfolio-section cv-section" aria-labelledby="cv-title-home">
           <Reveal className="container cv-section-inner" variant="settle">
             <div>
-              <span className="section-eyebrow">Currículo</span>
-              <h2 id="cv-title-home">Cibersegurança em uma leitura só.</h2>
-              <p>Uma página própria para ler, imprimir e levar para a candidatura.</p>
+              <span className="section-eyebrow">{copy.curriculumEyebrow}</span>
+              <h2 id="cv-title-home">{copy.curriculumTitle}</h2>
+              <p>{copy.curriculumCopy}</p>
             </div>
             <button className="button-light" type="button" onClick={onOpenCurriculum}>
-              Ver currículo
+              {copy.curriculumButton}
               <Icon name="arrow-up-right" />
             </button>
           </Reveal>
         </section>
 
-        <ContactSection />
+        <ContactSection contacts={publicContacts} copy={copy} />
       </main>
 
       <footer className="site-footer site-footer-v2">
         <div className="container footer-inner">
           <span className="footer-name">Dyllan</span>
-          <span className="footer-context">Digytron BR · cibersegurança aplicada</span>
+          <span className="footer-context">{copy.footerContext}</span>
           <a
             className="footer-context"
             href="https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio"
@@ -355,7 +365,13 @@ export function HomePage({ onOpenCurriculum, onHome, onOpenGovernance, onOpenAiE
   )
 }
 
-function ContactSection() {
+function ContactSection({
+  contacts,
+  copy,
+}: {
+  contacts: ReturnType<typeof getPortfolioContent>['contacts']
+  copy: ReturnType<typeof getPortfolioContent>['homeCopy']
+}) {
   const ref = useRef<HTMLElement>(null)
   const reduced = useReducedMotion()
   const { scrollYProgress } = useScroll({
@@ -377,14 +393,12 @@ function ContactSection() {
       )}
       <Reveal className="container section-grid contact-grid-v2" variant="lift">
         <div>
-          <span className="section-eyebrow">Contato</span>
-          <h2 id="contact-title">Vamos conversar.</h2>
-          <p className="contact-lede">
-            Para candidaturas, parcerias técnicas ou uma conversa sobre cibersegurança — com arquitetura, dados e software no entorno.
-          </p>
+          <span className="section-eyebrow">{copy.contactEyebrow}</span>
+          <h2 id="contact-title">{copy.contactTitle}</h2>
+          <p className="contact-lede">{copy.contactLede}</p>
         </div>
         <div className="contact-list-v2">
-          {publicContacts.map((contact) => (
+          {contacts.map((contact) => (
             <a
               href={contact.href}
               key={contact.label}
