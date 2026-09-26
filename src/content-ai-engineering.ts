@@ -69,7 +69,13 @@ export const aiEngineeringCapabilities = [
     label: 'Governed multi-agent orchestration',
     state: 'BUILT / PRIVATE EVIDENCE',
     detail:
-      'The Coordinator–Executor method turns one supervisory session into scoped work dispatched through a supported harness/model matrix, with structured envelopes, returns, and explicit capability boundaries.',
+      'The Coordinator decomposes intent into bounded work with an objective, scope, acceptance evidence, and human gates. Dispatch routes by measured capability; the Executor returns structured evidence, and missing capability is surfaced instead of silently replaced.',
+  },
+  {
+    label: 'Execution security boundaries',
+    state: 'BUILT / PRIVATE EVIDENCE',
+    detail:
+      'Execution starts read-only. A write requires an explicit one-time grant scoped to a repository and paths; sensitive actions remain behind human approval. This describes a private engineering method, not an external security certification.',
   },
   {
     label: 'RAG and tool workflows',
@@ -89,7 +95,7 @@ export const aiEvidenceLedger = [
   {
     label: 'Implementation',
     state: 'BUILT',
-    detail: 'Coordinator–Executor dispatch, session continuity patterns, structured returns, server-side model integration, tools, and product delivery exist in private systems.',
+    detail: 'Coordinator–Executor dispatch, bounded task decomposition, scoped write grants, human approval gates, session continuity patterns, structured returns, server-side model integration, tools, and product delivery exist in private systems.',
   },
   {
     label: 'Public surface',
@@ -99,7 +105,7 @@ export const aiEvidenceLedger = [
   {
     label: 'Evaluation harness',
     state: 'NOT YET PUBLIC',
-    detail: 'Representative datasets, graders, regression evaluation, quality, latency, cost, and safety results still need to be published as auditable artifacts.',
+    detail: 'Representative datasets, graders, regression evaluation, quality, latency, cost, and public security results still need to be published as auditable artifacts.',
   },
   {
     label: 'Enterprise outcomes',
@@ -112,6 +118,7 @@ export const aiNextArtifacts = [
   'An open evaluation harness with representative data, graders, and regression reports.',
   'A governed tool and database integration that can be tested without exposing customer data.',
   'A public case study with context, responsibility, architecture, and measurable outcome.',
+  'A planned evidence-to-doctrine loop would turn verified execution outcomes into proposed rule updates, with owner review and ratification before adoption; it is not implemented yet.',
 ] as const
 
 export const aiEngineeringContacts = publicContacts.filter(
@@ -213,7 +220,13 @@ const aiEngineeringCapabilitiesPt = [
     label: 'Orquestração multiagente governada',
     state: 'CONSTRUÍDO / EVIDÊNCIA PRIVADA',
     detail:
-      'O método Coordenador–Executor transforma uma sessão supervisora em trabalho delimitado, despachado por uma matriz de harness/modelo suportada, com envelopes estruturados, retornos e limites explícitos de capacidade.',
+      'A sessão Coordenadora decompõe a intenção em trabalho delimitado, com objetivo, escopo, evidência de aceite e decisões sob controle humano. O Dispatch roteia por capacidade medida; o Executor devolve evidência estruturada, e capacidades ausentes são apontadas sem substituição silenciosa.',
+  },
+  {
+    label: 'Limites de segurança da execução',
+    state: 'CONSTRUÍDO / EVIDÊNCIA PRIVADA',
+    detail:
+      'A execução começa em modo de leitura. Escritas exigem um grant explícito e de uso único, limitado a repositório e caminhos; ações sensíveis permanecem sob aprovação humana. Isso descreve um método de engenharia privado, não uma certificação externa de segurança.',
   },
   {
     label: 'RAG e workflows com tools',
@@ -233,7 +246,7 @@ const aiEvidenceLedgerPt = [
   {
     label: 'Implementação',
     state: 'CONSTRUÍDO',
-    detail: 'Despacho Coordenador–Executor, padrões de continuidade de sessão, retornos estruturados, integração de modelos no servidor, tools e entrega de produto existem em sistemas privados.',
+    detail: 'Despacho Coordenador–Executor, decomposição de tarefas delimitadas, grants de escrita por escopo, aprovações humanas, continuidade de sessão, retornos estruturados, integração de modelos no servidor, tools e entrega de produto existem em sistemas privados.',
   },
   {
     label: 'Superfície pública',
@@ -243,7 +256,7 @@ const aiEvidenceLedgerPt = [
   {
     label: 'Harness de avaliação',
     state: 'AINDA NÃO PÚBLICO',
-    detail: 'Datasets representativos, graders, avaliação de regressão, qualidade, latência, custo e resultados de segurança ainda precisam ser publicados como artefatos auditáveis.',
+    detail: 'Datasets representativos, graders, avaliação de regressão, qualidade, latência, custo e resultados públicos de segurança ainda precisam ser publicados como artefatos auditáveis.',
   },
   {
     label: 'Resultados enterprise',
@@ -256,6 +269,7 @@ const aiNextArtifactsPt = [
   'Um harness de avaliação aberto com dados representativos, graders e relatórios de regressão.',
   'Uma integração governada com tools e banco de dados que possa ser testada sem expor dados de clientes.',
   'Um case público com contexto, responsabilidade, arquitetura e resultado mensurável.',
+  'Um ciclo planejado de evidência para doutrina transformaria resultados verificados de execução em propostas de revisão, com revisão e ratificação do dono antes da adoção; ainda não foi implementado.',
 ] as const
 
 const aiEngineeringUi: Record<Language, AiEngineeringCopy['ui']> = {

@@ -23,6 +23,8 @@ conteúdo público só pode avançar quando o Dyllan fornecer ou aprovar cada it
 | Formação e idiomas | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | UNIDESC, Sistemas de Informação, inglês e espanhol |
 | Histórico de redes e suporte | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | AGE Telecom, Stefanini Group, NWI Telecom e SKILL.NET |
 | Digytron BR em nível técnico | CONFIRMADO | Documentação local da Digytron + solicitação explícita desta atualização | Contexto atual de engenharia aplicada; sem clientes, Space ou dados internos |
+| Decomposição de trabalho com IA e limites de execução | CONFIRMADO | Protocolo de Dispatch, spec de decomposição e autorização explícita de Dyllan em 26/09/2026 | Descrever em alto nível; grants e evidências permanecem privados; sem alegar certificação ou avaliação pública de segurança |
+| Amadurecimento automatizado da doutrina | PLANEJADO | Solicitação explícita de Dyllan em 26/09/2026 | Roadmap apenas; não afirmar que o fluxo foi implementado |
 | Foto de Dyllan | CONFIRMADO | Arquivo real fornecido em 20/08/2026 | `/public/assets/dyllan-alves-cordeiro.jpeg` e composição central do Hero |
 | Repositório do site | CONFIRMADO | Criado nesta sessão em 20/08/2026 | https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio — nunca Digytron System |
 
@@ -44,7 +46,9 @@ conteúdo público só pode avançar quando o Dyllan fornecer ou aprovar cada it
 A rota de AI Engineering é uma superfície pública profissional bilíngue, com português como estado inicial. Ela pode afirmar apenas o
 posicionamento congelado de fundador/full-stack engineer, experiência prática com integração server-side de
 modelos, workflows com tools, padrões de RAG, continuidade de sessão e o método Coordinator–Executor dentro de
-uma matriz de harness/modelo suportada.
+uma matriz de harness/modelo suportada. Também pode descrever a decomposição de objetivos em trabalho delimitado,
+a execução em modo de leitura por padrão, grants explícitos e restritos para escrita e decisões sensíveis sob
+controle humano.
 
 O switch de idioma é global e persistido entre as rotas públicas. A tradução deve preservar o mesmo limite factual
 em PT-BR e em inglês; mudar o idioma não autoriza adicionar métricas, escala enterprise, clientes, certificações ou
@@ -59,7 +63,8 @@ Ela deve separar explicitamente quatro estados de evidência:
 
 Não publicar nessa rota: `INCB` sem definição e prova auditável, cobertura irrestrita de qualquer harness/modelo,
 proficiência em espanhol, métricas de produção não divulgadas, escala enterprise, nomes de clientes ou a promessa de
-que uma implementação privada equivale a uma avaliação pública.
+que uma implementação privada equivale a uma avaliação pública. Amadurecimento automatizado da doutrina pode
+aparecer somente como planejado até haver desenho, salvaguardas e implementação verificáveis.
 
 ## Conteúdo omitido da versão pública
 

@@ -34,6 +34,7 @@ qualquer org/conta da Digytron.
 - [x] Nome profissional e contatos principais vieram do currículo-base fornecido.
 - [x] Dyllan aprovou o posicionamento desta versão (cibersegurança no centro; arquitetura de sistemas, dados e software como apoio).
 - [x] Dyllan autorizou publicar o conteúdo factual desta versão.
+- [x] Dyllan autorizou em 26/09/2026 atualizar `/ai-engineering` com a decomposição de trabalho, os limites de segurança de execução e o amadurecimento da doutrina marcado apenas como planejado.
 - [x] E-mail, telefone e LinkedIn foram transcritos e revisados; GitHub público: `dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio`.
 - [x] Currículo-base e formação foram lidos; certificados formais ainda precisam ser confirmados.
 - [ ] Três a cinco cases publicáveis foram aprovados.
