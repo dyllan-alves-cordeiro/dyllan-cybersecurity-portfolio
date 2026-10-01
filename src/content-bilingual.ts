@@ -163,7 +163,7 @@ const experiencesEn: Experience[] = [
   },
   {
     company: 'Stefanini Group',
-    role: 'Network & Operations Analyst (Caixa Econômica Federal project)',
+    role: 'Network & Operations Analyst (banking project)',
     period: '2021',
     summary: 'Continuous monitoring of circuits and mission-critical data traffic in a national banking environment.',
     bullets: [
@@ -292,8 +292,7 @@ const trainingEn = [
 ] as const
 
 const languagesEn: readonly LanguageItem[] = [
-  { language: 'English', level: 'Upper-intermediate' },
-  { language: 'Spanish', level: 'Basic' },
+  { language: 'English', level: 'Level to be confirmed' },
 ]
 
 const methodEn: readonly MethodItem[] = [
@@ -428,7 +427,7 @@ export const curriculumCopy: Record<Language, CurriculumCopy> = {
     factualItems: [
       'Cibersegurança Defensiva e IAM como foco principal',
       'Governança de identidade, privilégio mínimo e RLS',
-      'Operação de redes bancárias de missão crítica (Stefanini / CEF)',
+      'Operação de redes bancárias de missão crítica (Stefanini)',
       'LGPD técnica, ISO 27001 e conformidade auditável',
     ],
     operationalKicker: 'STATUS OPERACIONAL',
@@ -458,7 +457,7 @@ export const curriculumCopy: Record<Language, CurriculumCopy> = {
     factualItems: [
       'Defensive Cybersecurity and IAM as the primary focus',
       'Identity governance, least privilege, and RLS',
-      'Mission-critical banking network operations (Stefanini / CEF)',
+      'Mission-critical banking network operations (Stefanini)',
       'Technical LGPD, ISO 27001, and auditable compliance',
     ],
     operationalKicker: 'OPERATIONAL STATUS',

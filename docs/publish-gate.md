@@ -1,55 +1,25 @@
-<!--
-DGX FILE HEADER
-nivel: L2-small
-arquivo: docs/publish-gate.md
-papel: Gate de domínio, conteúdo e autorização para publicação.
-modo: publish-decision
-validar: revisão manual do Dyllan
--->
-<!-- DGX:ANCHOR: personal-portfolio-publish-gate -->
+# Gate de publicação — AI Engineering
 
-# Gate de publicação
+## Escopo e autorização
 
-## Estado atual
+Em 01/10/2026, Dyllan autorizou pelo envelope AI Engineering Portfolio Closure a atualização factual do portfólio pessoal, os currículos PT/EN e commit/push após validação. A continuação autônoma confirmou a integração dos artefatos revisados pelo ledger.
 
-`PUBLISHED` — versão bilíngue web publicada e evidenciada em 25/09/2026:
+Owner exclusivo: `dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio`. Hospedagem existente: projeto pessoal Vercel `dyllan1/dyllan-cybersecurity-portfolio`. Não transferir para conta ou organização Digytron.
 
-- Site: https://dyllan-cybersecurity-portfolio.vercel.app
-- GitHub: https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio
-- Vercel: conta `dyllan-alves-cordeiro`, time `dyllan1` (Dyllan), projeto `dyllan-cybersecurity-portfolio`
+## Conteúdo desta entrega
 
-Domínio próprio ainda não definido. Cases detalhados e certificados formais continuam pendentes e o
-site declara isso. O GitHub `dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio` está ligado ao
-projeto Vercel `dyllan1/dyllan-cybersecurity-portfolio`; push em `main` deve gerar deploy.
+- `/ai-engineering` é a entrada de candidatura AI, com cases sanitizados DGX Sovereign e Lecion.
+- PDFs AI PT e EN separados, uma página cada, revisados visualmente e vinculados por idioma.
+- Telefone autorizado: (61) 98642-9342.
+- Claims e limitações seguem `docs/content-contract.md`. Código privado, caminhos operacionais e clientes não são publicados.
+- Vector RAG, LLM evals e cinco anos especificamente como AI Engineer não são claims comprovados.
+- Companion RAG + Evals permanece PLANNED, fora da implementação do site.
 
-## Dono obrigatório
+## Validação e publicação
 
-Este portfólio é pessoal. GitHub e Vercel vivem **somente** em `dyllan-alves-cordeiro`.
+Typecheck, lint e build passam; o projeto não oferece script de testes. Matriz PT/EN, 375/1440px nas quatro rotas validada em Chrome de teste via DevTools; captura nativa indisponível. Barra do currículo rechecada sem overflow. Resultados detalhados e receipts ficam no relatório local de entrega.
 
-Nunca publicar, transferir, linkar ou hospedar este repositório no time **Digytron System** nem em
-qualquer org/conta da Digytron.
+A publicação de 25/09/2026 é histórica. Para esta mudança, push em `main` deve acionar o pipeline existente, mas não prova deploy. O estado desta revisão é CONTENT VALIDATED / DEPLOY UNVERIFIED até observar o commit e os assets no ambiente público. O relatório local registra o resultado medido após o push.
 
-## Condições obrigatórias
-
-- [x] Nome profissional e contatos principais vieram do currículo-base fornecido.
-- [x] Dyllan aprovou o posicionamento desta versão (cibersegurança no centro; arquitetura de sistemas, dados e software como apoio).
-- [x] Dyllan autorizou publicar o conteúdo factual desta versão.
-- [x] Dyllan autorizou em 26/09/2026 atualizar `/ai-engineering` com a decomposição de trabalho, os limites de segurança de execução e o amadurecimento da doutrina marcado apenas como planejado.
-- [x] E-mail, telefone e LinkedIn foram transcritos e revisados; GitHub público: `dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio`.
-- [x] Currículo-base e formação foram lidos; certificados formais ainda precisam ser confirmados.
-- [ ] Três a cinco cases publicáveis foram aprovados.
-- [x] Idioma inicial: PT-BR.
-- [x] Apresentação web em inglês com toggle global, confirmação e persistência entre rotas.
-- [ ] Domínio-alvo próprio definido.
-- [x] Estratégia de hospedagem: Vercel.
-- [x] Build e checagem visual inicial desktop/mobile foram executados localmente.
-- [x] Dyllan autorizou a publicação nesta sessão.
-- [x] Smoke público HTTP/HTTPS confirmou as quatro rotas e o fluxo PT/EN.
-
-## Regra de honestidade
-
-Build verde, screenshot ou URL local não significam publicação. O botão de impressão do CV gera
-uma visualização local para salvar em PDF; isso não é um PDF público nem uma publicação.
-`PUBLISHED` nesta sessão cobre a URL `*.vercel.app` evidenciada. O site web é bilíngue; o PDF
-oficial baixável continua em português até que uma versão inglesa separada seja gerada e revisada.
-Domínio próprio continua pendente.
+Site: https://dyllan-cybersecurity-portfolio.vercel.app/ai-engineering
+Domínio próprio continua pendente. Nenhuma candidatura é enviada nesta rodada.

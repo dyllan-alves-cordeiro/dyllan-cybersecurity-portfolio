@@ -128,7 +128,7 @@ export const professionalExperiences: Experience[] = [
   },
   {
     company: 'Stefanini Group',
-    role: 'Analista de Redes e Operações (Projeto Caixa Econômica Federal)',
+    role: 'Analista de Redes e Operações (projeto bancário)',
     period: '2021',
     summary:
       'Monitoramento contínuo de circuitos e tráfego de dados de missão crítica em ambiente bancário nacional.',
@@ -304,8 +304,7 @@ export const complementaryTraining = [
 ] as const
 
 export const languages = [
-  { language: 'Inglês', level: 'Intermediário avançado' },
-  { language: 'Espanhol', level: 'Básico' },
+  { language: 'Inglês', level: 'Nível a confirmar' },
 ] as const
 
 export const digytronMethod = [

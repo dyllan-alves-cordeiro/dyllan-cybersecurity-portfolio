@@ -37,7 +37,7 @@ export function AiEngineeringPage({
   const content = getAiEngineeringContent(language)
   const { profile, stages, capabilities, evidence, nextArtifacts, ui } = content
   const contacts = getPortfolioContent(language).contacts.filter(
-    (contact) => contact.kind !== 'phone' && contact.kind !== 'portfolio',
+    (contact) => contact.kind !== 'portfolio',
   )
 
   return (
@@ -64,10 +64,10 @@ export function AiEngineeringPage({
               <p className="ai-supporting-line">{profile.supportingLine}</p>
               <p className="ai-meta">{profile.locationNote}</p>
               <div className="ai-hero-actions">
-                <button className="button-light" type="button" onClick={onOpenCurriculum}>
+                <a className="button-light" href={language === 'pt' ? '/assets/dyllan-alves-ai-engineer-pt.pdf' : '/assets/dyllan-alves-ai-engineer-en.pdf'} target="_blank" rel="noreferrer">
                   {ui.openCurriculum}
                   <Icon name="arrow-up-right" />
-                </button>
+                </a>
                 {onOpenGovernance ? (
                   <button className="ai-text-link" type="button" onClick={onOpenGovernance}>
                     {ui.readGovernance}
@@ -136,6 +136,37 @@ export function AiEngineeringPage({
               ))}
             </div>
           </Reveal>
+        </section>
+
+        <section className="ai-section" aria-labelledby="ai-cases-title">
+          <div className="container">
+            <div className="ai-section-heading">
+              <h2 id="ai-cases-title">{language === 'pt' ? 'Dois sistemas. Problemas reais de engenharia.' : 'Two systems. Real engineering problems.'}</h2>
+              <p>{language === 'pt' ? 'Arquitetura sanitizada de implementações privadas. Evidência local, limites explícitos.' : 'Sanitized architecture of private implementations. Local evidence and explicit limits.'}</p>
+            </div>
+            <article className="ai-evidence-row" id="dgx-sovereign-case">
+              <div>
+                <h3>DGX Sovereign — Governed Agentic Engineering Platform</h3>
+                <p>{language === 'pt' ? 'Intenção humana → tarefa delimitada → roteamento por capacidade → MCP/tools → execução por escopo → evidência → verificação → auditoria e continuidade.' : 'Human intent → bounded task → capability routing → MCP/tools → scoped execution → evidence → verification → audit and continuity.'}</p>
+                <p>{language === 'pt' ? 'Projetei o método Coordenador–Executor, com admissão antes da execução, grants temporários no runtime próprio e retornos ligados a testes, diff e Git. Especificações canônicas e detectores de consistência sustentam rastreabilidade e decisões humanas.' : 'Designed Coordinator–Executor workflows with pre-execution admission, temporary grants within the platform runtime and returns linked to tests, diff and Git. Canonical specifications and consistency detectors support traceability and human decisions.'}</p>
+                <p>{language === 'pt' ? '36 testes locais de boundary/adversarial e 13 de gates MCP passaram em 01/10/2026. Suítes focadas; não representam saúde global, avaliação LLM, sandbox universal ou resultados enterprise.' : '36 local boundary/adversarial tests and 13 MCP gate tests passed on October 1, 2026. Focused suites; they do not establish global health, LLM evaluation, a universal sandbox or enterprise outcomes.'}</p>
+              </div>
+              <span>{language === 'pt' ? 'IMPLEMENTADO / FONTE PRIVADA' : 'IMPLEMENTED / PRIVATE SOURCE'}</span>
+            </article>
+            <article className="ai-evidence-row" id="lecion-case">
+              <div>
+                <h3>Lecion — LLM Application Engineering</h3>
+                <p>{language === 'pt' ? 'Requisição autenticada → contexto SQL por usuário → histórico/compactação → tools PDF → prompt → modelo no servidor → SSE → créditos/falhas → persistência e telemetria.' : 'Authenticated request → user-scoped SQL context → history/compaction → PDF tools → prompt → server-side model → SSE → credits/failures → persistence and telemetry.'}</p>
+                <p>{language === 'pt' ? 'Construí fluxos LLM com autenticação JWT, briefings por usuário, janelas por plano, tools de leitura/validação/proposta de edição e aceite humano. Streaming com heartbeat, timeout upstream e refunds tratam os modos de falha do produto.' : 'Built LLM workflows with JWT authentication, user-scoped briefings, plan-based windows, read/validate/edit-proposal tools and human acceptance. Streaming heartbeat, upstream timeouts and refunds address product failure modes.'}</p>
+                <p>{language === 'pt' ? '68 testes locais e typecheck passaram em 01/10/2026. Recuperação SQL/web/documental comprovada; vector RAG e LLM evals não estabelecidos. Adoção, disponibilidade atual e ganho de latência não medidos.' : '68 local tests and typecheck passed on October 1, 2026. SQL/web/document retrieval demonstrated; vector RAG and LLM evals are not established. Adoption, current availability and latency gains were not measured.'}</p>
+              </div>
+              <span>{language === 'pt' ? 'IMPLEMENTADO / FONTE PRIVADA' : 'IMPLEMENTED / PRIVATE SOURCE'}</span>
+            </article>
+            <div className="ai-hero-actions">
+              <a className="button-light" href={language === 'pt' ? '/assets/dyllan-alves-ai-engineer-pt.pdf' : '/assets/dyllan-alves-ai-engineer-en.pdf'}>{language === 'pt' ? 'Baixar currículo AI — PT' : 'Download AI resume — EN'}</a>
+              <a className="ai-text-link" href="https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio" target="_blank" rel="noreferrer">{language === 'pt' ? 'Fonte pública deste portfólio' : 'Public source of this portfolio'}</a>
+            </div>
+          </div>
         </section>
 
         <section className="ai-section ai-evidence-section" aria-labelledby="ai-evidence-title">

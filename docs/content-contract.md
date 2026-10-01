@@ -1,82 +1,61 @@
 <!--
 DGX FILE HEADER
-nivel: L2-small
+nivel: L2-medium
 arquivo: docs/content-contract.md
-papel: Fonte de verdade para fatos públicos do portfólio pessoal.
+papel: Fonte editorial dos claims públicos do portfólio pessoal.
 modo: contrato de conteúdo
-validar: revisão manual do Dyllan
+validar: revisão factual + npm run typecheck + npm run build
 -->
 <!-- DGX:ANCHOR: personal-portfolio-content-contract -->
 
 # Contrato de conteúdo factual
 
-Este arquivo impede que a interface transforme estrutura de página em currículo inventado. O
-conteúdo público só pode avançar quando o Dyllan fornecer ou aprovar cada item.
+Revisão 2026-10-01. Autoridade: envelope AI Engineering Portfolio Closure e autorização do Owner para a próxima etapa. A rota /ai-engineering é a entrada para candidaturas AI; o posicionamento cybersecurity continua disponível nas demais superfícies. Tradução não amplia claim.
 
-## Fatos usados nesta base
+## Identidade e carreira
 
-| Item | Estado | Fonte | Uso atual |
-|---|---|---|---|
-| Nome: Dyllan Alves Cordeiro | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | Cabeçalho, Hero e rota `/curriculo` |
-| Tema e posicionamento de trabalho | CONFIRMADO | Envelope GK + currículo-base + revisão 20/08/2026 | Cibersegurança no centro; arquitetura de sistemas, dados e software como apoio |
-| Contatos públicos | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | E-mail, telefone e LinkedIn; endereço completo não foi exposto |
-| Formação e idiomas | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | UNIDESC, Sistemas de Informação, inglês e espanhol |
-| Histórico de redes e suporte | CONFIRMADO | Currículo-base fornecido em 20/08/2026 | AGE Telecom, Stefanini Group, NWI Telecom e SKILL.NET |
-| Digytron BR em nível técnico | CONFIRMADO | Documentação local da Digytron + solicitação explícita desta atualização | Contexto atual de engenharia aplicada; sem clientes, Space ou dados internos |
-| Decomposição de trabalho com IA e limites de execução | CONFIRMADO | Protocolo de Dispatch, spec de decomposição e autorização explícita de Dyllan em 26/09/2026 | Descrever em alto nível; grants e evidências permanecem privados; sem alegar certificação ou avaliação pública de segurança |
-| Amadurecimento automatizado da doutrina | PLANEJADO | Solicitação explícita de Dyllan em 26/09/2026 | Roadmap apenas; não afirmar que o fluxo foi implementado |
-| Foto de Dyllan | CONFIRMADO | Arquivo real fornecido em 20/08/2026 | `/public/assets/dyllan-alves-cordeiro.jpeg` e composição central do Hero |
-| Repositório do site | CONFIRMADO | Criado nesta sessão em 20/08/2026 | https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio — nunca Digytron System |
+| Claim | Status | Source | Public usage | Limitation |
+|---|---|---|---|---|
+| Nome Dyllan Alves Cordeiro, contatos e formação UNIDESC | OWNER_STATED | Currículo-base e materiais privados de carreira | Header, contatos, currículos | Documentos acadêmicos não revalidados nesta rodada |
+| Telefone (61) 98642-9342 | OWNER_CONFIRMED | Envelope 01/10/2026 | Contato profissional e PDFs PT/EN | Não usar o número comercial da Digytron |
+| Founder e full-stack engineer na Digytron BR | OWNER_STATED + PROVEN em mecanismos | Histórico profissional e implementações inspecionadas | Resumo e experiência | Datas anteriores herdadas; autoria de cada linha não inferida de Git |
+| Suporte/redes em SKILL.NET, AGE e Stefanini | OWNER_STATED | Currículo-base | Histórico profissional | Não converter em AI Engineering ou cinco anos de desenvolvimento |
+| Foto pessoal | OWNER_CONFIRMED | Arquivo fornecido 20/08/2026 | Home | Sem imagem pessoal inventada |
+| GitHub/Vercel pessoal | PROVEN no repo | Remote e projeto existente | Código público deste site | Não usar organização Digytron |
 
-## Itens pendentes antes de conteúdo público
+## Evidence census — 2026-10-01
 
-- Cargo ou posicionamento preferido.
-- Datas finais atualizadas de experiências cujo currículo-base não as informa.
-- Certificados formais, instituições emissoras e datas.
-- GitHub de outros projetos pessoais, se existirem além deste repositório do site.
-- Aprovação do resumo profissional e da descrição pública da Digytron.
-- Três a cinco experiências/projetos com autorização de citação.
-- Para cada case: contexto, responsabilidade, abordagem, tecnologia e resultado comprovável.
-- Domínio desejado.
-- Idioma inicial: PT-BR default, com apresentação em inglês disponível no switch global.
-- Aprovação final da foto em produção e da versão visual.
+Fontes privadas são descritas em alto nível. Ledger completo e paths ficam nos materiais locais de carreira; não são publicados neste repo. PROVEN em código/teste local não significa resultado medido em produção.
 
-## Superfície `/ai-engineering`
+| Claim | Status | Source | Public usage | Limitation |
+|---|---|---|---|---|
+| Server-side LLM, JWT, SQL context, SSE, PDF tools, credits/refund | PROVEN | Lecion fonte atual + 68 testes/typecheck locais | Case e currículo | Sem disponibilidade, adoção ou qualidade de resposta medida |
+| History windows e workflow de compactação | PROVEN | Fonte e call site Lecion | Context engineering | Fidelidade de resumo/reinjeção e economia não medidas |
+| Coordinator/Executor, routing, grants e receipts | PROVEN | Runtime/dispatch + 36 testes focados | Case DGX | Runtime próprio; sem sandbox universal |
+| MCP/catalog/invoke e gates por conexão | PROVEN | Provider + MCP vivo + 13 testes focados | Capability map e case | Não implica transporte externo completo |
+| Especificações e consistência narrativa | PARTIAL | Detectores + auditoria anterior + Pulse atual | Mecanismo implementado | Saúde global contém achados; não afirmar verde |
+| Gateway PostgreSQL restrito e TLS verify-full | PROVEN na fonte | Gateway/config | Competência de dados | Runtime produtivo não sondado |
+| RLS/papéis/isolamento | PARTIAL | Migrations | Controles de acesso implementados em código | Aplicação e enforcement live não medidos |
+| 5+ anos como AI Engineer | NOT_PROVEN | Timeline Git e carreira | Não usar | Não inferir início de IA do período Digytron |
+| 5+ anos software/infra/operações | OWNER_STATED | Currículo-base | Preferir descrição sem cifra | Suporte não vira desenvolvimento automaticamente |
+| Vector RAG / embeddings / pgvector | NOT_PROVEN | Busca delimitada em aplicação/data | Somente roadmap | Estado global NOT_MEASURED |
+| LLM response evaluation harness | NOT_PROVEN | Testes atuais são determinísticos | Somente roadmap | Não descrever como apenas “ainda não público” |
+| RAG + Evals Lab | PLANNED | Proposta companion separada | Próximo projeto | Não implementado |
+| Contato profissional | OWNER_CONFIRMED | Envelope 01/10/2026 | (61) 98642-9342 | Não substituir pelo WhatsApp comercial |
 
-A rota de AI Engineering é uma superfície pública profissional bilíngue, com português como estado inicial. Ela pode afirmar apenas o
-posicionamento congelado de fundador/full-stack engineer, experiência prática com integração server-side de
-modelos, workflows com tools, padrões de RAG, continuidade de sessão e o método Coordinator–Executor dentro de
-uma matriz de harness/modelo suportada. Também pode descrever a decomposição de objetivos em trabalho delimitado,
-a execução em modo de leitura por padrão, grants explícitos e restritos para escrita e decisões sensíveis sob
-controle humano.
 
-O switch de idioma é global e persistido entre as rotas públicas. A tradução deve preservar o mesmo limite factual
-em PT-BR e em inglês; mudar o idioma não autoriza adicionar métricas, escala enterprise, clientes, certificações ou
-resultados que não estejam provados na fonte editorial.
+## Política de apresentação
 
-Ela deve separar explicitamente quatro estados de evidência:
+- /ai-engineering usa headline AI Engineer/Engenheiro de IA, competências explicáveis e dois cases reais sanitizados: DGX Sovereign e Lecion.
+- O case Lecion usa “LLM Application Engineering”; disponibilidade atual de produção não foi medida. História/compactação existem, mas fidelidade, reinjeção integral e economia de tokens não foram comprovadas.
+- Testes determinísticos e negativos não são apresentados como LLM evals. Contagens publicadas têm data e escopo: Lecion 68; boundaries 36; MCP gates 13. Não representam saúde global.
+- Retrieval SQL/web/documental e context assembly são linguagem atual. Embeddings, pgvector, hybrid retrieval e reranking aparecem somente no companion PLANNED.
+- O currículo 0.3.0 é exportado em PT e EN com revisão factual sob o envelope. Não atribuir revisão pessoal das traduções ao Owner; dados biográficos herdados permanecem OWNER_STATED.
+- Amadurecimento automatizado da doutrina continua PLANNED. Detectores de consistência implementados não comprovam esse loop completo.
+- A rota /curriculo mantém o currículo cybersecurity e oferece downloads AI por idioma. O download primário na rota AI abre o PDF AI correspondente.
 
-- `BUILT / PRIVATE EVIDENCE`: implementação real que não pode expor repositórios, segredos, clientes ou dados internos;
-- `PUBLIC SURFACE / IN PROGRESS`: documentação pública do método e dos limites;
-- `PUBLIC EVALUATION / NOT YET MEASURED`: datasets, graders, regressão, qualidade, latência, custo e segurança ainda não publicados;
-- `ENTERPRISE OUTCOMES / NOT PUBLICLY PROVEN`: adoção, escala e resultados mensuráveis não devem ser inferidos da implementação privada.
+## Conteúdo excluído
 
-Não publicar nessa rota: `INCB` sem definição e prova auditável, cobertura irrestrita de qualquer harness/modelo,
-proficiência em espanhol, métricas de produção não divulgadas, escala enterprise, nomes de clientes ou a promessa de
-que uma implementação privada equivale a uma avaliação pública. Amadurecimento automatizado da doutrina pode
-aparecer somente como planejado até haver desenho, salvaguardas e implementação verificáveis.
+Código proprietário, receipts internos, segredos, tokens, paths de operação, dados de clientes, nomes de clientes novos, endereço completo, dados familiares, certificações não validadas, proficiência em espanhol/inglês, métricas e resultados enterprise sem prova.
 
-## Conteúdo omitido da versão pública
-
-- Endereço completo, data de nascimento, estado civil e informação sobre filhos.
-- Experiência administrativa e estágio antigo, por não serem centrais ao posicionamento atual.
-- Disponibilidade genérica para viagens ou mudança de região.
-- Números, clientes, certificações formais ou resultados sem fonte validada.
-
-## Fontes explicitamente excluídas
-
-- Digytron Space.
-- Repositórios de clientes.
-- Dados jurídicos e de identidade comercial da Digytron.
-- Currículos, bios ou links encontrados em superfícies operacionais sem aprovação específica.
-- Conteúdo do Digytron Space e dados de clientes.
+Space/OS sustentam apenas descrições arquiteturais sanitizadas autorizadas nesta rodada. Não publicar dados, código ou screenshots internos dessas aplicações. A evidência do gateway é metadados/configuração; não implica acesso livre a dados nem vector RAG. Nenhum projeto privado é aberto para produzir prova pública.

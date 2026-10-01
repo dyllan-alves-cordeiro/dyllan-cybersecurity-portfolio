@@ -21,8 +21,7 @@ fornecidos em 20/08/2026, com uma primeira consolidação da atuação técnica 
 - **Código:** https://github.com/dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio
 - **Ambiente:** Vercel no time pessoal `dyllan1` (conta `dyllan-alves-cordeiro`); GitHub ligado ao projeto; domínio próprio ainda pendente.
 - **Idioma de trabalho:** PT-BR como padrão, com apresentação em inglês disponível pelo toggle global persistente.
-- **Conteúdo:** PT-BR + inglês, baseado no currículo-base e em documentação local de alto nível da Digytron;
-  datas finais, cargo preferido, certificados e cases detalhados continuam pendentes.
+- **Conteúdo:** PT-BR + inglês; /ai-engineering apresenta posicionamento AI, mapa de competências, cases DGX/Lecion sanitizados e maturidade factual. Certificados e resultados de produção não medidos continuam pendentes.
 - **Currículo:** rota `/curriculo` responsiva e preparada para impressão; `Salvar como PDF` abre a
   impressão do navegador em layout A4, sem gerar publicação automática.
 - **Analytics e integrações:** não configurados.
@@ -49,9 +48,9 @@ A versão bilíngue web foi publicada na Vercel pessoal nesta sessão. Continuam
 
 1. domínio próprio;
 2. datas finais, cargo preferido e certificados formais;
-3. três a cinco cases detalhados com autorização e evidência;
+3. métricas públicas de resultados dos cases DGX e Lecion;
 4. GitHub pessoal de código, se existir além deste repositório do site;
-5. PDF oficial separado em inglês; a versão oficial atual do PDF continua em português.
+5. companion público RAG + Evals (proposta, ainda não implementado). Os PDFs AI PT/EN estão em public/assets/dyllan-alves-ai-engineer-{pt,en}.pdf; o PDF cybersecurity anterior foi preservado.
 
 O inventário completo está em [`docs/content-contract.md`](docs/content-contract.md) e o gate de
 publicação em [`docs/publish-gate.md`](docs/publish-gate.md).

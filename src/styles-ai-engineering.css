@@ -480,3 +480,20 @@ validar: desktop + 375px; sem overflow horizontal; reduced motion
     transition: none;
   }
 }
+
+/* Architecture cases reuse the established evidence rows and semantic tokens. */
+#dgx-sovereign-case p + p,
+#lecion-case p + p {
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .curriculum-toolbar-v2,
+  .toolbar-actions-v2 {
+    flex-wrap: wrap;
+  }
+
+  .toolbar-actions-v2 {
+    width: 100%;
+  }
+}

@@ -64,6 +64,9 @@ export function CurriculumPage({
             {copy.back}
           </button>
           <div className="toolbar-actions-v2">
+            <a className="cv-toolbar-download" href={language === 'pt' ? '/assets/dyllan-alves-ai-engineer-pt.pdf' : '/assets/dyllan-alves-ai-engineer-en.pdf'} target="_blank" rel="noreferrer">
+              {language === 'pt' ? 'Currículo AI — PT' : 'AI resume — EN'}
+            </a>
             <a
               className="cv-toolbar-download"
               href="/assets/curriculo-dyllan-ciberseguranca.pdf"
