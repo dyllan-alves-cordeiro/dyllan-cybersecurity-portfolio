@@ -150,7 +150,7 @@ const experiencesEn: Experience[] = [
   {
     company: 'Digytron BR',
     role: 'Software Engineering & Applied Security',
-    period: '2022 — Present',
+    period: '2019 — Present',
     summary: 'Identity governance, data security, and engineering-tool evolution for an own operation.',
     bullets: [
       'Implemented access-control policies (RBAC/IAM), applying the principle of least privilege in corporate systems.',
@@ -160,6 +160,22 @@ const experiencesEn: Experience[] = [
     ],
     sourceNote: 'Source: Digytron BR technical documentation and operational governance.',
     current: true,
+  },
+  {
+    company: 'Onitel Telecom',
+    role: 'IT Analyst',
+    period: '2024 — 2025',
+    summary: 'Full-time, on-site IT analyst at a telecommunications provider.',
+    bullets: ['Full-time, on-site IT analyst at a telecommunications provider.'],
+    sourceNote: 'Source: professional LinkedIn profile, confirmed by the holder.',
+  },
+  {
+    company: 'Reitec',
+    role: 'Systems Analyst',
+    period: '2023 — 2024',
+    summary: 'Full-time systems analyst working with Python and HTML5.',
+    bullets: ['Full-time systems analyst working with Python and HTML5.'],
+    sourceNote: 'Source: professional LinkedIn profile, confirmed by the holder.',
   },
   {
     company: 'Stefanini Group',

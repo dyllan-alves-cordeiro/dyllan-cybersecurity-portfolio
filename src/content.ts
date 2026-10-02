@@ -56,12 +56,6 @@ export const publicContacts: PublicContact[] = [
     kind: 'email',
   },
   {
-    label: 'Telefone',
-    value: '(61) 98642-9342',
-    href: 'tel:+5561986429342',
-    kind: 'phone',
-  },
-  {
     label: 'LinkedIn',
     value: 'linkedin.com/in/dyllancordeiro',
     href: 'https://www.linkedin.com/in/dyllancordeiro/',
@@ -113,7 +107,7 @@ export const professionalExperiences: Experience[] = [
   {
     company: 'Digytron BR',
     role: 'Engenharia de Software & Segurança Aplicada',
-    period: '2022 — Atual',
+    period: '2019 — Atual',
     summary:
       'Governança de identidade, segurança de dados e evolução de ferramentas de engenharia para operação própria.',
     bullets: [
@@ -125,6 +119,22 @@ export const professionalExperiences: Experience[] = [
     sourceNote:
       'Fonte: documentação técnica e governança operacional Digytron BR.',
     current: true,
+  },
+  {
+    company: 'Onitel Telecom',
+    role: 'Analista de TI',
+    period: '2024 — 2025',
+    summary: 'Analista de TI em provedor de telecomunicações, em tempo integral e regime presencial.',
+    bullets: ['Analista de TI em provedor de telecomunicações, em tempo integral e regime presencial.'],
+    sourceNote: 'Fonte: perfil profissional no LinkedIn, confirmado pelo titular.',
+  },
+  {
+    company: 'Reitec',
+    role: 'Analista de sistemas',
+    period: '2023 — 2024',
+    summary: 'Analista de sistemas em tempo integral, com uso de Python e HTML5.',
+    bullets: ['Analista de sistemas em tempo integral, com uso de Python e HTML5.'],
+    sourceNote: 'Fonte: perfil profissional no LinkedIn, confirmado pelo titular.',
   },
   {
     company: 'Stefanini Group',

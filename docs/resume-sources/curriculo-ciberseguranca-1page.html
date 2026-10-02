@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Currículo - Dyllan Alves Cordeiro - Cibersegurança Defensiva</title>
+<style>
+  @page {
+    size: A4;
+    margin: 10mm 12mm 10mm 12mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    line-height: 1.36;
+    font-size: 8.6pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  /* Header */
+  .header {
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 5px;
+    margin-bottom: 7px;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .header h1 {
+    font-size: 18pt;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+  }
+  .header .badge {
+    font-size: 7.8pt;
+    font-weight: 700;
+    color: #1d4ed8;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .header .target-role {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #2563eb;
+    margin-top: 1px;
+    margin-bottom: 3px;
+  }
+  .header .contact-bar {
+    font-size: 8pt;
+    color: #475569;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    align-items: center;
+  }
+  .contact-bar a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* Section styling */
+  .section {
+    margin-bottom: 7px;
+  }
+  .section-title {
+    font-size: 9.2pt;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .section-title::before {
+    content: "";
+    display: inline-block;
+    width: 3.5px;
+    height: 11px;
+    background-color: #2563eb;
+    border-radius: 2px;
+  }
+
+  /* Summary */
+  .summary-text {
+    font-size: 8.4pt;
+    color: #334155;
+    text-align: justify;
+    line-height: 1.35;
+  }
+
+  /* Competencies Grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .skill-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 4px 6px;
+  }
+  .skill-box h4 {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 2px;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 2px;
+  }
+  .skill-box ul {
+    list-style: none;
+  }
+  .skill-box li {
+    font-size: 7.6pt;
+    color: #475569;
+    margin-bottom: 1.2px;
+    position: relative;
+    padding-left: 8px;
+    line-height: 1.25;
+  }
+  .skill-box li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: bold;
+  }
+
+  /* Experience Entries */
+  .experience-item {
+    margin-bottom: 5px;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+  .exp-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .exp-role {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .exp-company {
+    font-size: 8.4pt;
+    font-weight: 600;
+    color: #2563eb;
+  }
+  .exp-period {
+    font-size: 7.8pt;
+    font-weight: 500;
+    color: #64748b;
+  }
+  .exp-bullets {
+    list-style-type: disc;
+    padding-left: 13px;
+    margin-top: 1px;
+  }
+  .exp-bullets li {
+    font-size: 8pt;
+    color: #334155;
+    margin-bottom: 1.2px;
+    line-height: 1.28;
+    text-align: justify;
+  }
+  .exp-bullets li strong {
+    color: #0f172a;
+  }
+
+  /* Two Column Row for Education and Additional Info */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 10px;
+  }
+  .edu-block h4 {
+    font-size: 8.4pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .edu-block p {
+    font-size: 7.8pt;
+    color: #475569;
+  }
+  .courses-block p {
+    font-size: 7.8pt;
+    color: #334155;
+    line-height: 1.28;
+  }
+  .courses-block strong {
+    color: #0f172a;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top">
+      <h1>Dyllan Alves Cordeiro</h1>
+      <span class="badge">Disponibilidade Imediata • Remoto / Híbrido</span>
+    </div>
+    <div class="target-role">Cibersegurança Defensiva, Identidade (IAM) & Resiliência Operacional</div>
+    <div class="contact-bar">
+      <span>Valparaíso de Goiás – GO (Entorno DF)</span>
+      <span>•</span>
+      <span><a href="mailto:dyllanalves@outlook.com">dyllanalves@outlook.com</a></span>
+      <span>•</span>
+      <span><a href="https://www.linkedin.com/in/dyllancordeiro/">linkedin.com/in/dyllancordeiro</a></span>
+      <span>•</span>
+      <span><a href="https://github.com/dyllan-alves-cordeiro">github.com/dyllan-alves-cordeiro</a></span>
+      <span>•</span>
+      <span><a href="https://dyllan-cybersecurity-portfolio.vercel.app">dyllan-cybersecurity-portfolio.vercel.app</a></span>
+    </div>
+  </header>
+
+  <!-- RESUMO PROFISSIONAL -->
+  <section class="section">
+    <div class="section-title">Resumo Profissional</div>
+    <p class="summary-text">
+      Profissional graduado em <strong>Sistemas de Informação (Bacharelado)</strong> com atuação focada em <strong>cibersegurança defensiva: governança de identidade (IAM), segurança de redes e proteção de dados</strong>. Base sólida em arquitetura de sistemas e engenharia de software para construir, sustentar e auditar ambientes corporativos resilientes. Experiência na implementação de <strong>controle de acessos rigoroso (RBAC/IAM) sob o princípio do menor privilégio (Least Privilege)</strong>, custódia e governança de credenciais/segredos, proteção de dados com <strong>Row Level Security (RLS)</strong> e conformidade técnica com <strong>LGPD e ISO 27001</strong>. Vivência em operação de redes de missão crítica bancária na Caixa Econômica Federal (Stefanini), atuando na detecção proativa de anomalias, estabilização de roteamento BGP e cumprimento estrito de SLAs de segurança e disponibilidade.
+    </p>
+  </section>
+
+  <!-- COMPETÊNCIAS & PILARES DE SEGURANÇA -->
+  <section class="section">
+    <div class="section-title">Pilares de Atuação & Competências</div>
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h4>Identidade & Acessos (IAM)</h4>
+        <ul>
+          <li>Políticas de Menor Privilégio (Least Privilege)</li>
+          <li>Governança de Acessos e Modelagem RBAC</li>
+          <li>Custódia e gestão de segredos e chaves de API</li>
+          <li>Row Level Security (RLS) & Isolamento de dados</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h4>Segurança de Redes & Infraestrutura</h4>
+        <ul>
+          <li>Integridade de Roteamento BGP & Protocolos TCP/IP</li>
+          <li>Túneis VPN corporativos e enlaces seguros</li>
+          <li>Segmentação de tráfego de rede (VLANs)</li>
+          <li>Observabilidade contínua (Zabbix, PRTG, The Dude)</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h4>Governança, Compliance & Código</h4>
+        <ul>
+          <li>Conformidade técnica LGPD & ISO 27001</li>
+          <li>Trilhas de auditoria e análise de logs críticos</li>
+          <li>APIs seguras, TypeScript, React e Python</li>
+          <li>Mitigação proativa de riscos e resposta a incidentes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA PROFISSIONAL -->
+  <section class="section">
+    <div class="section-title">Experiência Profissional</div>
+
+    <!-- DIGYTRON BR -->
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-title-group">
+          <span class="exp-role">Engenharia de Software & Segurança Aplicada</span>
+          <span class="exp-company">Digytron BR</span>
+        </div>
+        <span class="exp-period">2019 — Atual</span>
+      </div>
+      <ul class="exp-bullets">
+        <li><strong>Controle de acesso e privilégio mínimo:</strong> Implementação de políticas de controle de acesso (RBAC/IAM), aplicando com rigor o princípio do menor privilégio em sistemas e plataformas corporativas.</li>
+        <li><strong>Gestão segura de credenciais:</strong> Custódia e gestão segura de credenciais, chaves de API e segredos de produção, prevenindo vazamentos de dados e acessos não autorizados.</li>
+        <li><strong>Proteção de dados e conformidade LGPD:</strong> Modelagem de segurança de dados em bancos relacionais com Row Level Security (RLS) e conformidade técnica contínua com a LGPD.</li>
+        <li><strong>Trilhas de auditoria e rastreabilidade:</strong> Estabelecimento de trilhas de auditoria estruturadas e logs detalhados para rastreabilidade de eventos críticos e sustentação defensiva.</li>
+      </ul>
+    </div>
+
+    <!-- STEFANINI GROUP -->
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-title-group">
+          <span class="exp-role">Analista de Redes e Operações (Projeto Caixa Econômica Federal)</span>
+          <span class="exp-company">Stefanini Group</span>
+        </div>
+        <span class="exp-period">2021</span>
+      </div>
+      <ul class="exp-bullets">
+        <li><strong>Monitoramento de missão crítica:</strong> Monitoramento contínuo de circuitos e tráfego de dados de missão crítica em ambiente bancário nacional de alta disponibilidade.</li>
+        <li><strong>Detecção de anomalias e conformidade:</strong> Detecção proativa de anomalias de rede, degradação de rotas e incidentes, atuando sob rígidos protocolos de auditoria, conformidade e SLAs bancários.</li>
+        <li><strong>Estabilização de roteamento BGP:</strong> Análise de integridade e estabilização de rotas do protocolo BGP na infraestrutura Huawei de interconexão financeira.</li>
+      </ul>
+    </div>
+
+    <!-- AGE TELECOM & NWI TELECOM -->
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-title-group">
+          <span class="exp-role">Analista de Suporte e Operador de Redes</span>
+          <span class="exp-company">AGE Telecom / NWI Telecom</span>
+        </div>
+        <span class="exp-period">2021 — 2022</span>
+      </div>
+      <ul class="exp-bullets">
+        <li><strong>Segmentação e enlaces seguros:</strong> Atuação em segmentação de tráfego (VLANs), implantação de enlaces seguros e túneis VPN corporativos para clientes críticos e contas corporativas.</li>
+        <li><strong>Configuração de borda e observabilidade:</strong> Configuração e endurecimento de roteadores e ONUs (Huawei, Datacom, MikroTik) com visibilidade operacional ativa via Zabbix, PRTG e The Dude.</li>
+      </ul>
+    </div>
+
+    <!-- SKILL.NET -->
+    <div class="experience-item">
+      <div class="exp-header">
+        <div class="exp-title-group">
+          <span class="exp-role">Suporte Técnico & Operações de Redes</span>
+          <span class="exp-company">SKILL.NET</span>
+        </div>
+        <span class="exp-period">2018 — 2021</span>
+      </div>
+      <ul class="exp-bullets">
+        <li><strong>Suporte seguro e integridade:</strong> Execução de rotinas de suporte seguro, administração de redes locais, manutenção de integridade física/lógica e controle documental auditável.</li>
+        <li><strong>Administração de ativos:</strong> Configuração e manutenção de roteadores, switches, ONUs e monitoramento de disponibilidade de ativos via MikroTik e Zabbix.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FORMAÇÃO ACADÊMICA & QUALIFICAÇÕES COMPLEMENTARES -->
+  <section class="section">
+    <div class="section-title">Formação Acadêmica & Qualificações</div>
+    <div class="bottom-row">
+      <div class="edu-block">
+        <h4>Bacharelado em Sistemas de Informação</h4>
+        <p>UNIDESC – Centro Universitário de Desenv. do Centro-Oeste • 2015 — 2019</p>
+        <p style="margin-top: 2px;"><strong>Idiomas:</strong> Inglês Intermediário/Avançado • Espanhol Básico</p>
+      </div>
+      <div class="courses-block">
+        <p>• <strong>Qualificações & Treinamentos:</strong> ISO 27001 (Segurança da Informação) • LGPD (Privacidade e Proteção de Dados) • Compliance e Governança Corporativa • Redes TCP/IP, BGP e Roteamento Seguro • Linux Hardening e Administração de Sistemas • ISO 9001 e Gestão da Qualidade • Excel Avançado e Análise de Dados.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -17,7 +17,7 @@ Revisão 2026-10-01. Autoridade: envelope AI Engineering Portfolio Closure e aut
 | Claim | Status | Source | Public usage | Limitation |
 |---|---|---|---|---|
 | Nome Dyllan Alves Cordeiro, contatos e formação UNIDESC | OWNER_STATED | Currículo-base e materiais privados de carreira | Header, contatos, currículos | Documentos acadêmicos não revalidados nesta rodada |
-| Telefone (61) 98642-9342 | OWNER_CONFIRMED | Envelope 01/10/2026 | Contato profissional e PDFs PT/EN | Não usar o número comercial da Digytron |
+| Telefone | REMOVED_BY_OWNER | Chat 2026-10-02 | Não publicar em site nem PDFs | Decisão do titular: cidade fica, telefone sai |
 | Founder e full-stack engineer na Digytron BR | OWNER_STATED + PROVEN em mecanismos | Histórico profissional e implementações inspecionadas | Resumo e experiência | Datas anteriores herdadas; autoria de cada linha não inferida de Git |
 | Suporte/redes em SKILL.NET, AGE e Stefanini | OWNER_STATED | Currículo-base | Histórico profissional | Não converter em AI Engineering ou cinco anos de desenvolvimento |
 | Foto pessoal | OWNER_CONFIRMED | Arquivo fornecido 20/08/2026 | Home | Sem imagem pessoal inventada |
@@ -41,7 +41,7 @@ Fontes privadas são descritas em alto nível. Ledger completo e paths ficam nos
 | Vector RAG / embeddings / pgvector | NOT_PROVEN | Busca delimitada em aplicação/data | Somente roadmap | Estado global NOT_MEASURED |
 | LLM response evaluation harness | NOT_PROVEN | Testes atuais são determinísticos | Somente roadmap | Não descrever como apenas “ainda não público” |
 | RAG + Evals Lab | PLANNED | Proposta companion separada | Próximo projeto | Não implementado |
-| Contato profissional | OWNER_CONFIRMED | Envelope 01/10/2026 | (61) 98642-9342 | Não substituir pelo WhatsApp comercial |
+| Contato profissional | OWNER_CONFIRMED | Chat 2026-10-02 | E-mail e LinkedIn | Telefone retirado por decisão do titular |
 
 
 ## Política de apresentação

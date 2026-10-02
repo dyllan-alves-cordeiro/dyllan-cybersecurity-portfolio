@@ -10,7 +10,7 @@ Owner exclusivo: `dyllan-alves-cordeiro/dyllan-cybersecurity-portfolio`. Hospeda
 
 - `/ai-engineering` é a entrada de candidatura AI, com cases sanitizados DGX Sovereign e Lecion.
 - PDFs AI PT e EN separados, uma página cada, revisados visualmente e vinculados por idioma.
-- Telefone autorizado: (61) 98642-9342.
+- Telefone: retirado do site e dos PDFs por decisão do titular em 2026-10-02 ("cidade pode ficar, tira só o telefone e corrige a data").
 - Claims e limitações seguem `docs/content-contract.md`. Código privado, caminhos operacionais e clientes não são publicados.
 - Vector RAG, LLM evals e cinco anos especificamente como AI Engineer não são claims comprovados.
 - Companion RAG + Evals permanece PLANNED, fora da implementação do site.
