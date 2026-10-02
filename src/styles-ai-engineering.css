@@ -482,6 +482,7 @@ validar: desktop + 375px; sem overflow horizontal; reduced motion
 }
 
 /* Architecture cases reuse the established evidence rows and semantic tokens. */
+#ai-request-triage-case p + p,
 #dgx-sovereign-case p + p,
 #lecion-case p + p {
   margin-top: 16px;
