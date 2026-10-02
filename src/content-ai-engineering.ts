@@ -13,7 +13,7 @@ export const aiEngineeringProfile = {
   kicker: 'AI ENGINEERING / PERSONAL SURFACE',
   headline: 'AI Engineer',
   lede:
-    'Founder and full-stack engineer with hands-on experience shipping AI-backed products and operational AI systems, strongest in server-side model integration, tool workflows, and end-to-end product delivery. Public evaluation, measurable production outcomes, and enterprise-scale evidence are still being built.',
+    'Founder and full-stack engineer with hands-on experience shipping AI-backed products and operational AI systems, strongest in server-side model integration, tool workflows, and end-to-end product delivery. A first public case with evaluation results is available below; measurable production outcomes and enterprise-scale evidence are still being built.',
   supportingLine:
     'My current focus is the boundary between a model and the system around it: context assembly, SQL-backed retrieval, web/document tools, structured handoffs, and continuity across sessions.',
   locationNote: 'Brazil · Founder and full-stack engineer · LLM applications and governed agent workflows',
@@ -103,9 +103,14 @@ export const aiEvidenceLedger = [
     detail: 'This page makes the method inspectable without exposing private repositories, customer data, secrets, or internal operational paths.',
   },
   {
-    label: 'LLM response evaluation',
+    label: 'LLM evaluation harness',
+    state: 'PROVEN / PORTFOLIO SCOPE',
+    detail: 'The public AI Request Triage project ships a 12-case evaluation dataset, a runner, and results with a simulated and a real model, plus live scenarios that separate the model path from the fallback path. It is a smoke evaluation set, not a large benchmark, and makes no claim of universal model-quality evaluation.',
+  },
+  {
+    label: 'Vector RAG',
     state: 'NOT PROVEN',
-    detail: 'Focused deterministic product and authorization tests exist. A golden dataset and a response-quality evaluation harness are not established by the current evidence. They belong to the planned public companion.',
+    detail: 'Embeddings, pgvector, and hybrid retrieval are not demonstrated yet. Retrieval in the public project is a plain SQL filter. This is the next public artifact.',
   },
   {
     label: 'Enterprise outcomes',
@@ -115,8 +120,7 @@ export const aiEvidenceLedger = [
 ] as const
 
 export const aiNextArtifacts = [
-  'AI Engineering RAG + Evals Lab (planned): a safe public corpus, embeddings, PostgreSQL/pgvector, hybrid retrieval and a separate evaluation plane.',
-  'A governed tool and database integration that can be tested without exposing customer data.',
+  'RAG Lab (planned): a safe public corpus, embeddings, PostgreSQL/pgvector, hybrid retrieval, and retrieval evaluation with known answers.',
   'Extend the architecture cases with measured outcomes when reproducible evidence can be disclosed.',
   'A planned evidence-to-doctrine loop would turn verified execution outcomes into proposed rule updates, with owner review and ratification before adoption; it is not implemented yet.',
 ] as const
@@ -172,7 +176,7 @@ const aiEngineeringProfilePt = {
   kicker: 'ENGENHARIA DE IA / SUPERFÍCIE PESSOAL',
   headline: 'Engenheiro de IA',
   lede:
-    'Founder e engenheiro full-stack com experiência prática entregando produtos apoiados por IA e sistemas de IA operacionais, com maior força em integração de modelos no servidor, workflows com tools e entrega de produto ponta a ponta. Avaliação pública, resultados mensuráveis em produção e evidência em escala enterprise ainda estão sendo construídos.',
+    'Founder e engenheiro full-stack com experiência prática entregando produtos apoiados por IA e sistemas de IA operacionais, com maior força em integração de modelos no servidor, workflows com tools e entrega de produto ponta a ponta. Um primeiro case público com resultados de avaliação está disponível abaixo; resultados mensuráveis em produção e evidência em escala enterprise ainda estão sendo construídos.',
   supportingLine:
     'Meu foco atual é a fronteira entre um modelo e o sistema ao redor dele: montagem de contexto, recuperação em SQL, tools web e de documentos, handoffs estruturados e continuidade entre sessões.',
   locationNote: 'Brasil · Fundador e engenheiro full-stack · Aplicações LLM e fluxos governados de agentes',
@@ -254,9 +258,14 @@ const aiEvidenceLedgerPt = [
     detail: 'Esta página torna o método inspecionável sem expor repositórios privados, dados de clientes, segredos ou caminhos operacionais internos.',
   },
   {
-    label: 'Avaliação de respostas LLM',
+    label: 'Harness de avaliação de LLM',
+    state: 'COMPROVADO / ESCOPO DE PORTFÓLIO',
+    detail: 'O projeto público AI Request Triage traz um conjunto de 12 casos de avaliação, o runner e os resultados com modelo simulado e modelo real, além de cenários ao vivo que separam o caminho do modelo do caminho de reserva. É um conjunto de smoke, não um benchmark amplo, e não afirma avaliação universal de qualidade de modelo.',
+  },
+  {
+    label: 'RAG vetorial',
     state: 'NÃO COMPROVADO',
-    detail: 'Existem testes determinísticos focados de produto e autorização. Dataset golden e harness de qualidade de resposta não são comprovados pela evidência atual. Fazem parte do companion público planejado.',
+    detail: 'Embeddings, pgvector e retrieval híbrido ainda não foram demonstrados. A recuperação no projeto público é um filtro SQL. Este é o próximo artefato público.',
   },
   {
     label: 'Resultados enterprise',
@@ -266,8 +275,7 @@ const aiEvidenceLedgerPt = [
 ] as const
 
 const aiNextArtifactsPt = [
-  'AI Engineering RAG + Evals Lab (planejado): corpus público seguro, embeddings, PostgreSQL/pgvector, retrieval híbrido e plano de avaliação separado.',
-  'Uma integração governada com tools e banco de dados que possa ser testada sem expor dados de clientes.',
+  'RAG Lab (planejado): corpus público seguro, embeddings, PostgreSQL/pgvector, retrieval híbrido e avaliação de recuperação com respostas conhecidas.',
   'Ampliar os cases de arquitetura com resultados medidos quando a evidência reproduzível puder ser divulgada.',
   'Um ciclo planejado de evidência para doutrina transformaria resultados verificados de execução em propostas de revisão, com revisão e ratificação do dono antes da adoção; ainda não foi implementado.',
 ] as const

@@ -141,9 +141,19 @@ export function AiEngineeringPage({
         <section className="ai-section" aria-labelledby="ai-cases-title">
           <div className="container">
             <div className="ai-section-heading">
-              <h2 id="ai-cases-title">{language === 'pt' ? 'Dois sistemas. Problemas reais de engenharia.' : 'Two systems. Real engineering problems.'}</h2>
-              <p>{language === 'pt' ? 'Arquitetura sanitizada de implementações privadas. Evidência local, limites explícitos.' : 'Sanitized architecture of private implementations. Local evidence and explicit limits.'}</p>
+              <h2 id="ai-cases-title">{language === 'pt' ? 'Três sistemas. Problemas reais de engenharia.' : 'Three systems. Real engineering problems.'}</h2>
+              <p>{language === 'pt' ? 'Um case com código público e duas arquiteturas sanitizadas de implementações privadas. Evidência medida, limites explícitos.' : 'One case with public source and two sanitized architectures of private implementations. Measured evidence and explicit limits.'}</p>
             </div>
+            <article className="ai-evidence-row" id="ai-request-triage-case">
+              <div>
+                <h3>AI Request Triage — Governed LLM Workflow</h3>
+                <p>{language === 'pt' ? 'Solicitação não confiável → webhook autenticado → contexto SQL verificado → modelo → validação determinística das fontes → aprovação humana com token de uso único → auditoria.' : 'Untrusted request → authenticated webhook → verified SQL context → model → deterministic source validation → human approval with a one-shot token → audit trail.'}</p>
+                <p>{language === 'pt' ? 'n8n self-hosted, PostgreSQL e OpenAI. O modelo classifica e propõe; uma pessoa decide. Idempotência por restrição única no banco, reserva por regra quando o modelo falha e nenhuma ação externa sem aprovação. A primeira versão passava em todos os testes sem nunca chamar o modelo; a tabela de auditoria revelou, e o repositório documenta a correção.' : 'Self-hosted n8n, PostgreSQL and OpenAI. The model classifies and proposes; a person decides. Idempotency through a database unique constraint, a rule-based fallback when the model fails, and no external action without approval. The first version passed every test without ever calling the model; the audit table exposed it, and the repository documents the fix.'}</p>
+                <p>{language === 'pt' ? 'Medido em 02/10/2026: 12 de 12 casos de avaliação com o modelo real; 11 de 11 cenários ao vivo, em duas passadas, antes e depois de reiniciar o container. Dados sintéticos, laboratório de portfólio, sem acesso a produção de cliente; 12 casos não são benchmark; a recuperação é filtro SQL, sem busca vetorial.' : 'Measured on October 2, 2026: 12 of 12 evaluation cases with the real model; 11 of 11 live scenarios, run twice, before and after a container restart. Synthetic data, portfolio lab, no customer production access; 12 cases are not a benchmark; retrieval is a SQL filter, with no vector search.'}</p>
+                <p><a className="ai-text-link" href="https://github.com/dyllan-alves-cordeiro/ai-request-triage-n8n" target="_blank" rel="noreferrer">{language === 'pt' ? 'Código, evals e resultados no GitHub' : 'Source, evals and results on GitHub'}</a></p>
+              </div>
+              <span>{language === 'pt' ? 'IMPLEMENTADO / FONTE PÚBLICA' : 'IMPLEMENTED / PUBLIC SOURCE'}</span>
+            </article>
             <article className="ai-evidence-row" id="dgx-sovereign-case">
               <div>
                 <h3>DGX Sovereign — Governed Agentic Engineering Platform</h3>
