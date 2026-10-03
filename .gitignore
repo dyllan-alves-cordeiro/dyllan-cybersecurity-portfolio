@@ -16,3 +16,6 @@ dist/
 .vercel/
 .vercel
 .env*
+
+# Logs de rodada DGX: ficam só no Mac (caminhos locais; repositório público)
+.dgx/
