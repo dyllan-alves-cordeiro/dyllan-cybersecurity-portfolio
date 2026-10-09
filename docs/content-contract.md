@@ -18,7 +18,7 @@ Revisão 2026-10-01. Autoridade: envelope AI Engineering Portfolio Closure e aut
 |---|---|---|---|---|
 | Nome Dyllan Alves Cordeiro, contatos e formação UNIDESC | OWNER_STATED | Currículo-base e materiais privados de carreira | Header, contatos, currículos | Documentos acadêmicos não revalidados nesta rodada |
 | Telefone | REMOVED_BY_OWNER | Chat 2026-10-02 | Não publicar em site nem PDFs | Decisão do titular: cidade fica, telefone sai |
-| Founder e full-stack engineer na Digytron BR | OWNER_STATED + PROVEN em mecanismos | Histórico profissional e implementações inspecionadas | Resumo e experiência | Datas anteriores herdadas; autoria de cada linha não inferida de Git |
+| Engenheiro full-stack na Digytron BR | OWNER_STATED + PROVEN em mecanismos | Histórico profissional e implementações inspecionadas | Resumo e experiência | Datas anteriores herdadas; autoria de cada linha não inferida de Git |
 | Suporte/redes em SKILL.NET, AGE e Stefanini | OWNER_STATED | Currículo-base | Histórico profissional | Não converter em AI Engineering ou cinco anos de desenvolvimento |
 | Foto pessoal | OWNER_CONFIRMED | Arquivo fornecido 20/08/2026 | Home | Sem imagem pessoal inventada |
 | GitHub/Vercel pessoal | PROVEN no repo | Remote e projeto existente | Código público deste site | Não usar organização Digytron |
@@ -59,3 +59,7 @@ Fontes privadas são descritas em alto nível. Ledger completo e paths ficam nos
 Código proprietário, receipts internos, segredos, tokens, paths de operação, dados de clientes, nomes de clientes novos, endereço completo, dados familiares, certificações não validadas, proficiência em espanhol/inglês, métricas e resultados enterprise sem prova.
 
 Space/OS sustentam apenas descrições arquiteturais sanitizadas autorizadas nesta rodada. Não publicar dados, código ou screenshots internos dessas aplicações. A evidência do gateway é metadados/configuração; não implica acesso livre a dados nem vector RAG. Nenhum projeto privado é aberto para produzir prova pública.
+
+## Correção de posicionamento — 2026-10-09
+
+A apresentação pública remove fundador/proprietário conforme decisão do dono de 2026-10-06. Os PDFs IA PT/EN usam a versão 0.6.0, com datas corrigidas pelo perfil Gupy confirmado pelo dono. O case n8n registra resultados reais históricos de 2026-10-02; a reprodução de 2026-10-09 é simulada e não prova disponibilidade atual do deployment.

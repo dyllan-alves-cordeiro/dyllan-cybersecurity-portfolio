@@ -13,10 +13,10 @@ export const aiEngineeringProfile = {
   kicker: 'AI ENGINEERING / PERSONAL SURFACE',
   headline: 'AI Engineer',
   lede:
-    'Founder and full-stack engineer with hands-on experience shipping AI-backed products and operational AI systems, strongest in server-side model integration, tool workflows, and end-to-end product delivery. A first public case with evaluation results is available below; measurable production outcomes and enterprise-scale evidence are still being built.',
+    'Full-stack engineer with hands-on experience shipping AI-backed products and operational AI systems, strongest in server-side model integration, tool workflows, and end-to-end product delivery. A first public case with evaluation results is available below; measurable production outcomes and enterprise-scale evidence are still being built.',
   supportingLine:
     'My current focus is the boundary between a model and the system around it: context assembly, SQL-backed retrieval, web/document tools, structured handoffs, and continuity across sessions.',
-  locationNote: 'Brazil · Founder and full-stack engineer · LLM applications and governed agent workflows',
+  locationNote: 'Brazil · Full-stack engineer · LLM applications and governed agent workflows',
 } as const
 
 export type AiExecutionStage = {
@@ -176,10 +176,10 @@ const aiEngineeringProfilePt = {
   kicker: 'ENGENHARIA DE IA / SUPERFÍCIE PESSOAL',
   headline: 'Engenheiro de IA',
   lede:
-    'Founder e engenheiro full-stack com experiência prática entregando produtos apoiados por IA e sistemas de IA operacionais, com maior força em integração de modelos no servidor, workflows com tools e entrega de produto ponta a ponta. Um primeiro case público com resultados de avaliação está disponível abaixo; resultados mensuráveis em produção e evidência em escala enterprise ainda estão sendo construídos.',
+    'Engenheiro full-stack com experiência prática entregando produtos apoiados por IA e sistemas de IA operacionais, com maior força em integração de modelos no servidor, workflows com tools e entrega de produto ponta a ponta. Um primeiro case público com resultados de avaliação está disponível abaixo; resultados mensuráveis em produção e evidência em escala enterprise ainda estão sendo construídos.',
   supportingLine:
     'Meu foco atual é a fronteira entre um modelo e o sistema ao redor dele: montagem de contexto, recuperação em SQL, tools web e de documentos, handoffs estruturados e continuidade entre sessões.',
-  locationNote: 'Brasil · Fundador e engenheiro full-stack · Aplicações LLM e fluxos governados de agentes',
+  locationNote: 'Brasil · Engenheiro full-stack · Aplicações LLM e fluxos governados de agentes',
 } as const
 
 const aiExecutionStagesPt: readonly AiExecutionStage[] = [

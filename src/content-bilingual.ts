@@ -164,7 +164,7 @@ const experiencesEn: Experience[] = [
   {
     company: 'Onitel Telecom',
     role: 'IT Analyst',
-    period: '2024 — 2025',
+    period: '12/2024 — 12/2025',
     summary: 'Full-time, on-site IT analyst at a telecommunications provider.',
     bullets: ['Full-time, on-site IT analyst at a telecommunications provider.'],
     sourceNote: 'Source: professional LinkedIn profile, confirmed by the holder.',
@@ -172,7 +172,7 @@ const experiencesEn: Experience[] = [
   {
     company: 'Reitec',
     role: 'Systems Analyst',
-    period: '2023 — 2024',
+    period: '11/2023 — 11/2024',
     summary: 'Full-time systems analyst working with Python and HTML5.',
     bullets: ['Full-time systems analyst working with Python and HTML5.'],
     sourceNote: 'Source: professional LinkedIn profile, confirmed by the holder.',
@@ -180,7 +180,7 @@ const experiencesEn: Experience[] = [
   {
     company: 'Stefanini Group',
     role: 'Network & Operations Analyst (banking project)',
-    period: '2021',
+    period: '08/2022 — 03/2023',
     summary: 'Continuous monitoring of circuits and mission-critical data traffic in a national banking environment.',
     bullets: [
       'Continuously monitored circuits and mission-critical data traffic in a national banking environment.',
@@ -192,7 +192,7 @@ const experiencesEn: Experience[] = [
   {
     company: 'AGE Telecom',
     role: 'Support & Network Analyst',
-    period: '2021 — 2022',
+    period: '03/2022 — 01/2023',
     summary: 'Secure connectivity infrastructure and solutions for critical customers and corporate accounts.',
     bullets: [
       'Segmented traffic (VLANs), deployed secure links, and established corporate VPN tunnels for branch interconnection.',
@@ -204,7 +204,7 @@ const experiencesEn: Experience[] = [
   {
     company: 'NWI Telecom',
     role: 'Teleprocessing Network Operator',
-    period: '2021',
+    period: '04/2021 — 03/2022',
     summary: 'Telecommunications infrastructure operations, network observability, and traffic security.',
     bullets: [
       'Built and maintained active operational visibility with Zabbix, PRTG, and The Dude.',
@@ -215,7 +215,7 @@ const experiencesEn: Experience[] = [
   {
     company: 'SKILL.NET',
     role: 'Technical Support & Network Operations',
-    period: '2018 — 2021',
+    period: '03/2018 — 05/2021',
     summary: 'Secure support routines, local-network administration, and physical/logical integrity maintenance.',
     bullets: [
       'Ran secure support routines, local-network administration, physical/logical integrity maintenance, and auditable documentation control.',

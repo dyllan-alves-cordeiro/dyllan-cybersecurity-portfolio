@@ -123,7 +123,7 @@ export const professionalExperiences: Experience[] = [
   {
     company: 'Onitel Telecom',
     role: 'Analista de TI',
-    period: '2024 — 2025',
+    period: '12/2024 — 12/2025',
     summary: 'Analista de TI em provedor de telecomunicações, em tempo integral e regime presencial.',
     bullets: ['Analista de TI em provedor de telecomunicações, em tempo integral e regime presencial.'],
     sourceNote: 'Fonte: perfil profissional no LinkedIn, confirmado pelo titular.',
@@ -131,7 +131,7 @@ export const professionalExperiences: Experience[] = [
   {
     company: 'Reitec',
     role: 'Analista de sistemas',
-    period: '2023 — 2024',
+    period: '11/2023 — 11/2024',
     summary: 'Analista de sistemas em tempo integral, com uso de Python e HTML5.',
     bullets: ['Analista de sistemas em tempo integral, com uso de Python e HTML5.'],
     sourceNote: 'Fonte: perfil profissional no LinkedIn, confirmado pelo titular.',
@@ -139,7 +139,7 @@ export const professionalExperiences: Experience[] = [
   {
     company: 'Stefanini Group',
     role: 'Analista de Redes e Operações (projeto bancário)',
-    period: '2021',
+    period: '08/2022 — 03/2023',
     summary:
       'Monitoramento contínuo de circuitos e tráfego de dados de missão crítica em ambiente bancário nacional.',
     bullets: [
@@ -152,7 +152,7 @@ export const professionalExperiences: Experience[] = [
   {
     company: 'AGE Telecom',
     role: 'Analista de Suporte & Redes',
-    period: '2021 — 2022',
+    period: '03/2022 — 01/2023',
     summary:
       'Infraestrutura de conectividade segura e soluções para clientes críticos e contas corporativas.',
     bullets: [
@@ -165,7 +165,7 @@ export const professionalExperiences: Experience[] = [
   {
     company: 'NWI Telecom',
     role: 'Operador de Rede de Teleprocessamento',
-    period: '2021',
+    period: '04/2021 — 03/2022',
     summary:
       'Operação de infraestrutura de telecomunicações, observabilidade de rede e segurança de tráfego.',
     bullets: [
@@ -177,7 +177,7 @@ export const professionalExperiences: Experience[] = [
   {
     company: 'SKILL.NET',
     role: 'Suporte Técnico & Operações de Redes',
-    period: '2018 — 2021',
+    period: '03/2018 — 05/2021',
     summary:
       'Rotinas de suporte seguro, administração de redes locais e manutenção de integridade física/lógica.',
     bullets: [
